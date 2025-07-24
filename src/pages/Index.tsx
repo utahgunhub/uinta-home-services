@@ -61,13 +61,15 @@ const Index = () => {
             src={heroImage} 
             alt="Professional coating work"
             className="w-full h-full object-cover opacity-20"
+            loading="eager"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-background/60"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-up">
+            <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground">
                   Utah's Trusted{" "}
@@ -110,7 +112,9 @@ const Index = () => {
                 <img 
                   src={heroImage}
                   alt="Professional epoxy coating work" 
-                  className="rounded-2xl shadow-2xl max-w-lg animate-scale-in"
+                  className="rounded-2xl shadow-2xl max-w-lg"
+                  loading="eager"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent"></div>
               </div>

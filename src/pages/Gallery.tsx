@@ -154,7 +154,9 @@ const Gallery = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-200"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 
