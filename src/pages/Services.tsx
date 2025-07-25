@@ -158,18 +158,20 @@ const Services = () => {
             {services.map((service, index) => (
               <Card key={index} className="card-service group overflow-hidden">
                 <CardContent className="p-8">
-                  <div className="flex items-start space-x-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                        <service.icon className="w-8 h-8 text-primary" />
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                          <service.icon className="w-8 h-8 text-primary" />
+                        </div>
                       </div>
+                      <h3 className="text-2xl font-bold heading-caps text-foreground leading-tight min-h-[3rem] flex items-center">
+                        {service.title}
+                      </h3>
                     </div>
 
-                    <div className="flex-1 space-y-4">
+                    <div className="space-y-4">
                       <div>
-                        <h3 className="text-2xl font-bold heading-caps text-foreground mb-3">
-                          {service.title}
-                        </h3>
                         <p className="text-muted-foreground leading-relaxed">
                           {service.description}
                         </p>
