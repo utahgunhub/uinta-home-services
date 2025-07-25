@@ -6,14 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import PageLayout from "@/components/layout/PageLayout";
 import { useToast } from "@/hooks/use-toast";
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock,
-  Send,
-  CheckCircle
-} from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -22,14 +15,14 @@ const Contact = () => {
     email: "",
     phone: "",
     projectType: "",
-    message: ""
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -42,15 +35,19 @@ const Contact = () => {
         email: "",
         phone: "",
         projectType: "",
-        message: ""
+        message: "",
       });
     }, 1000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -58,31 +55,31 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "(801) 555-0123",
-      link: "tel:8015550123",
-      description: "Call us for immediate assistance"
+      value: "(385) 528-6767",
+      link: "tel:3855286767",
+      description: "Call us for immediate assistance",
     },
     {
       icon: Mail,
       title: "Email",
-      value: "info@qualitycoatingsllc.com",
-      link: "mailto:info@qualitycoatingsllc.com",
-      description: "Send us a detailed message"
+      value: "danny@qcoatingsllc.com",
+      link: "mailto:danny@qcoatingsllc.com",
+      description: "Send us a detailed message",
     },
     {
       icon: MapPin,
-      title: "Service Area",
-      value: "Throughout Utah",
+      title: "Location",
+      value: "West Jordan, UT, 84081-4020",
       link: null,
-      description: "We travel to you for all projects"
+      description: "Serving all of Utah",
     },
     {
       icon: Clock,
       title: "Business Hours",
-      value: "Mon-Fri: 7AM-6PM",
+      value: "Mon-Sat: 7AM-7PM, Sun: By Appointment",
       link: null,
-      description: "Emergency service available"
-    }
+      description: "Flexible scheduling available",
+    },
   ];
 
   const projectTypes = [
@@ -92,7 +89,7 @@ const Contact = () => {
     "Gutters & Downspouts",
     "Window Replacement",
     "Insurance Claim",
-    "Other"
+    "Other",
   ];
 
   return (
@@ -102,11 +99,13 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground mb-6">
-              Get Your <span className="text-primary text-glow">Free Quote</span>
+              Get Your{" "}
+              <span className="text-primary text-glow">Free Quote</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Ready to start your project? Contact us today for a free, no-obligation 
-              estimate. We'll work with you to find the perfect solution for your needs.
+              Ready to start your project? Contact us today for a free,
+              no-obligation estimate. We'll work with you to find the perfect
+              solution for your needs.
             </p>
           </div>
         </div>
@@ -125,15 +124,18 @@ const Contact = () => {
                       Request Your Free Estimate
                     </h2>
                     <p className="text-muted-foreground leading-relaxed">
-                      Fill out the form below and we'll get back to you within 24 hours 
-                      with a detailed estimate for your project.
+                      Fill out the form below and we'll get back to you within
+                      24 hours with a detailed estimate for your project.
                     </p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="name" className="text-foreground font-medium">
+                        <Label
+                          htmlFor="name"
+                          className="text-foreground font-medium"
+                        >
                           Full Name *
                         </Label>
                         <Input
@@ -147,9 +149,12 @@ const Contact = () => {
                           placeholder="Your full name"
                         />
                       </div>
-                      
+
                       <div className="space-y-2">
-                        <Label htmlFor="email" className="text-foreground font-medium">
+                        <Label
+                          htmlFor="email"
+                          className="text-foreground font-medium"
+                        >
                           Email Address *
                         </Label>
                         <Input
@@ -167,7 +172,10 @@ const Contact = () => {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="phone" className="text-foreground font-medium">
+                        <Label
+                          htmlFor="phone"
+                          className="text-foreground font-medium"
+                        >
                           Phone Number *
                         </Label>
                         <Input
@@ -181,9 +189,12 @@ const Contact = () => {
                           placeholder="(801) 555-0123"
                         />
                       </div>
-                      
+
                       <div className="space-y-2">
-                        <Label htmlFor="projectType" className="text-foreground font-medium">
+                        <Label
+                          htmlFor="projectType"
+                          className="text-foreground font-medium"
+                        >
                           Project Type
                         </Label>
                         <select
@@ -195,14 +206,19 @@ const Contact = () => {
                         >
                           <option value="">Select a service</option>
                           {projectTypes.map((type) => (
-                            <option key={type} value={type}>{type}</option>
+                            <option key={type} value={type}>
+                              {type}
+                            </option>
                           ))}
                         </select>
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message" className="text-foreground font-medium">
+                      <Label
+                        htmlFor="message"
+                        className="text-foreground font-medium"
+                      >
                         Project Details
                       </Label>
                       <Textarea
@@ -216,9 +232,9 @@ const Contact = () => {
                       />
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      size="lg" 
+                    <Button
+                      type="submit"
+                      size="lg"
                       disabled={isSubmitting}
                       className="btn-primary w-full glow-primary"
                     >
@@ -244,24 +260,33 @@ const Contact = () => {
                 </h3>
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
-                    <Card key={index} className="p-6 bg-background border-border hover:border-primary/30 transition-colors duration-200">
+                    <Card
+                      key={index}
+                      className="p-6 bg-background border-border hover:border-primary/30 transition-colors duration-200"
+                    >
                       <div className="flex items-start space-x-4">
                         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                           <info.icon className="w-6 h-6 text-primary" />
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-semibold text-foreground mb-1">{info.title}</h4>
+                          <h4 className="font-semibold text-foreground mb-1">
+                            {info.title}
+                          </h4>
                           {info.link ? (
-                            <a 
+                            <a
                               href={info.link}
                               className="text-primary hover:text-primary-glow transition-colors duration-200 font-medium"
                             >
                               {info.value}
                             </a>
                           ) : (
-                            <p className="text-foreground font-medium">{info.value}</p>
+                            <p className="text-foreground font-medium">
+                              {info.value}
+                            </p>
                           )}
-                          <p className="text-muted-foreground text-sm mt-1">{info.description}</p>
+                          <p className="text-muted-foreground text-sm mt-1">
+                            {info.description}
+                          </p>
                         </div>
                       </div>
                     </Card>
@@ -280,7 +305,7 @@ const Contact = () => {
                     "15+ years of experience",
                     "Free estimates & competitive pricing",
                     "Insurance coordination services",
-                    "Quality guarantee on all work"
+                    "Quality guarantee on all work",
                   ].map((item, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -301,27 +326,37 @@ const Contact = () => {
             Prefer to Talk? Give Us a Call
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Sometimes it's easier to discuss your project over the phone. 
-            Our team is standing by to answer your questions and provide expert advice.
+            Sometimes it's easier to discuss your project over the phone. Our
+            team is standing by to answer your questions and provide expert
+            advice.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:8015550123">
-              <Button size="lg" className="btn-primary glow-primary text-lg px-8 py-4">
+            <a href="tel:3855286767">
+              <Button
+                size="lg"
+                className="btn-primary glow-primary text-lg px-8 py-4"
+              >
                 <Phone className="mr-2 w-5 h-5" />
-                Call (801) 555-0123
+                Call (385) 528-6767
               </Button>
             </a>
-            <a href="mailto:info@qualitycoatingsllc.com">
-              <Button variant="outline" size="lg" className="btn-ghost text-lg px-8 py-4">
+            <a href="mailto:danny@qcoatingsllc.com">
+              <Button
+                variant="outline"
+                size="lg"
+                className="btn-ghost text-lg px-8 py-4"
+              >
                 <Mail className="mr-2 w-5 h-5" />
                 Send Email
               </Button>
             </a>
           </div>
-          
+
           <div className="mt-8 text-muted-foreground">
-            <p>Available Monday through Friday, 7 AM to 6 PM</p>
+            <p>Available Monday through Saturday, 7 AM to 7 PM</p>
+            <p className="mt-2">Sunday: By Appointment</p>
+            <p className="mt-2">License Number: 12398041-5501</p>
           </div>
         </div>
       </section>

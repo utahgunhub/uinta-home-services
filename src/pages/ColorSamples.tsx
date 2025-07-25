@@ -5,50 +5,56 @@ import { Badge } from "@/components/ui/badge";
 const ColorSamples = () => {
   const colorSamples = [
     {
-      name: "Classic Gray",
-      description: "Timeless neutral perfect for garages and basements",
-      image: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?w=400&h=300&fit=crop",
-      category: "Neutral",
-      finish: "Satin"
-    },
-    {
-      name: "Ocean Blue",
-      description: "Vibrant blue reminiscent of deep ocean waters",
-      image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=400&h=300&fit=crop",
-      category: "Blue",
-      finish: "Gloss"
-    },
-    {
-      name: "Sunset Orange",
-      description: "Warm, energetic orange for bold statement floors",
-      image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=400&h=300&fit=crop",
+      name: "Light Beige Speckled",
+      description:
+        "Warm light beige base with dense black and dark gray speckles, featuring subtle light brown and gold flecks for depth",
+      image: "/images/color-samples/sample-1.jpg",
       category: "Warm",
-      finish: "Semi-Gloss"
+      finish: "High Gloss",
     },
     {
-      name: "Forest Green",
-      description: "Rich, natural green perfect for outdoor applications",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
-      category: "Green",
-      finish: "Matte"
-    },
-    {
-      name: "Arctic White",
-      description: "Clean, bright white for modern minimalist spaces",
-      image: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=400&h=300&fit=crop",
+      name: "Neutral Gray Speckled",
+      description:
+        "Consistent light gray background with uniform black and dark gray speckles, perfect for professional settings",
+      image: "/images/color-samples/sample-2.jpg",
       category: "Neutral",
-      finish: "High Gloss"
+      finish: "Semi-Gloss",
     },
     {
-      name: "Charcoal Black",
-      description: "Sophisticated black with subtle metallic flecks",
-      image: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=400&h=300&fit=crop",
-      category: "Dark",
-      finish: "Satin"
-    }
+      name: "Bright White Speckled",
+      description:
+        "Bright white base with prominent black speckles and distinctive brownish-gold flecks that catch the light beautifully",
+      image: "/images/color-samples/sample-3.jpg",
+      category: "Neutral",
+      finish: "Gloss",
+    },
+    {
+      name: "White Terrazzo Style",
+      description:
+        "Bright white background with black speckles and prominent brownish-gold flecks creating a luxurious terrazzo appearance",
+      image: "/images/color-samples/sample-4.jpg",
+      category: "Neutral",
+      finish: "Satin",
+    },
+    {
+      name: "Cool Gray Speckled",
+      description:
+        "Cooler, muted light gray base with dense black and dark gray speckles, offering a sophisticated industrial look",
+      image: "/images/color-samples/sample-5.jpg",
+      category: "Neutral",
+      finish: "Matte",
+    },
+    {
+      name: "Soft Gray Speckled",
+      description:
+        "Soft light gray background with uniform black and dark gray speckles, providing a clean and professional finish",
+      image: "/images/color-samples/sample-6.jpg",
+      category: "Neutral",
+      finish: "Semi-Gloss",
+    },
   ];
 
-  const categories = ["All", "Neutral", "Blue", "Warm", "Green", "Dark"];
+  const categories = ["All", "Neutral", "Warm"];
 
   return (
     <PageLayout>
@@ -58,13 +64,14 @@ const ColorSamples = () => {
           <div className="text-center space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground">
-                <span className="text-primary text-glow">Epoxy Color</span><br />
+                <span className="text-primary text-glow">Epoxy Color</span>
+                <br />
                 Samples
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                Explore our extensive collection of premium epoxy coating colors. 
-                From classic neutrals to bold statement hues, find the perfect color 
-                for your concrete coating project.
+                Explore our extensive collection of premium epoxy coating
+                colors. From classic neutrals to bold statement hues, find the
+                perfect color for your concrete coating project.
               </p>
             </div>
           </div>
@@ -76,9 +83,9 @@ const ColorSamples = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {categories.map((category) => (
-              <Badge 
-                key={category} 
-                variant="outline" 
+              <Badge
+                key={category}
+                variant="outline"
                 className="px-4 py-2 text-sm cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 {category}
@@ -95,8 +102,8 @@ const ColorSamples = () => {
             {colorSamples.map((sample, index) => (
               <Card key={index} className="card-service group overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src={sample.image} 
+                  <img
+                    src={sample.image}
                     alt={sample.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -115,7 +122,10 @@ const ColorSamples = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">
-                      Finish: <span className="font-medium text-foreground">{sample.finish}</span>
+                      Finish:{" "}
+                      <span className="font-medium text-foreground">
+                        {sample.finish}
+                      </span>
                     </span>
                   </div>
                 </CardContent>
@@ -132,14 +142,16 @@ const ColorSamples = () => {
             Don't See Your Perfect Color?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            We offer custom color matching and can create unique blends to match 
-            your exact vision. Our team can work with any color sample or design 
+            We offer custom color matching and can create unique blends to match
+            your exact vision. Our team can work with any color sample or design
             preference to create the perfect coating for your space.
           </p>
-          
+
           <div className="space-y-4">
             <div className="bg-background/50 backdrop-blur-sm rounded-lg p-6 border border-border">
-              <h3 className="font-bold text-foreground mb-2">Custom Color Services Include:</h3>
+              <h3 className="font-bold text-foreground mb-2">
+                Custom Color Services Include:
+              </h3>
               <ul className="text-muted-foreground space-y-1">
                 <li>• Color matching from samples or photos</li>
                 <li>• Custom metallic and decorative flake blends</li>

@@ -2,16 +2,19 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import PageLayout from "@/components/layout/PageLayout";
-import { 
-  Shield, 
-  Award, 
-  Users, 
-  CheckCircle, 
+import RotatingHero from "@/components/RotatingHero";
+import {
+  Shield,
+  Award,
+  Users,
+  CheckCircle,
   Star,
   ArrowRight,
   Palette,
   Home,
-  Building2
+  Building2,
+  Phone,
+  Paintbrush,
 } from "lucide-react";
 import heroImage from "@/assets/hero-coating.jpg";
 
@@ -19,109 +22,64 @@ const Index = () => {
   const features = [
     {
       icon: Shield,
-      title: "Licensed & Insured",
-      description: "Fully licensed contractors with comprehensive insurance coverage for your peace of mind."
+      title: "SERVICES WE PROVIDE",
+      description: [
+        "Concrete Polishing",
+        "Epoxy Garage Floors",
+        "Waterproof Decking",
+        "Concrete Staining",
+        "Concrete Overlays & Repairs",
+        "Concrete Sealing",
+      ],
+      buttonText: "Our Services »",
+      buttonLink: "/services",
+      image: heroImage,
     },
     {
       icon: Award,
-      title: "Expert Craftsmanship",
-      description: "Over 15 years of experience delivering premium coating solutions across Utah."
+      title: "VIEW OUR WORK",
+      description:
+        "Looking for a epoxy garage coating specialist in Utah? We've got you covered. Check out our epoxy garage floor coating, waterproof decking, staining, overlays, sealing, and sports court galleries here.",
+      buttonText: "View Galleries »",
+      buttonLink: "/gallery",
+      image: heroImage,
     },
     {
       icon: Users,
-      title: "Insurance Coordination",
-      description: "We handle all the paperwork and work directly with your insurance company."
-    }
+      title: "COLOR SAMPLES",
+      description:
+        "We have products for every taste and budget. From simple and sleek to flashy and elegant our broad range of coatings and finishes allows us to do almost anything you can think up. Browse our gallery to see.",
+      buttonText: "Color Samples »",
+      buttonLink: "/color-samples",
+      image: heroImage,
+    },
   ];
 
   const services = [
     {
       icon: Palette,
-      title: "Epoxy & Polyurea Coatings",
-      description: "Durable, beautiful floor coatings for garages, basements, and commercial spaces."
+      title: "Epoxy Flooring",
+      description:
+        "If you're looking for trusted epoxy floor coating services, look no further than us. We are local industry leaders, and we provide an unparalleled level of quality and service to every client.",
     },
     {
-      icon: Home,
-      title: "Stucco & Exterior Work",
-      description: "Complete exterior renovations including stucco, gutters, and window replacement."
+      icon: Paintbrush,
+      title: "Exterior Painting",
+      description:
+        "If you're looking for exterior painting services, look no further than us. We provide a complete range of services to help homeowners, business owners, and property managers attain the stellar exterior they've always wanted.",
     },
     {
-      icon: Building2,
-      title: "Commercial Projects",
-      description: "Large-scale coating solutions for warehouses, retail spaces, and industrial facilities."
-    }
+      icon: Paintbrush,
+      title: "House Painting",
+      description:
+        "Quality Coatings LLC is the top house painting company. Our team is licensed, insured, and bonded, and we have the skills, knowledge, and expertise to deliver seamless results for your home.",
+    },
   ];
 
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero min-h-[90vh] flex items-center">
-        <div className="absolute inset-0 overflow-hidden">
-          <img 
-            src={heroImage} 
-            alt="Professional coating work"
-            className="w-full h-full object-cover opacity-20"
-            loading="eager"
-            decoding="async"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-background/60"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground">
-                  Utah's Trusted{" "}
-                  <span className="text-primary text-glow">Coating Experts</span>
-                </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  From patios to warehouses, we coat it all. Professional quality, 
-                  insurance coordination, and results that last.
-                </p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact">
-                  <Button size="lg" className="btn-primary glow-primary text-lg px-8 py-4">
-                    Get a Free Quote
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-                <Link to="/gallery">
-                  <Button variant="outline" size="lg" className="btn-ghost text-lg px-8 py-4">
-                    View Our Work
-                  </Button>
-                </Link>
-              </div>
-              
-              <div className="flex items-center space-x-6 pt-4">
-                <div className="flex items-center space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <span className="text-muted-foreground">
-                  Rated 5/5 by 200+ satisfied customers
-                </span>
-              </div>
-            </div>
-            
-            <div className="lg:flex justify-center hidden">
-              <div className="relative">
-                <img 
-                  src={heroImage}
-                  alt="Professional epoxy coating work" 
-                  className="rounded-2xl shadow-2xl max-w-lg"
-                  loading="eager"
-                  decoding="async"
-                />
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <RotatingHero />
 
       {/* Features Section */}
       <section className="py-20 bg-surface">
@@ -131,26 +89,59 @@ const Index = () => {
               Why Choose Quality Coatings LLC?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We combine expert craftsmanship with exceptional service to deliver 
-              coating solutions that exceed expectations.
+              We combine expert craftsmanship with exceptional service to
+              deliver coating solutions that exceed expectations.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="card-service text-center group">
-                <CardContent className="p-8">
-                  <div className="mb-6">
-                    <feature.icon className="w-12 h-12 text-primary mx-auto group-hover:scale-110 transition-transform duration-300" />
+              <div
+                key={index}
+                className="relative h-80 rounded-xl overflow-hidden group"
+              >
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/40"></div>
+
+                {/* Content */}
+                <div className="relative h-full flex flex-col justify-center items-center p-8">
+                  <div className="bg-black/60 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-2xl text-center text-white max-w-sm">
+                    <h3 className="text-xl font-bold heading-caps mb-4">
+                      {feature.title}
+                    </h3>
+                    {Array.isArray(feature.description) ? (
+                      <ul className="text-gray-200 leading-relaxed mb-6 space-y-1">
+                        {feature.description.map((item, index) => (
+                          <li key={index} className="text-sm">
+                            • {item}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-gray-200 leading-relaxed mb-6 text-sm">
+                        {feature.description}
+                      </p>
+                    )}
+                    <Link to={feature.buttonLink}>
+                      <Button
+                        size="sm"
+                        className="bg-primary text-white hover:bg-primary/90 transition-all duration-300"
+                      >
+                        {feature.buttonText}
+                      </Button>
+                    </Link>
                   </div>
-                  <h3 className="text-xl font-bold heading-caps text-foreground mb-4">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -164,11 +155,11 @@ const Index = () => {
               Our Core Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive coating and restoration services for residential, 
+              Comprehensive coating and restoration services for residential,
               commercial, and industrial projects throughout Utah.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {services.map((service, index) => (
               <Card key={index} className="card-service group">
@@ -182,8 +173,8 @@ const Index = () => {
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     {service.description}
                   </p>
-                  <Link 
-                    to="/services" 
+                  <Link
+                    to="/services"
                     className="text-primary hover:text-primary-glow font-semibold inline-flex items-center transition-colors duration-200"
                   >
                     Learn More <ArrowRight className="ml-1 w-4 h-4" />
@@ -192,7 +183,7 @@ const Index = () => {
               </Card>
             ))}
           </div>
-          
+
           <div className="text-center">
             <Link to="/services">
               <Button size="lg" className="btn-primary">
@@ -209,22 +200,30 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-4xl font-bold heading-caps text-foreground">
-                Experience You Can Trust
+                Outstanding Service
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                For over 15 years, Quality Coatings LLC has been Utah's go-to 
-                choice for professional coating and restoration services. We pride 
-                ourselves on quality workmanship, transparent pricing, and 
-                exceptional customer service.
+                We combine expertise with the highest standards for customer
+                service. Promptness, punctuality, and professionalism are but a
+                few of the key tenets of our service model. When you enlist our
+                services, you'll experience nothing but our steadfast commitment
+                to you.
               </p>
-              
+
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We promise clear and effective communication with everyone who
+                comes our way. Whether you have a question for us or a concern
+                you'd like to address, you can count on us to give you the
+                attention you deserve.
+              </p>
+
               <div className="space-y-4">
                 {[
                   "Licensed and fully insured contractors",
                   "Direct insurance company coordination",
-                  "Free estimates and competitive pricing", 
-                  "Garage floors, driveways, pool decks, and more",
-                  "Complete exterior renovations and repairs"
+                  "Free estimates and competitive pricing",
+                  "Clear and effective communication",
+                  "Promptness, punctuality, and professionalism",
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
@@ -232,7 +231,7 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="pt-6">
                 <Link to="/contact">
                   <Button size="lg" className="btn-primary">
@@ -241,7 +240,7 @@ const Index = () => {
                 </Link>
               </div>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6">
                 <Card className="p-6 text-center bg-primary/5 border-primary/20">
@@ -250,7 +249,9 @@ const Index = () => {
                 </Card>
                 <Card className="p-6 text-center bg-primary/5 border-primary/20">
                   <div className="text-3xl font-bold text-primary">500+</div>
-                  <div className="text-muted-foreground">Projects Completed</div>
+                  <div className="text-muted-foreground">
+                    Projects Completed
+                  </div>
                 </Card>
               </div>
               <div className="space-y-6 pt-8">
@@ -263,6 +264,266 @@ const Index = () => {
                   <div className="text-muted-foreground">Satisfaction Rate</div>
                 </Card>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews & Instagram Feed Section */}
+      <section className="py-20 bg-surface">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Reviews Section */}
+            <div className="space-y-6">
+              <div className="text-center lg:text-left">
+                <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
+                  What Our Customers Say
+                </h2>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Don't just take our word for it - hear from our satisfied
+                  customers
+                </p>
+              </div>
+
+              <div className="relative">
+                {/* Review Carousel */}
+                <div className="space-y-4">
+                  {/* Review 1 */}
+                  <Card className="p-4 bg-primary/5 border-primary/20">
+                    <div className="flex items-center space-x-2 mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                    <p className="text-sm text-foreground mb-3 italic">
+                      "Quality Coatings LLC did an amazing job on our garage
+                      floor. Professional, on-time, and great communication
+                      throughout."
+                    </p>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                        <span className="text-primary font-bold text-sm">
+                          S
+                        </span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground text-sm">
+                          Sarah M.
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          West Jordan, UT
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+
+                  {/* Review 2 */}
+                  <Card className="p-4 bg-primary/5 border-primary/20">
+                    <div className="flex items-center space-x-2 mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                    <p className="text-sm text-foreground mb-3 italic">
+                      "Outstanding service! They handled our insurance claim
+                      seamlessly and the exterior painting exceeded
+                      expectations."
+                    </p>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                        <span className="text-primary font-bold text-sm">
+                          M
+                        </span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground text-sm">
+                          Mike R.
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          Salt Lake City, UT
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+
+                  {/* Review 3 */}
+                  <Card className="p-4 bg-primary/5 border-primary/20">
+                    <div className="flex items-center space-x-2 mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                    <p className="text-sm text-foreground mb-3 italic">
+                      "The insulation installation was done quickly and
+                      professionally. Our energy bills have dropped
+                      significantly!"
+                    </p>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                        <span className="text-primary font-bold text-sm">
+                          J
+                        </span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground text-sm">
+                          Jennifer L.
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          Sandy, UT
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+              </div>
+            </div>
+
+            {/* Instagram Feed Section */}
+            <div className="space-y-6">
+              <div className="text-center lg:text-left">
+                <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
+                  Follow Our Work
+                </h2>
+                <p className="text-lg text-muted-foreground mb-6">
+                  See our latest projects and transformations on Instagram
+                </p>
+                <a
+                  href="https://www.instagram.com/qualitycoatingsutah/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors"
+                >
+                  <span className="font-semibold">@qualitycoatingsutah</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4">
+                {/* Instagram Real Images */}
+                {[
+                  "/images/instagram-samples/instgram-1.jpg",
+                  "/images/instagram-samples/instgram-2.jpg",
+                  "/images/instagram-samples/instgram-3.jpg",
+                  "/images/instagram-samples/instgram-4.jpg",
+                  "/images/instagram-samples/instgram-5.jpg",
+                  "/images/instagram-samples/instgram-6.jpg",
+                ].map((image, index) => (
+                  <a
+                    key={index}
+                    href="https://www.instagram.com/qualitycoatingsutah/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300"
+                  >
+                    <img
+                      src={image}
+                      alt={`Epoxy flooring project ${index + 1}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                  </a>
+                ))}
+              </div>
+
+              <div className="text-center">
+                <a
+                  href="https://www.instagram.com/qualitycoatingsutah/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors font-semibold"
+                >
+                  <span>View More on Instagram</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Exceeding Expectations Section */}
+      <section className="py-20 bg-surface">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-8">
+            <div className="space-y-6">
+              <h2 className="text-4xl font-bold heading-caps text-foreground">
+                Exceeding Expectations
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+                We know the value of our services, and we think you should too.
+                We want you to take advantage without having to feel like you're
+                taking a risk. It's for that reason that we guarantee your
+                satisfaction.
+              </p>
+
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+                In the rare instance we somehow fall short of your expectations,
+                then we want to do everything we can to fix the issue. Whatever
+                it may entail. Reach out to us, and we'll strive to make sure
+                you are happy with our services.
+              </p>
+            </div>
+
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-8 mb-8">
+              <h3 className="text-2xl font-bold text-primary mb-4">
+                Satisfaction Guaranteed
+              </h3>
+              <p className="text-muted-foreground">
+                Customer service isn't just friendly greetings; it's also a
+                commitment to doing right by the client no matter what. We won't
+                rest until you're completely satisfied with the end
+                result—that's our guarantee to you!
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  className="btn-primary glow-primary text-lg px-8 py-4"
+                >
+                  Call Us Now!
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <a href="tel:3855286767">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="btn-ghost text-lg px-8 py-4"
+                >
+                  <Phone className="mr-2 w-5 h-5" />
+                  (385) 528-6767
+                </Button>
+              </a>
+              <Link to="/about">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="btn-ghost text-lg px-8 py-4"
+                >
+                  Learn More About Us
+                </Button>
+              </Link>
+            </div>
+
+            <div className="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-xl">
+              <h4 className="text-lg font-bold text-primary mb-2">
+                Ask About Our Discounts
+              </h4>
+              <p className="text-muted-foreground">
+                New Customer, Loyalty Program, Seniors and Military Discounts
+              </p>
             </div>
           </div>
         </div>

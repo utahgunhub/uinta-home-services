@@ -9,6 +9,7 @@ const Navigation = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/gallery", label: "Gallery" },
     { href: "/color-samples", label: "Color Samples" },
@@ -24,7 +25,9 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">QC</span>
+              <span className="text-primary-foreground font-bold text-lg">
+                QC
+              </span>
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-lg heading-caps text-foreground">
@@ -55,7 +58,7 @@ const Navigation = () => {
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <Phone className="w-4 h-4" />
-              <span>(801) 555-0123</span>
+              <span>(385) 528-6767</span>
             </div>
             <Button variant="default" size="sm" className="btn-primary">
               Free Quote
@@ -68,7 +71,11 @@ const Navigation = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-foreground hover:text-primary p-2"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -94,14 +101,18 @@ const Navigation = () => {
               <div className="pt-4 space-y-2">
                 <div className="flex items-center space-x-2 px-3 text-sm text-muted-foreground">
                   <Phone className="w-4 h-4" />
-                  <span>(801) 555-0123</span>
+                  <span>(385) 528-6767</span>
                 </div>
                 <div className="flex items-center space-x-2 px-3 text-sm text-muted-foreground">
                   <Mail className="w-4 h-4" />
-                  <span>info@qualitycoatingsllc.com</span>
+                  <span>danny@qcoatingsllc.com</span>
                 </div>
                 <div className="px-3">
-                  <Button variant="default" size="sm" className="btn-primary w-full">
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="btn-primary w-full"
+                  >
                     Get Free Quote
                   </Button>
                 </div>

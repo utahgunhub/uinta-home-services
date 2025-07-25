@@ -10,97 +10,126 @@ const Gallery = () => {
 
   const categories = ["All", "Garages", "Commercial", "Homes", "Patios"];
 
-  // Mock gallery data - in a real app, these would be actual project images
+  // Real project gallery data
   const projects = [
     {
       id: 1,
-      title: "Modern Garage Epoxy Floor",
-      category: "Garages",
-      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=600&fit=crop",
-      description: "Metallic epoxy flooring with decorative flakes"
+      title: "Outdoor Covered Patio",
+      category: "Patios",
+      image: "/images/gallery/gallery1.png",
+      description:
+        "Newly finished outdoor patio with light gray textured floor, bordered by red brick walls and warm wooden ceiling",
     },
     {
       id: 2,
-      title: "Commercial Warehouse Coating",
+      title: "Commercial Walkway Coating",
       category: "Commercial",
-      image: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=800&h=600&fit=crop",
-      description: "Heavy-duty polyurea coating for industrial use"
+      image: "/images/gallery/gallery2.png",
+      description:
+        "Freshly coated light gray concrete surface with subtle speckled texture, perfect for high-traffic areas",
     },
     {
       id: 3,
-      title: "Residential Stucco Renovation",
-      category: "Homes",
-      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
-      description: "Complete exterior stucco restoration and painting"
+      title: "Bass Boat Garage Floor",
+      category: "Garages",
+      image: "/images/gallery/gallery3.png",
+      description:
+        "Light gray speckled epoxy floor in a spacious garage, featuring high reflectivity and professional finish",
     },
     {
       id: 4,
-      title: "Pool Deck Coating",
-      category: "Patios",
-      image: "https://images.unsplash.com/photo-1544984243-ec57ea16fe25?w=800&h=600&fit=crop",
-      description: "Non-slip decorative concrete coating"
+      title: "Clean Garage Epoxy",
+      category: "Garages",
+      image: "/images/gallery/gallery4.png",
+      description:
+        "Pristine light gray epoxy coating with dense speckled pattern, creating a granite-like appearance",
     },
     {
       id: 5,
-      title: "Luxury Home Garage",
-      category: "Garages",
-      image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop",
-      description: "Premium epoxy with custom color scheme"
+      title: "Industrial Epoxy Floor",
+      category: "Commercial",
+      image: "/images/gallery/gallery5.png",
+      description:
+        "Light gray epoxy with speckled pattern, featuring expansion joints and highly reflective surface",
     },
     {
       id: 6,
-      title: "Office Building Exterior",
+      title: "Floor Preparation Process",
       category: "Commercial",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
-      description: "Commercial stucco and window replacement"
+      image: "/images/gallery/gallery6.png",
+      description:
+        "Professional floor cleaning and preparation using industrial vacuum equipment for epoxy application",
     },
     {
       id: 7,
-      title: "Basement Floor Coating",
-      category: "Homes",
-      image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
-      description: "Moisture-resistant basement flooring system"
+      title: "New Epoxy Installation",
+      category: "Garages",
+      image: "/images/gallery/gallery7.png",
+      description:
+        "Freshly applied light gray epoxy floor with speckled finish in a clean, empty garage space",
     },
     {
       id: 8,
-      title: "Outdoor Patio Restoration",
-      category: "Patios",
-      image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=600&fit=crop",
-      description: "Decorative stamped concrete overlay"
+      title: "Garage Epoxy with Windows",
+      category: "Garages",
+      image: "/images/gallery/gallery8.png",
+      description:
+        "Light gray speckled epoxy floor with natural light streaming through windows, creating a bright workspace",
     },
     {
       id: 9,
-      title: "Three-Car Garage Transformation",
+      title: "Black Speckled Epoxy",
       category: "Garages",
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop",
-      description: "Full garage makeover with storage solutions"
+      image: "/images/gallery/gallery9.png",
+      description:
+        "High-gloss black epoxy floor with dense white and light gray speckles, creating a sophisticated salt-and-pepper effect",
     },
     {
       id: 10,
-      title: "Retail Store Front",
-      category: "Commercial",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
-      description: "Modern storefront renovation"
+      title: "Garage with Drywall Prep",
+      category: "Garages",
+      image: "/images/gallery/gallery10.png",
+      description:
+        "Light gray speckled epoxy floor with walls prepped for painting, showcasing seamless floor-to-wall transition",
     },
     {
       id: 11,
-      title: "Custom Home Exterior",
-      category: "Homes",
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop",
-      description: "Complete exterior coating and stonework"
+      title: "Marble Effect Epoxy",
+      category: "Commercial",
+      image: "/images/gallery/gallery11.png",
+      description:
+        "Creamy beige epoxy floor with striking dark gray swirls and streaks, creating a luxurious marble-like effect",
     },
     {
       id: 12,
-      title: "Entertainment Patio",
-      category: "Patios",
-      image: "https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=800&h=600&fit=crop",
-      description: "Outdoor living space with decorative coatings"
-    }
+      title: "Metallic Bronze Epoxy",
+      category: "Commercial",
+      image: "/images/gallery/gallery12.png",
+      description:
+        "Dark metallic brown epoxy with swirled pattern, creating mirror-like reflections in a spacious commercial setting",
+    },
+    {
+      id: 13,
+      title: "Dark Speckled Epoxy",
+      category: "Garages",
+      image: "/images/gallery/gallery13.png",
+      description:
+        "Highly reflective dark epoxy floor with dense black, gray, and white speckles, featuring seamless black baseboards",
+    },
+    {
+      id: 14,
+      title: "Basement Epoxy Coating",
+      category: "Homes",
+      image: "/images/gallery/gallery14.png",
+      description:
+        "Light beige epoxy floor with darker flecks in an unfinished basement, providing moisture-resistant protection",
+    },
   ];
 
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <PageLayout>
@@ -109,11 +138,12 @@ const Gallery = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground mb-6">
-              Our <span className="text-primary text-glow">Project Gallery</span>
+              Our{" "}
+              <span className="text-primary text-glow">Project Gallery</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Explore our portfolio of completed coating and restoration projects 
-              throughout Utah. Quality craftsmanship in every detail.
+              Explore our portfolio of completed coating and restoration
+              projects throughout Utah. Quality craftsmanship in every detail.
             </p>
           </div>
         </div>
@@ -159,9 +189,9 @@ const Gallery = () => {
                     decoding="async"
                   />
                 </div>
-                
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
+
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <h3 className="text-lg font-bold mb-2">{project.title}</h3>
                   <p className="text-sm opacity-90">{project.description}</p>
@@ -201,26 +231,36 @@ const Gallery = () => {
             Ready for Your Own Transformation?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Let's discuss your project and create something amazing together. 
+            Let's discuss your project and create something amazing together.
             Every project starts with a free consultation and estimate.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <Button size="lg" className="btn-primary glow-primary text-lg px-8 py-4">
+              <Button
+                size="lg"
+                className="btn-primary glow-primary text-lg px-8 py-4"
+              >
                 Start Your Project
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
             <Link to="/services">
-              <Button variant="outline" size="lg" className="btn-ghost text-lg px-8 py-4">
+              <Button
+                variant="outline"
+                size="lg"
+                className="btn-ghost text-lg px-8 py-4"
+              >
                 View Services
               </Button>
             </Link>
           </div>
-          
+
           <div className="mt-8 text-muted-foreground">
-            <p>Questions? Call us: <span className="text-primary font-semibold">(801) 555-0123</span></p>
+            <p>
+              Questions? Call us:{" "}
+              <span className="text-primary font-semibold">(801) 555-0123</span>
+            </p>
           </div>
         </div>
       </section>

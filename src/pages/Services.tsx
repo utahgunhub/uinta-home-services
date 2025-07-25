@@ -2,97 +2,120 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import PageLayout from "@/components/layout/PageLayout";
-import { 
-  Palette, 
-  Home, 
+import {
+  Palette,
+  Home,
   Building2,
   Droplets,
   RectangleHorizontal,
   ArrowRight,
   CheckCircle,
-  Star
+  Star,
+  Paintbrush,
+  Thermometer,
+  Zap,
 } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
       icon: Palette,
-      title: "Epoxy & Polyurea Coatings",
-      description: "Transform your floors with durable, chemical-resistant coatings that last for decades.",
+      title: "Epoxy Flooring",
+      description:
+        "If you're looking for trusted epoxy floor coating services, look no further than us. We are local industry leaders, and we provide an unparalleled level of quality and service to every client.",
       features: [
         "Garage floor epoxy systems",
-        "Basement floor coatings", 
-        "Commercial & industrial flooring",
-        "Decorative flake systems",
-        "Anti-slip textures available"
+        "Commercial epoxy flooring",
+        "Decorative epoxy coatings",
+        "Anti-slip textures",
+        "Chemical-resistant finishes",
       ],
-      image: "🏠"
+      image: "🏢",
     },
     {
-      icon: Home,
-      title: "Full Exterior Stucco Work",
-      description: "Complete stucco installation, repair, and renovation services for residential and commercial properties.",
+      icon: Paintbrush,
+      title: "Exterior Painting",
+      description:
+        "If you're looking for exterior painting services, look no further than us. We provide a complete range of services to help homeowners, business owners, and property managers attain the stellar exterior they've always wanted. Fast and efficient, friendly and dependable, our team is second to none.",
       features: [
-        "New stucco installation",
-        "Stucco repair & patching",
-        "Texture matching & finishing",
-        "Color matching services",
-        "Weather-resistant systems"
+        "Residential exterior painting",
+        "Commercial building painting",
+        "Color consultation services",
+        "Surface preparation & repair",
+        "Fast and efficient service",
       ],
-      image: "🏗️"
+      image: "🎨",
     },
     {
-      icon: Building2,
-      title: "Stonework Installation",
-      description: "Expert stone and masonry work that adds timeless beauty and value to your property.",
+      icon: Thermometer,
+      title: "Fiberglass Insulation Installation",
+      description:
+        "Fiberglass insulation is one of the most energy-efficient insulation materials on the market today. To make sure you get the most value out of your fiberglass insulation, you need an installation contractor who will do it right.",
       features: [
-        "Natural stone installation",
-        "Cultured stone systems",
-        "Stone repair & restoration",
-        "Retaining walls",
-        "Decorative stonework"
+        "Energy-efficient fiberglass insulation",
+        "Professional installation services",
+        "Attic and wall insulation",
+        "R-value optimization",
+        "Energy cost reduction",
       ],
-      image: "🪨"
+      image: "🏠",
     },
     {
-      icon: Droplets,
-      title: "Gutters & Downspouts",
-      description: "Protect your property with professional gutter installation and maintenance services.",
+      icon: Paintbrush,
+      title: "House Painting",
+      description:
+        "Quality Coatings LLC is the top house painting company. Our team is licensed, insured, and bonded, and we have the skills, knowledge, and expertise to deliver seamless results for your home. When you choose us to improve your living space, we don't disappoint.",
       features: [
-        "Seamless gutter installation",
-        "Gutter repair & cleaning",
-        "Downspout installation",
-        "Gutter guard systems",
-        "Storm damage restoration"
+        "Interior house painting",
+        "Exterior house painting",
+        "Color consultation",
+        "Surface preparation",
+        "Quality guarantee",
       ],
-      image: "🌧️"
+      image: "🏡",
     },
     {
-      icon: Home,
-      title: "Soffit & Fascia",
-      description: "Complete soffit and fascia services to protect and enhance your home's exterior.",
+      icon: Thermometer,
+      title: "Insulation Installation",
+      description:
+        "If you want to optimize your property's energy efficiency, you need an insulation company that guarantees their installations' quality and durability. In the surrounding areas, that company is Quality Coatings LLC. Focusing on competitive pricing, customer experience, and sustainability, we have established ourselves as the region's premier insulation contractor.",
       features: [
-        "Soffit installation & repair",
-        "Fascia board replacement",
-        "Ventilation systems",
-        "Custom color matching",
-        "Storm damage repairs"
+        "Energy efficiency optimization",
+        "Quality and durability guarantee",
+        "Competitive pricing",
+        "Customer experience focus",
+        "Sustainability solutions",
       ],
-      image: "🏡"
+      image: "🌡️",
     },
     {
-      icon: RectangleHorizontal,
-      title: "Window Replacement",
-      description: "Energy-efficient window installation and replacement services for improved comfort and savings.",
+      icon: Thermometer,
+      title: "Loose Fill Insulation Installation",
+      description:
+        "Perfect for closed walls and attics, loose-fill insulation offers one of the most popular insulation forms on the market. And with good reason: it's relatively inexpensive, has a great R-value, and is easy to install. For many years, we have been providing the surrounding areas with affordable and reliable loose-fill insulation.",
       features: [
-        "Energy-efficient windows",
-        "Custom window sizing",
+        "Closed wall insulation",
+        "Attic insulation solutions",
+        "Great R-value performance",
+        "Cost-effective installation",
+        "Years of reliable service",
+      ],
+      image: "🏘️",
+    },
+    {
+      icon: Zap,
+      title: "Spray Foam Insulation Installation",
+      description:
+        "We are a team of innovative insulation experts that wants to change the way home and business owners insulate their properties. We are Quality Coatings LLC, the leading spray foam insulation installation contractor in the surrounding areas.",
+      features: [
+        "Innovative spray foam technology",
+        "Superior energy efficiency",
+        "Air sealing capabilities",
         "Professional installation",
-        "Frame repair & replacement",
-        "Insurance claim assistance"
+        "Leading contractor expertise",
       ],
-      image: "🪟"
-    }
+      image: "⚡",
+    },
   ];
 
   return (
@@ -102,18 +125,24 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground mb-6">
-              Our <span className="text-primary text-glow">Professional Services</span>
+              Our{" "}
+              <span className="text-primary text-glow">
+                Professional Services
+              </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Comprehensive coating and restoration services for residential, commercial, 
-              and industrial properties throughout Utah. Every project backed by our 
-              quality guarantee.
+              Comprehensive coating and restoration services for residential,
+              commercial, and industrial properties throughout Utah. Every
+              project backed by our quality guarantee.
             </p>
           </div>
-          
+
           <div className="flex justify-center">
             <Link to="/contact">
-              <Button size="lg" className="btn-primary glow-primary text-lg px-8 py-4">
+              <Button
+                size="lg"
+                className="btn-primary glow-primary text-lg px-8 py-4"
+              >
                 Get Free Estimate
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -135,7 +164,7 @@ const Services = () => {
                         <service.icon className="w-8 h-8 text-primary" />
                       </div>
                     </div>
-                    
+
                     <div className="flex-1 space-y-4">
                       <div>
                         <h3 className="text-2xl font-bold heading-caps text-foreground mb-3">
@@ -145,19 +174,24 @@ const Services = () => {
                           {service.description}
                         </p>
                       </div>
-                      
+
                       <div className="space-y-2">
                         {service.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-3">
+                          <div
+                            key={featureIndex}
+                            className="flex items-center space-x-3"
+                          >
                             <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                            <span className="text-foreground text-sm">{feature}</span>
+                            <span className="text-foreground text-sm">
+                              {feature}
+                            </span>
                           </div>
                         ))}
                       </div>
-                      
+
                       <div className="pt-4">
-                        <Link 
-                          to="/contact" 
+                        <Link
+                          to="/contact"
                           className="text-primary hover:text-primary-glow font-semibold inline-flex items-center transition-colors duration-200"
                         >
                           Request Quote <ArrowRight className="ml-1 w-4 h-4" />
@@ -180,11 +214,11 @@ const Services = () => {
               Quality That Sets Us Apart
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Every service we provide is backed by our commitment to excellence, 
-              professional expertise, and customer satisfaction.
+              Every service we provide is backed by our commitment to
+              excellence, professional expertise, and customer satisfaction.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="card-service text-center">
               <CardContent className="p-8">
@@ -195,12 +229,13 @@ const Services = () => {
                   Premium Materials
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We use only the highest quality materials from trusted manufacturers 
-                  to ensure long-lasting results that exceed industry standards.
+                  We use only the highest quality materials from trusted
+                  manufacturers to ensure long-lasting results that exceed
+                  industry standards.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="card-service text-center">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -210,12 +245,12 @@ const Services = () => {
                   Licensed & Insured
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Fully licensed contractors with comprehensive insurance coverage. 
-                  Your project is protected from start to finish.
+                  Fully licensed contractors with comprehensive insurance
+                  coverage. Your project is protected from start to finish.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="card-service text-center">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -225,7 +260,7 @@ const Services = () => {
                   Insurance Coordination
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We handle all insurance paperwork and work directly with your 
+                  We handle all insurance paperwork and work directly with your
                   insurance company to streamline the claims process.
                 </p>
               </CardContent>
@@ -241,26 +276,37 @@ const Services = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Get a free, no-obligation estimate for your coating or restoration project. 
-            We'll work with you to find the perfect solution for your needs and budget.
+            Get a free, no-obligation estimate for your coating or restoration
+            project. We'll work with you to find the perfect solution for your
+            needs and budget.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <Button size="lg" className="btn-primary glow-primary text-lg px-8 py-4">
+              <Button
+                size="lg"
+                className="btn-primary glow-primary text-lg px-8 py-4"
+              >
                 Get Free Quote
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
             <Link to="/gallery">
-              <Button variant="outline" size="lg" className="btn-ghost text-lg px-8 py-4">
+              <Button
+                variant="outline"
+                size="lg"
+                className="btn-ghost text-lg px-8 py-4"
+              >
                 View Our Work
               </Button>
             </Link>
           </div>
-          
+
           <div className="mt-8 text-muted-foreground">
-            <p>Call us today: <span className="text-primary font-semibold">(801) 555-0123</span></p>
+            <p>
+              Call us today:{" "}
+              <span className="text-primary font-semibold">(385) 528-6767</span>
+            </p>
           </div>
         </div>
       </section>
