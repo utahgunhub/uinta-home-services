@@ -403,26 +403,17 @@ const Index = () => {
                 <p className="text-lg text-muted-foreground mb-6">
                   See our latest projects and transformations on Instagram
                 </p>
-                <a
-                  href="https://www.instagram.com/uintahomeservices/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors"
-                >
+                <span className="inline-flex items-center space-x-2 text-primary">
                   <span className="font-semibold">@uintahomeservices</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+                </span>
               </div>
 
               <div className="grid grid-cols-3 gap-4">
                 {/* Instagram Real Images */}
                 {instagramPosts.map((image, index) => (
-                  <a
+                  <div
                     key={index}
-                    href="https://www.instagram.com/qualitycoatingsutah/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300"
+                    className="group relative aspect-square rounded-lg overflow-hidden"
                   >
                     <img
                       src={image}
@@ -430,21 +421,14 @@ const Index = () => {
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
-                  </a>
+                  </div>
                 ))}
               </div>
 
               <div className="text-center">
-                <a
-                  href="https://www.instagram.com/qualitycoatingsutah/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors font-semibold"
-                >
-                  <span>View More on Instagram</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+                <span className="inline-flex items-center space-x-2 text-primary font-semibold">
+                  <span>Follow Our Work</span>
+                </span>
               </div>
             </div>
           </div>
