@@ -15,6 +15,10 @@ import {
   Building2,
   Phone,
   Paintbrush,
+  Droplets,
+  Sparkles,
+  Car,
+  Monitor,
 } from "lucide-react";
 import heroImage from "@/assets/hero-coating.jpg";
 
@@ -24,12 +28,10 @@ const Index = () => {
       icon: Shield,
       title: "SERVICES WE PROVIDE",
       description: [
-        "Concrete Polishing",
-        "Epoxy Garage Floors",
-        "Waterproof Decking",
-        "Concrete Staining",
-        "Concrete Overlays & Repairs",
-        "Concrete Sealing",
+        "Interior Window Cleaning",
+        "Exterior Window Cleaning",
+        "Gutter Cleaning", 
+        "Power Washing",
       ],
       buttonText: "Our Services »",
       buttonLink: "/services",
@@ -39,41 +41,54 @@ const Index = () => {
       icon: Award,
       title: "VIEW OUR WORK",
       description:
-        "Looking for a epoxy garage coating specialist in Utah? We've got you covered. Check out our epoxy garage floor coating, waterproof decking, staining, overlays, sealing, and sports court galleries here.",
+        "Looking for professional home services in Utah? We've got you covered. Check out our window cleaning, power washing, gutter cleaning, and more in our gallery here.",
       buttonText: "View Galleries »",
       buttonLink: "/gallery",
       image: heroImage,
     },
     {
       icon: Users,
-      title: "COLOR SAMPLES",
-      description:
-        "We have products for every taste and budget. From simple and sleek to flashy and elegant our broad range of coatings and finishes allows us to do almost anything you can think up. Browse our gallery to see.",
-      buttonText: "Color Samples »",
-      buttonLink: "/color-samples",
+      title: "ADDITIONAL SERVICES",
+      description: [
+        "Christmas Lights",
+        "Dryer Vent Cleaning",
+        "Car Detailing",
+        "Screen Replacement",
+      ],
+      buttonText: "View All Services »",
+      buttonLink: "/services",
       image: heroImage,
     },
   ];
 
   const services = [
     {
-      icon: Palette,
-      title: "Epoxy Flooring",
+      icon: Droplets,
+      title: "Window Cleaning",
       description:
-        "If you're looking for trusted epoxy floor coating services, look no further than us. We are local industry leaders, and we provide an unparalleled level of quality and service to every client.",
+        "If you're looking for trusted window cleaning services, look no further than us. We are local industry leaders, and we provide an unparalleled level of quality and service to every client.",
     },
     {
       icon: Paintbrush,
-      title: "Exterior Painting",
+      title: "Power Washing",
       description:
-        "If you're looking for exterior painting services, look no further than us. We provide a complete range of services to help homeowners, business owners, and property managers attain the stellar exterior they've always wanted.",
+        "If you're looking for power washing services, look no further than us. We provide a complete range of services to help homeowners, business owners, and property managers attain the stellar exterior they've always wanted.",
     },
     {
-      icon: Paintbrush,
-      title: "House Painting",
+      icon: Sparkles,
+      title: "Christmas Lights",
       description:
-        "Quality Coatings LLC is the top house painting company. Our team is licensed, insured, and bonded, and we have the skills, knowledge, and expertise to deliver seamless results for your home.",
+        "Uinta Home Services is the top Christmas light installation company. Our team is licensed, insured, and bonded, and we have the skills, knowledge, and expertise to deliver seamless results for your home.",
     },
+  ];
+
+  const instagramPosts = [
+    "https://placehold.co/300x300?text=Instagram+1",
+    "https://placehold.co/300x300?text=Instagram+2",
+    "https://placehold.co/300x300?text=Instagram+3",
+    "https://placehold.co/300x300?text=Instagram+4",
+    "https://placehold.co/300x300?text=Instagram+5",
+    "https://placehold.co/300x300?text=Instagram+6",
   ];
 
   return (
@@ -86,11 +101,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
-              Why Choose Quality Coatings LLC?
+              Why Choose Uinta Home Services?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We combine expert craftsmanship with exceptional service to
-              deliver coating solutions that exceed expectations.
+              deliver home maintenance solutions that exceed expectations.
             </p>
           </div>
 
@@ -155,8 +170,8 @@ const Index = () => {
               Our Core Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive coating and restoration services for residential,
-              commercial, and industrial projects throughout Utah.
+              Comprehensive home maintenance and cleaning services for residential,
+              commercial, and industrial properties throughout Utah.
             </p>
           </div>
 
@@ -210,17 +225,10 @@ const Index = () => {
                 to you.
               </p>
 
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We promise clear and effective communication with everyone who
-                comes our way. Whether you have a question for us or a concern
-                you'd like to address, you can count on us to give you the
-                attention you deserve.
-              </p>
+
 
               <div className="space-y-4">
                 {[
-                  "Licensed and fully insured contractors",
-                  "Direct insurance company coordination",
                   "Free estimates and competitive pricing",
                   "Clear and effective communication",
                   "Promptness, punctuality, and professionalism",
@@ -299,8 +307,8 @@ const Index = () => {
                       ))}
                     </div>
                     <p className="text-sm text-foreground mb-3 italic">
-                      "Quality Coatings LLC did an amazing job on our garage
-                      floor. Professional, on-time, and great communication
+                      "Uinta Home Services did an amazing job on our windows
+                      and gutters. Professional, on-time, and great communication
                       throughout."
                     </p>
                     <div className="flex items-center space-x-2">
@@ -314,7 +322,7 @@ const Index = () => {
                           Sarah M.
                         </p>
                         <p className="text-xs text-muted-foreground">
-                          West Jordan, UT
+                          Sandy, UT
                         </p>
                       </div>
                     </div>
@@ -331,8 +339,8 @@ const Index = () => {
                       ))}
                     </div>
                     <p className="text-sm text-foreground mb-3 italic">
-                      "Outstanding service! They handled our insurance claim
-                      seamlessly and the exterior painting exceeded
+                      "Outstanding service! They handled our power washing
+                      and Christmas light installation seamlessly and exceeded
                       expectations."
                     </p>
                     <div className="flex items-center space-x-2">
@@ -363,9 +371,8 @@ const Index = () => {
                       ))}
                     </div>
                     <p className="text-sm text-foreground mb-3 italic">
-                      "The insulation installation was done quickly and
-                      professionally. Our energy bills have dropped
-                      significantly!"
+                      "The dryer vent cleaning was done quickly and
+                      professionally. Our dryer is working much better now!"
                     </p>
                     <div className="flex items-center space-x-2">
                       <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
@@ -397,26 +404,19 @@ const Index = () => {
                   See our latest projects and transformations on Instagram
                 </p>
                 <a
-                  href="https://www.instagram.com/qualitycoatingsutah/"
+                  href="https://www.instagram.com/uintahomeservices/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors"
                 >
-                  <span className="font-semibold">@qualitycoatingsutah</span>
+                  <span className="font-semibold">@uintahomeservices</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
 
               <div className="grid grid-cols-3 gap-4">
                 {/* Instagram Real Images */}
-                {[
-                  "/images/instagram-samples/instgram-1.jpg",
-                  "/images/instagram-samples/instgram-2.jpg",
-                  "/images/instagram-samples/instgram-3.jpg",
-                  "/images/instagram-samples/instgram-4.jpg",
-                  "/images/instagram-samples/instgram-5.jpg",
-                  "/images/instagram-samples/instgram-6.jpg",
-                ].map((image, index) => (
+                {instagramPosts.map((image, index) => (
                   <a
                     key={index}
                     href="https://www.instagram.com/qualitycoatingsutah/"
@@ -426,7 +426,7 @@ const Index = () => {
                   >
                     <img
                       src={image}
-                      alt={`Epoxy flooring project ${index + 1}`}
+                      alt={`Instagram post ${index + 1}`}
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
@@ -496,14 +496,14 @@ const Index = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <a href="tel:3855286767">
+              <a href="tel:8015207948">
                 <Button
-                  variant="outline"
+                  variant="default"
                   size="lg"
-                  className="btn-ghost text-lg px-8 py-4"
+                  className="group w-full sm:w-auto px-8"
                 >
                   <Phone className="mr-2 w-5 h-5" />
-                  (385) 528-6767
+                  801-520-7948
                 </Button>
               </a>
               <Link to="/about">

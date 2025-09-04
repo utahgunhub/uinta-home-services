@@ -55,21 +55,21 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "(385) 528-6767",
-      link: "tel:3855286767",
+      value: "801-520-7948",
+      link: "tel:8015207948",
       description: "Call us for immediate assistance",
     },
     {
       icon: Mail,
       title: "Email",
-      value: "danny@qcoatingsllc.com",
-      link: "mailto:danny@qcoatingsllc.com",
+      value: "marketing@uintawindowwashing.com",
+      link: "mailto:marketing@uintawindowwashing.com",
       description: "Send us a detailed message",
     },
     {
       icon: MapPin,
-      title: "Location",
-      value: "West Jordan, UT, 84081-4020",
+      title: "Address",
+      value: "Sandy, UT, 84081-4020",
       link: null,
       description: "Serving all of Utah",
     },
@@ -83,12 +83,13 @@ const Contact = () => {
   ];
 
   const projectTypes = [
-    "Epoxy Floor Coating",
-    "Stucco Work",
-    "Stonework",
-    "Gutters & Downspouts",
-    "Window Replacement",
-    "Insurance Claim",
+    "Window Cleaning",
+    "Gutter Cleaning",
+    "Power Washing",
+    "Christmas Lights",
+    "Dryer Vent Cleaning",
+    "Car Detailing",
+    "Screen Replacement",
     "Other",
   ];
 
@@ -294,26 +295,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Why Choose Us */}
-              <Card className="p-6 bg-primary/5 border-primary/20">
-                <h4 className="font-bold text-foreground mb-4 heading-caps">
-                  Why Choose Quality Coatings LLC?
-                </h4>
-                <div className="space-y-3">
-                  {[
-                    "Licensed & insured contractors",
-                    "15+ years of experience",
-                    "Free estimates & competitive pricing",
-                    "Insurance coordination services",
-                    "Quality guarantee on all work",
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span className="text-foreground text-sm">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </Card>
+
             </div>
           </div>
         </div>
@@ -332,16 +314,16 @@ const Contact = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:3855286767">
+            <a href="tel:8015207948">
               <Button
                 size="lg"
                 className="btn-primary glow-primary text-lg px-8 py-4"
               >
                 <Phone className="mr-2 w-5 h-5" />
-                Call (385) 528-6767
+                Call 801-520-7948
               </Button>
             </a>
-            <a href="mailto:danny@qcoatingsllc.com">
+            <a href="mailto:marketing@uintawindowwashing.com">
               <Button
                 variant="outline"
                 size="lg"

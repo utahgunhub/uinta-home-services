@@ -3,114 +3,115 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import PageLayout from "@/components/layout/PageLayout";
 import {
-  Palette,
+  Droplets,
   Home,
   Building2,
-  Droplets,
+  Zap,
   RectangleHorizontal,
   ArrowRight,
   CheckCircle,
   Star,
-  Paintbrush,
-  Thermometer,
-  Zap,
+  Sparkles,
+  Car,
+  Monitor,
+  Gauge,
 } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
-      icon: Palette,
-      title: "Epoxy Flooring",
+      icon: Droplets,
+      title: "Window Cleaning",
       description:
-        "If you're looking for trusted epoxy floor coating services, look no further than us. We are local industry leaders, and we provide an unparalleled level of quality and service to every client.",
+        "If you're looking for trusted window cleaning services, look no further than us. We are local industry leaders, and we provide an unparalleled level of quality and service to every client.",
       features: [
-        "Garage floor epoxy systems",
-        "Commercial epoxy flooring",
-        "Decorative epoxy coatings",
-        "Anti-slip textures",
-        "Chemical-resistant finishes",
-      ],
-      image: "🏢",
-    },
-    {
-      icon: Paintbrush,
-      title: "Exterior Painting",
-      description:
-        "If you're looking for exterior painting services, look no further than us. We provide a complete range of services to help homeowners, business owners, and property managers attain the stellar exterior they've always wanted. Fast and efficient, friendly and dependable, our team is second to none.",
-      features: [
-        "Residential exterior painting",
-        "Commercial building painting",
-        "Color consultation services",
-        "Surface preparation & repair",
-        "Fast and efficient service",
-      ],
-      image: "🎨",
-    },
-    {
-      icon: Thermometer,
-      title: "Fiberglass Insulation Installation",
-      description:
-        "Fiberglass insulation is one of the most energy-efficient insulation materials on the market today. To make sure you get the most value out of your fiberglass insulation, you need an installation contractor who will do it right.",
-      features: [
-        "Energy-efficient fiberglass insulation",
-        "Professional installation services",
-        "Attic and wall insulation",
-        "R-value optimization",
-        "Energy cost reduction",
+        "Residential window cleaning",
+        "Commercial window cleaning",
+        "High-rise window services",
+        "Screen cleaning included",
+        "Streak-free results",
       ],
       image: "🏠",
     },
     {
-      icon: Paintbrush,
-      title: "House Painting",
+      icon: Gauge,
+      title: "Gutter Cleaning",
       description:
-        "Quality Coatings LLC is the top house painting company. Our team is licensed, insured, and bonded, and we have the skills, knowledge, and expertise to deliver seamless results for your home. When you choose us to improve your living space, we don't disappoint.",
+        "If you're looking for gutter cleaning services, look no further than us. We provide a complete range of services to help homeowners, business owners, and property managers maintain clean and functional gutters. Fast and efficient, friendly and dependable, our team is second to none.",
       features: [
-        "Interior house painting",
-        "Exterior house painting",
-        "Color consultation",
-        "Surface preparation",
+        "Residential gutter cleaning",
+        "Commercial building gutters",
+        "Downspout cleaning",
+        "Gutter inspection services",
+        "Fast and efficient service",
+      ],
+      image: "🏠",
+    },
+    {
+      icon: Zap,
+      title: "Power Washing",
+      description:
+        "Power washing is one of the most effective ways to clean and maintain your property's exterior surfaces. To make sure you get the most value out of your power washing service, you need a contractor who will do it right.",
+      features: [
+        "House exterior cleaning",
+        "Driveway and walkway cleaning",
+        "Deck and patio cleaning",
+        "Professional equipment",
+        "Safe cleaning solutions",
+      ],
+      image: "🏠",
+    },
+    {
+      icon: Sparkles,
+      title: "Christmas Lights",
+      description:
+        "Uinta Home Services is the top Christmas light installation company. Our team is licensed, insured, and bonded, and we have the skills, knowledge, and expertise to deliver seamless results for your home. When you choose us to brighten your living space, we don't disappoint.",
+      features: [
+        "Christmas light installation",
+        "Holiday decoration setup",
+        "Professional installation",
+        "Safe electrical work",
         "Quality guarantee",
       ],
       image: "🏡",
     },
     {
-      icon: Thermometer,
-      title: "Insulation Installation",
+      icon: Building2,
+      title: "Dryer Vent Cleaning",
       description:
-        "If you want to optimize your property's energy efficiency, you need an insulation company that guarantees their installations' quality and durability. In the surrounding areas, that company is Quality Coatings LLC. Focusing on competitive pricing, customer experience, and sustainability, we have established ourselves as the region's premier insulation contractor.",
+        "If you want to optimize your dryer's efficiency and safety, you need a dryer vent cleaning company that guarantees their service quality and thoroughness. In the surrounding areas, that company is Uinta Home Services. Focusing on competitive pricing, customer experience, and safety, we have established ourselves as the region's premier dryer vent cleaning contractor.",
       features: [
-        "Energy efficiency optimization",
-        "Quality and durability guarantee",
+        "Dryer efficiency optimization",
+        "Safety and fire prevention",
         "Competitive pricing",
         "Customer experience focus",
-        "Sustainability solutions",
+        "Thorough cleaning service",
       ],
       image: "🌡️",
     },
     {
-      icon: Thermometer,
-      title: "Loose Fill Insulation Installation",
+      icon: Car,
+      title: "Car Detailing",
       description:
-        "Perfect for closed walls and attics, loose-fill insulation offers one of the most popular insulation forms on the market. And with good reason: it's relatively inexpensive, has a great R-value, and is easy to install. For many years, we have been providing the surrounding areas with affordable and reliable loose-fill insulation.",
+        "Perfect for maintaining your vehicle's appearance and value, professional car detailing offers one of the most comprehensive cleaning services on the market. And with good reason: it's thorough, has great results, and is convenient. For many years, we have been providing the surrounding areas with affordable and reliable car detailing services.",
       features: [
-        "Closed wall insulation",
-        "Attic insulation solutions",
-        "Great R-value performance",
-        "Cost-effective installation",
+        "Interior car cleaning",
+        "Exterior car washing",
+        "Professional detailing",
+        "Convenient service",
         "Years of reliable service",
       ],
       image: "🏘️",
     },
     {
-      icon: Zap,
-      title: "Spray Foam Insulation Installation",
+      icon: Monitor,
+      title: "Screen Replacement",
       description:
-        "We are a team of innovative insulation experts that wants to change the way home and business owners insulate their properties. We are Quality Coatings LLC, the leading spray foam insulation installation contractor in the surrounding areas.",
+        "We are a team of innovative home service experts that wants to change the way home and business owners maintain their window screens. We are Uinta Home Services, the leading screen replacement contractor in the surrounding areas.",
       features: [
-        "Innovative spray foam technology",
-        "Superior energy efficiency",
-        "Air sealing capabilities",
+        "Window screen replacement",
+        "Patio door screens",
+        "Custom screen sizes",
         "Professional installation",
         "Leading contractor expertise",
       ],
@@ -131,7 +132,7 @@ const Services = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Comprehensive coating and restoration services for residential,
+              Comprehensive home maintenance and cleaning services for residential,
               commercial, and industrial properties throughout Utah. Every
               project backed by our quality guarantee.
             </p>
@@ -278,7 +279,7 @@ const Services = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Get a free, no-obligation estimate for your coating or restoration
+            Get a free, no-obligation estimate for your home maintenance or cleaning
             project. We'll work with you to find the perfect solution for your
             needs and budget.
           </p>
@@ -307,7 +308,7 @@ const Services = () => {
           <div className="mt-8 text-muted-foreground">
             <p>
               Call us today:{" "}
-              <span className="text-primary font-semibold">(385) 528-6767</span>
+              <span className="text-primary font-semibold">801-520-7948</span>
             </p>
           </div>
         </div>

@@ -70,7 +70,7 @@ const About = () => {
             <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground mb-6">
               About{" "}
               <span className="text-primary text-glow">
-                Quality Coatings LLC
+                Uinta Home Services
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -131,7 +131,7 @@ const About = () => {
             <div className="relative">
               <img
                 src={heroImage}
-                alt="Quality Coatings LLC team at work"
+                alt="Uinta Home Services team at work"
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent"></div>
@@ -221,7 +221,7 @@ const About = () => {
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Our clients have come to expect the very best from us, and we think
-            you should be able to as well. Quality Coatings LLC: It's a name
+            you should be able to as well. Uinta Home Services: It's a name
             that means excellence. It's a name you can trust.
           </p>
 
@@ -248,21 +248,21 @@ const About = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <a href="tel:3855286767">
+            <a href="tel:8015207948">
               <Button
-                variant="outline"
+                variant="default"
                 size="lg"
-                className="btn-ghost text-lg px-8 py-4"
+                className="group w-full sm:w-auto px-8"
               >
                 <Phone className="mr-2 w-5 h-5" />
-                Call (385) 528-6767
+                Call 801-520-7948
               </Button>
             </a>
           </div>
 
           <div className="mt-8 text-muted-foreground">
             <p>
-              Quality Coatings LLC: Founded on a culture of professionalism,
+              Uinta Home Services: Founded on a culture of professionalism,
               dedication, and excellence.
             </p>
             <p className="mt-2">Founded on honesty, integrity, and respect.</p>

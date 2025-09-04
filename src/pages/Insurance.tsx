@@ -96,7 +96,7 @@ const Insurance = () => {
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
-                <a href="tel:8015550123">
+                <a href="tel:8015207948">
                   <Button variant="outline" size="lg" className="btn-ghost text-lg px-8 py-4">
                     <Phone className="mr-2 w-5 h-5" />
                     Call Now
@@ -269,10 +269,10 @@ const Insurance = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <a href="tel:8015550123">
+            <a href="tel:8015207948">
               <Button variant="outline" size="lg" className="btn-ghost text-lg px-8 py-4">
                 <Phone className="mr-2 w-5 h-5" />
-                (801) 555-0123
+                Get Free Quote
               </Button>
             </a>
           </div>

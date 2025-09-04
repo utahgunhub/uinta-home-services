@@ -13,11 +13,11 @@ const Footer = () => {
   ];
 
   const services = [
-    "Epoxy Coatings",
-    "Stucco Work",
-    "Stonework",
-    "Gutters & Downspouts",
-    "Window Replacement",
+    "Window Cleaning",
+    "Gutter Cleaning",
+    "Power Washing",
+    "Christmas Lights",
+    "Dryer Vent Cleaning",
   ];
 
   return (
@@ -28,18 +28,18 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">QC</span>
+                <span className="text-primary-foreground font-bold text-lg">UHS</span>
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-lg heading-caps text-foreground">
-                  Quality Coatings
+                  Uinta Home Services
                 </span>
-                <span className="text-xs text-muted-foreground -mt-1">LLC</span>
+                <span className="text-xs text-muted-foreground -mt-1">Professional Home Services</span>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Utah's trusted coating experts. From patios to warehouses, we coat it all with
-              professional quality and insurance coordination.
+              Utah's trusted home service experts. From windows to gutters, we clean it all with
+              professional quality and exceptional customer service.
             </p>
             <div className="flex space-x-4">
               <a
@@ -107,23 +107,27 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <div>
-                  <a
-                    href="tel:8015550123"
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm"
-                  >
-                    (801) 555-0123
-                  </a>
+                  <span className="text-muted-foreground hover:text-foreground transition-colors">
+                    <a
+                      href="tel:8015207948"
+                      className="hover:underline"
+                    >
+                      801-520-7948
+                    </a>
+                  </span>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <div>
-                  <a
-                    href="mailto:info@qualitycoatingsllc.com"
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm"
-                  >
-                    info@qualitycoatingsllc.com
-                  </a>
+                  <span className="text-muted-foreground hover:text-foreground transition-colors">
+                    <a
+                      href="mailto:marketing@uintawindowwashing.com"
+                      className="hover:underline"
+                    >
+                      marketing@uintawindowwashing.com
+                    </a>
+                  </span>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -142,7 +146,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-muted-foreground text-sm">
-              © {currentYear} Quality Coatings LLC. All rights reserved.
+              © {currentYear} Uinta Home Services. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <Link

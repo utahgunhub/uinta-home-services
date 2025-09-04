@@ -10,6 +10,10 @@ const concreteWaterproofingImage =
 const epoxyFloorImage = "/images/hero-images/epoxy-floor.png";
 const housePaintingImage = "/images/hero-images/house-painting.png";
 const insulationImage = "/images/hero-images/insulation.png";
+const windowCleaningImage = "/images/hero-images/window-cleaning.png";
+const powerWashingImage = "/images/hero-images/power-washing.png";
+const gutterCleaningImage = "/images/hero-images/gutter-cleaning.png";
+const carDetailImage = "/images/hero-images/car-detail.png";
 
 interface HeroSlide {
   id: number;
@@ -25,15 +29,16 @@ interface HeroSlide {
 
 const RotatingHero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
 
   const slides: HeroSlide[] = [
     {
       id: 1,
-      image: heroImage,
-      title: "Welcome to",
-      subtitle: "Quality Coatings LLC",
+      image: housePaintingImage,
+      title: "Uinta Home Services",
+      subtitle: "",
       description:
-        "Utah's premier coating and restoration specialists. From residential to commercial, we deliver professional quality with exceptional service.",
+        "Utah's premier home maintenance and cleaning specialists. From residential to commercial, we deliver professional quality with exceptional service.",
       ctaText: "Get a Free Quote",
       ctaLink: "/contact",
       secondaryCtaText: "View Our Work",
@@ -41,11 +46,11 @@ const RotatingHero = () => {
     },
     {
       id: 2,
-      image: concreteWaterproofingImage,
-      title: "Concrete",
-      subtitle: "Waterproof Coating",
+      image: windowCleaningImage,
+      title: "Window Cleaning",
+      subtitle: "",
       description:
-        "Protect your concrete surfaces with our advanced waterproof coating solutions. Prevent damage from moisture, chemicals, and weather.",
+        "Crystal clear windows with our professional cleaning service. We handle residential and commercial properties with care and attention to detail.",
       ctaText: "Learn More",
       ctaLink: "/services",
       secondaryCtaText: "Get Estimate",
@@ -53,11 +58,11 @@ const RotatingHero = () => {
     },
     {
       id: 3,
-      image: housePaintingImage,
-      title: "Professional",
-      subtitle: "Painting Services",
+      image: powerWashingImage,
+      title: "Power Washing",
+      subtitle: "",
       description:
-        "Interior and exterior painting with premium materials and expert craftsmanship. Transform your space with lasting beauty.",
+        "Revitalize your property's exterior with our professional power washing services. We clean driveways, walkways, decks, siding, and more, removing dirt, grime, and mildew to restore beauty and prevent damage.",
       ctaText: "View Gallery",
       ctaLink: "/gallery",
       secondaryCtaText: "Get Quote",
@@ -65,11 +70,11 @@ const RotatingHero = () => {
     },
     {
       id: 4,
-      image: insulationImage,
-      title: "Insulation",
-      subtitle: "Installation",
+      image: gutterCleaningImage,
+      title: "Gutter Cleaning",
+      subtitle: "",
       description:
-        "Energy-efficient insulation solutions for homes and businesses. Reduce energy costs and improve comfort year-round.",
+        "Keep your gutters flowing freely with our professional cleaning service. We remove debris, leaves, and buildup to prevent water damage, foundation issues, and pest infestations, maintaining your home's integrity and value.",
       ctaText: "Learn More",
       ctaLink: "/services",
       secondaryCtaText: "Contact Us",
@@ -77,36 +82,41 @@ const RotatingHero = () => {
     },
     {
       id: 5,
-      image: epoxyFloorImage,
-      title: "Epoxy",
-      subtitle: "Flooring",
+      image: carDetailImage,
+      title: "Car Detailing",
+      subtitle: "",
       description:
-        "Durable, beautiful epoxy floor coatings for garages, basements, and commercial spaces. Long-lasting protection and style.",
-      ctaText: "View Color Samples",
-      ctaLink: "/color-samples",
+        "Restore your vehicle's shine with our professional car detailing service. We provide thorough interior and exterior cleaning, polishing, and protection for a showroom finish that lasts and protects your investment.",
+      ctaText: "View Gallery",
+      ctaLink: "/gallery",
       secondaryCtaText: "Get Estimate",
       secondaryCtaLink: "/contact",
     },
   ];
 
   useEffect(() => {
+    if (!autoPlay) return;
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [slides.length, autoPlay]);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
+    setAutoPlay(false);
   };
 
   const goToNextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setAutoPlay(false);
   };
 
   const goToPrevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setAutoPlay(false);
   };
 
   return (

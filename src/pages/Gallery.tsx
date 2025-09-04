@@ -6,130 +6,139 @@ import { Link } from "react-router-dom";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedService, setSelectedService] = useState("All");
 
-  const categories = ["All", "Garages", "Commercial", "Homes", "Patios"];
+  const services = [
+    "All",
+    "Window Cleaning",
+    "Gutter Cleaning",
+    "Power Washing",
+    "Christmas Lights",
+    "Dryer Vent Cleaning",
+    "Car Detailing",
+    "Screen Replacement"
+  ];
 
-  // Real project gallery data
+  // Real project gallery data organized by services
   const projects = [
     {
       id: 1,
-      title: "Outdoor Covered Patio",
-      category: "Patios",
+      title: "Sparkling Window Transformation",
+      service: "Window Cleaning",
       image: "/images/gallery/gallery1.png",
       description:
-        "Newly finished outdoor patio with light gray textured floor, bordered by red brick walls and warm wooden ceiling",
+        "Professional window cleaning service that restored crystal-clear views and enhanced natural light throughout this home",
     },
     {
       id: 2,
-      title: "Commercial Walkway Coating",
-      category: "Commercial",
+      title: "Commercial Building Windows",
+      service: "Window Cleaning",
       image: "/images/gallery/gallery2.png",
       description:
-        "Freshly coated light gray concrete surface with subtle speckled texture, perfect for high-traffic areas",
+        "Large-scale commercial window cleaning project, bringing back the shine to this office building",
     },
     {
       id: 3,
-      title: "Bass Boat Garage Floor",
-      category: "Garages",
+      title: "Gutter System Restoration",
+      service: "Gutter Cleaning",
       image: "/images/gallery/gallery3.png",
       description:
-        "Light gray speckled epoxy floor in a spacious garage, featuring high reflectivity and professional finish",
+        "Complete gutter cleaning and maintenance, ensuring proper water flow and preventing water damage",
     },
     {
       id: 4,
-      title: "Clean Garage Epoxy",
-      category: "Garages",
+      title: "Residential Gutter Maintenance",
+      service: "Gutter Cleaning",
       image: "/images/gallery/gallery4.png",
       description:
-        "Pristine light gray epoxy coating with dense speckled pattern, creating a granite-like appearance",
+        "Thorough gutter cleaning service protecting this home's foundation and landscaping",
     },
     {
       id: 5,
-      title: "Industrial Epoxy Floor",
-      category: "Commercial",
+      title: "Driveway Power Washing",
+      service: "Power Washing",
       image: "/images/gallery/gallery5.png",
       description:
-        "Light gray epoxy with speckled pattern, featuring expansion joints and highly reflective surface",
+        "High-pressure cleaning restored this driveway to like-new condition, removing years of built-up grime",
     },
     {
       id: 6,
-      title: "Floor Preparation Process",
-      category: "Commercial",
+      title: "House Exterior Cleaning",
+      service: "Power Washing",
       image: "/images/gallery/gallery6.png",
       description:
-        "Professional floor cleaning and preparation using industrial vacuum equipment for epoxy application",
+        "Complete house exterior power washing, revealing the true beauty of this home's siding and brickwork",
     },
     {
       id: 7,
-      title: "New Epoxy Installation",
-      category: "Garages",
+      title: "Festive Christmas Display",
+      service: "Christmas Lights",
       image: "/images/gallery/gallery7.png",
       description:
-        "Freshly applied light gray epoxy floor with speckled finish in a clean, empty garage space",
+        "Professional Christmas light installation creating a magical holiday atmosphere for this family home",
     },
     {
       id: 8,
-      title: "Garage Epoxy with Windows",
-      category: "Garages",
+      title: "Commercial Holiday Lighting",
+      service: "Christmas Lights",
       image: "/images/gallery/gallery8.png",
       description:
-        "Light gray speckled epoxy floor with natural light streaming through windows, creating a bright workspace",
+        "Large-scale commercial Christmas light installation bringing holiday cheer to this business district",
     },
     {
       id: 9,
-      title: "Black Speckled Epoxy",
-      category: "Garages",
+      title: "Dryer Vent Safety Clean",
+      service: "Dryer Vent Cleaning",
       image: "/images/gallery/gallery9.png",
       description:
-        "High-gloss black epoxy floor with dense white and light gray speckles, creating a sophisticated salt-and-pepper effect",
+        "Professional dryer vent cleaning service improving safety and efficiency for this family's laundry system",
     },
     {
       id: 10,
-      title: "Garage with Drywall Prep",
-      category: "Garages",
+      title: "Luxury Car Detailing",
+      service: "Car Detailing",
       image: "/images/gallery/gallery10.png",
       description:
-        "Light gray speckled epoxy floor with walls prepped for painting, showcasing seamless floor-to-wall transition",
+        "Premium car detailing service restoring this vehicle to showroom condition with our professional techniques",
     },
     {
       id: 11,
-      title: "Marble Effect Epoxy",
-      category: "Commercial",
+      title: "Screen Door Replacement",
+      service: "Screen Replacement",
       image: "/images/gallery/gallery11.png",
       description:
-        "Creamy beige epoxy floor with striking dark gray swirls and streaks, creating a luxurious marble-like effect",
+        "Custom screen replacement service providing fresh, durable screens for optimal airflow and insect protection",
     },
     {
       id: 12,
-      title: "Metallic Bronze Epoxy",
-      category: "Commercial",
+      title: "Window Screen Installation",
+      service: "Screen Replacement",
       image: "/images/gallery/gallery12.png",
       description:
-        "Dark metallic brown epoxy with swirled pattern, creating mirror-like reflections in a spacious commercial setting",
+        "Professional window screen replacement ensuring proper fit and long-lasting performance",
     },
     {
       id: 13,
-      title: "Dark Speckled Epoxy",
-      category: "Garages",
+      title: "Patio Door Screens",
+      service: "Screen Replacement",
       image: "/images/gallery/gallery13.png",
       description:
-        "Highly reflective dark epoxy floor with dense black, gray, and white speckles, featuring seamless black baseboards",
+        "Custom patio door screen replacement enhancing outdoor living space comfort and functionality",
     },
     {
       id: 14,
-      title: "Basement Epoxy Coating",
-      category: "Homes",
+      title: "Complete Home Exterior",
+      service: "Power Washing",
       image: "/images/gallery/gallery14.png",
       description:
-        "Light beige epoxy floor with darker flecks in an unfinished basement, providing moisture-resistant protection",
+        "Comprehensive exterior cleaning service including siding, walkways, and outdoor surfaces",
     },
   ];
 
   const filteredProjects =
-    selectedCategory === "All"
+    selectedService === "All"
       ? projects
-      : projects.filter((project) => project.category === selectedCategory);
+      : projects.filter((project) => project.service === selectedService);
 
   return (
     <PageLayout>
@@ -153,17 +162,17 @@ const Gallery = () => {
       <section className="py-8 bg-surface border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
+            {services.map((service) => (
               <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
+                key={service}
+                onClick={() => setSelectedService(service)}
                 className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                  selectedCategory === category
+                  selectedService === service
                     ? "bg-primary text-primary-foreground shadow-lg"
                     : "bg-background text-foreground hover:bg-accent border border-border"
                 }`}
               >
-                {category}
+                {service}
               </button>
             ))}
           </div>
@@ -196,7 +205,7 @@ const Gallery = () => {
                   <h3 className="text-lg font-bold mb-2">{project.title}</h3>
                   <p className="text-sm opacity-90">{project.description}</p>
                   <span className="inline-block mt-2 px-3 py-1 bg-primary/20 backdrop-blur-sm rounded-full text-xs">
-                    {project.category}
+                    {project.service}
                   </span>
                 </div>
               </div>

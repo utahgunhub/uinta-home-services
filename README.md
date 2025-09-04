@@ -1,10 +1,10 @@
-# Quality Coatings LLC Website
+# Uinta Home Services Website
 
-A professional website for Quality Coatings LLC, showcasing their coating and restoration services throughout Utah.
+A professional website for Uinta Home Services, showcasing their home maintenance and cleaning services throughout Utah.
 
 ## Project Overview
 
-This is a React-based website built with modern web technologies to provide information about Quality Coatings LLC's services including epoxy floors, stucco work, stonework, gutters, and more.
+This is a React-based website built with modern web technologies to provide information about Uinta Home Services including window cleaning, gutter cleaning, power washing, Christmas lights, dryer vent cleaning, car detailing, and screen replacement.
 
 ## Technologies Used
 
@@ -30,7 +30,7 @@ This project is built with:
 git clone <YOUR_GIT_URL>
 
 # Step 2: Navigate to the project directory
-cd bright-surface-studio
+cd uinta-home-services
 
 # Step 3: Install the necessary dependencies
 npm install
