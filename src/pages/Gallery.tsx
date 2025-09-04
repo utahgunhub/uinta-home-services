@@ -25,7 +25,7 @@ const Gallery = () => {
       id: 1,
       title: "Sparkling Window Transformation",
       service: "Window Cleaning",
-      image: "/images/gallery/gallery1.png",
+      image: "https://placehold.co/600x400?text=Window+Cleaning+1",
       description:
         "Professional window cleaning service that restored crystal-clear views and enhanced natural light throughout this home",
     },
@@ -33,7 +33,7 @@ const Gallery = () => {
       id: 2,
       title: "Commercial Building Windows",
       service: "Window Cleaning",
-      image: "/images/gallery/gallery2.png",
+      image: "https://placehold.co/600x400?text=Window+Cleaning+2",
       description:
         "Large-scale commercial window cleaning project, bringing back the shine to this office building",
     },
@@ -41,7 +41,7 @@ const Gallery = () => {
       id: 3,
       title: "Gutter System Restoration",
       service: "Gutter Cleaning",
-      image: "/images/gallery/gallery3.png",
+      image: "https://placehold.co/600x400?text=Gutter+Cleaning+1",
       description:
         "Complete gutter cleaning and maintenance, ensuring proper water flow and preventing water damage",
     },
@@ -49,7 +49,7 @@ const Gallery = () => {
       id: 4,
       title: "Residential Gutter Maintenance",
       service: "Gutter Cleaning",
-      image: "/images/gallery/gallery4.png",
+      image: "https://placehold.co/600x400?text=Gutter+Cleaning+2",
       description:
         "Thorough gutter cleaning service protecting this home's foundation and landscaping",
     },
@@ -57,7 +57,7 @@ const Gallery = () => {
       id: 5,
       title: "Driveway Power Washing",
       service: "Power Washing",
-      image: "/images/gallery/gallery5.png",
+      image: "https://placehold.co/600x400?text=Power+Washing+1",
       description:
         "High-pressure cleaning restored this driveway to like-new condition, removing years of built-up grime",
     },
@@ -65,7 +65,7 @@ const Gallery = () => {
       id: 6,
       title: "House Exterior Cleaning",
       service: "Power Washing",
-      image: "/images/gallery/gallery6.png",
+      image: "https://placehold.co/600x400?text=Power+Washing+2",
       description:
         "Complete house exterior power washing, revealing the true beauty of this home's siding and brickwork",
     },
@@ -73,7 +73,7 @@ const Gallery = () => {
       id: 7,
       title: "Festive Christmas Display",
       service: "Christmas Lights",
-      image: "/images/gallery/gallery7.png",
+      image: "https://placehold.co/600x400?text=Christmas+Lights+1",
       description:
         "Professional Christmas light installation creating a magical holiday atmosphere for this family home",
     },
@@ -81,7 +81,7 @@ const Gallery = () => {
       id: 8,
       title: "Commercial Holiday Lighting",
       service: "Christmas Lights",
-      image: "/images/gallery/gallery8.png",
+      image: "https://placehold.co/600x400?text=Christmas+Lights+2",
       description:
         "Large-scale commercial Christmas light installation bringing holiday cheer to this business district",
     },
@@ -89,7 +89,7 @@ const Gallery = () => {
       id: 9,
       title: "Dryer Vent Safety Clean",
       service: "Dryer Vent Cleaning",
-      image: "/images/gallery/gallery9.png",
+      image: "https://placehold.co/600x400?text=Dryer+Vent+1",
       description:
         "Professional dryer vent cleaning service improving safety and efficiency for this family's laundry system",
     },
@@ -97,7 +97,7 @@ const Gallery = () => {
       id: 10,
       title: "Luxury Car Detailing",
       service: "Car Detailing",
-      image: "/images/gallery/gallery10.png",
+      image: "https://placehold.co/600x400?text=Car+Detailing+1",
       description:
         "Premium car detailing service restoring this vehicle to showroom condition with our professional techniques",
     },
@@ -105,7 +105,7 @@ const Gallery = () => {
       id: 11,
       title: "Screen Door Replacement",
       service: "Screen Replacement",
-      image: "/images/gallery/gallery11.png",
+      image: "https://placehold.co/600x400?text=Screen+Replacement+1",
       description:
         "Custom screen replacement service providing fresh, durable screens for optimal airflow and insect protection",
     },
@@ -113,7 +113,7 @@ const Gallery = () => {
       id: 12,
       title: "Window Screen Installation",
       service: "Screen Replacement",
-      image: "/images/gallery/gallery12.png",
+      image: "https://placehold.co/600x400?text=Screen+Replacement+2",
       description:
         "Professional window screen replacement ensuring proper fit and long-lasting performance",
     },
@@ -121,7 +121,7 @@ const Gallery = () => {
       id: 13,
       title: "Patio Door Screens",
       service: "Screen Replacement",
-      image: "/images/gallery/gallery13.png",
+      image: "https://placehold.co/600x400?text=Screen+Replacement+3",
       description:
         "Custom patio door screen replacement enhancing outdoor living space comfort and functionality",
     },
@@ -129,7 +129,7 @@ const Gallery = () => {
       id: 14,
       title: "Complete Home Exterior",
       service: "Power Washing",
-      image: "/images/gallery/gallery14.png",
+      image: "https://placehold.co/600x400?text=Power+Washing+3",
       description:
         "Comprehensive exterior cleaning service including siding, walkways, and outdoor surfaces",
     },
@@ -268,7 +268,7 @@ const Gallery = () => {
           <div className="mt-8 text-muted-foreground">
             <p>
               Questions? Call us:{" "}
-              <span className="text-primary font-semibold">(801) 555-0123</span>
+              <span className="text-primary font-semibold">(801) 520-7948</span>
             </p>
           </div>
         </div>

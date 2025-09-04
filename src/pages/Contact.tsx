@@ -187,7 +187,7 @@ const Contact = () => {
                           value={formData.phone}
                           onChange={handleChange}
                           className="focus:ring-primary focus:border-primary"
-                          placeholder="(801) 555-0123"
+                          placeholder="(801) 520-7948"
                         />
                       </div>
 
