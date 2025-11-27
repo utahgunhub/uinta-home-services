@@ -20,24 +20,18 @@ const Navigation = () => {
   return (
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="relative flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">
-                UHS
-              </span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-lg heading-caps text-foreground">
-                Uinta Home Services
-              </span>
-              <span className="text-xs text-muted-foreground -mt-1">Professional Home Services</span>
-            </div>
+            <img
+              src="/nav-logo.png"
+              alt="Pine Cleaning logo"
+              className="h-10 w-auto"
+            />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - absolutely centered in header */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -55,13 +49,18 @@ const Navigation = () => {
 
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+            <a
+              href="tel:8015207948"
+              className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
               <Phone className="w-4 h-4" />
               <span>801-520-7948</span>
-            </div>
-            <Button variant="default" size="sm" className="btn-primary">
-              Free Quote
-            </Button>
+            </a>
+            <Link to="/contact">
+              <Button variant="default" size="sm" className="btn-primary">
+                Get Your Quote
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -98,22 +97,28 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
-                <div className="flex items-center space-x-2 px-3 text-sm text-muted-foreground">
+                <a
+                  href="tel:8015207948"
+                  className="flex items-center space-x-2 px-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
                   <Phone className="w-4 h-4" />
                   <span>801-520-7948</span>
-                </div>
+                </a>
                 <div className="flex items-center space-x-2 px-3 text-sm text-muted-foreground">
                   <Mail className="w-4 h-4" />
                   <span>marketing@uintawindowwashing.com</span>
                 </div>
                 <div className="px-3">
-                  <Button
-                    variant="default"
-                    size="sm"
-                    className="btn-primary w-full"
-                  >
-                    Get Free Quote
-                  </Button>
+                  <Link to="/contact">
+                    <Button
+                      variant="default"
+                      size="sm"
+                      className="btn-primary w-full"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Get Your Quote
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

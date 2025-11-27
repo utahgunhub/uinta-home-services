@@ -1,10 +1,10 @@
-# Uinta Home Services Website
+# PiNE Cleaning Website
 
-A professional website for Uinta Home Services, showcasing their home maintenance and cleaning services throughout Utah.
+A professional website for PiNE Cleaning, showcasing their home maintenance and cleaning services throughout Utah.
 
 ## Project Overview
 
-This is a React-based website built with modern web technologies to provide information about Uinta Home Services including window cleaning, gutter cleaning, power washing, Christmas lights, dryer vent cleaning, car detailing, and screen replacement.
+This is a React-based website built with modern web technologies to provide information about PiNE Cleaning including window cleaning, gutter cleaning, power washing, Christmas lights, dryer vent cleaning, car detailing, and screen replacement.
 
 ## Technologies Used
 

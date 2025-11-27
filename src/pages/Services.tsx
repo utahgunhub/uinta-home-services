@@ -65,7 +65,7 @@ const Services = () => {
       icon: Sparkles,
       title: "Christmas Lights",
       description:
-        "Uinta Home Services is the top Christmas light installation company. Our team is licensed, insured, and bonded, and we have the skills, knowledge, and expertise to deliver seamless results for your home. When you choose us to brighten your living space, we don't disappoint.",
+        "PiNE Cleaning is the top Christmas light installation company. Our team is licensed, insured, and bonded, and we have the skills, knowledge, and expertise to deliver seamless results for your home. When you choose us to brighten your living space, we don't disappoint.",
       features: [
         "Christmas light installation",
         "Holiday decoration setup",
@@ -79,7 +79,7 @@ const Services = () => {
       icon: Building2,
       title: "Dryer Vent Cleaning",
       description:
-        "If you want to optimize your dryer's efficiency and safety, you need a dryer vent cleaning company that guarantees their service quality and thoroughness. In the surrounding areas, that company is Uinta Home Services. Focusing on competitive pricing, customer experience, and safety, we have established ourselves as the region's premier dryer vent cleaning contractor.",
+        "If you want to optimize your dryer's efficiency and safety, you need a dryer vent cleaning company that guarantees their service quality and thoroughness. In the surrounding areas, that company is PiNE Cleaning. Focusing on competitive pricing, customer experience, and safety, we have established ourselves as the region's premier dryer vent cleaning contractor.",
       features: [
         "Dryer efficiency optimization",
         "Safety and fire prevention",
@@ -107,7 +107,7 @@ const Services = () => {
       icon: Monitor,
       title: "Screen Replacement",
       description:
-        "We are a team of innovative home service experts that wants to change the way home and business owners maintain their window screens. We are Uinta Home Services, the leading screen replacement contractor in the surrounding areas.",
+        "We are a team of innovative home service experts that wants to change the way home and business owners maintain their window screens. We are PiNE Cleaning, the leading screen replacement contractor in the surrounding areas.",
       features: [
         "Window screen replacement",
         "Patio door screens",
@@ -144,7 +144,7 @@ const Services = () => {
                 size="lg"
                 className="btn-primary glow-primary text-lg px-8 py-4"
               >
-                Get Free Estimate
+                Get Your Quote
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
@@ -290,7 +290,7 @@ const Services = () => {
                 size="lg"
                 className="btn-primary glow-primary text-lg px-8 py-4"
               >
-                Get Free Quote
+                Get Your Quote
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>

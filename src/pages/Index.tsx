@@ -26,38 +26,43 @@ const Index = () => {
   const features = [
     {
       icon: Shield,
-      title: "SERVICES WE PROVIDE",
+      title: "White-glove Service",
       description: [
-        "Interior Window Cleaning",
-        "Exterior Window Cleaning",
-        "Gutter Cleaning", 
-        "Power Washing",
+        "5-star rated by our customers",
+        "7+ years in business",
+        "100,000+ windows cleaned",
+        "Licensed & insured technicians",
+        "Punctual, honest, and professional service",
       ],
-      buttonText: "Our Services »",
-      buttonLink: "/services",
-      image: heroImage,
+      buttonText: "Reviews",
+      buttonLink: "/#reviews",
+      image: "/worker.png",
     },
     {
       icon: Award,
-      title: "VIEW OUR WORK",
-      description:
-        "Looking for professional home services in Utah? We've got you covered. Check out our window cleaning, power washing, gutter cleaning, and more in our gallery here.",
-      buttonText: "View Galleries »",
-      buttonLink: "/gallery",
-      image: heroImage,
+      title: "Comprehensive Home Care",
+      description: [
+        "Interior & exterior window cleaning",
+        "Home & concrete pressure washing",
+        "Screen repair & replacement",
+        "Christmas light fitting & installation",
+        "Automotive detailing",
+      ],
+      buttonText: "View Our Services",
+      buttonLink: "/services",
+      image: "/mountain-home.png",
     },
     {
       icon: Users,
-      title: "ADDITIONAL SERVICES",
+      title: "Service Plans for All Situations",
       description: [
-        "Christmas Lights",
-        "Dryer Vent Cleaning",
-        "Car Detailing",
-        "Screen Replacement",
+        "Biannual – save 10% on every cleaning",
+        "Quarterly – save 15% on every cleaning",
+        "Bimonthly – save 25% on every cleaning",
       ],
-      buttonText: "View All Services »",
+      buttonText: "View Service Plans",
       buttonLink: "/services",
-      image: heroImage,
+      image: "/luxury-vehicle.png",
     },
   ];
 
@@ -78,7 +83,7 @@ const Index = () => {
       icon: Sparkles,
       title: "Christmas Lights",
       description:
-        "Uinta Home Services is the top Christmas light installation company. Our team is licensed, insured, and bonded, and we have the skills, knowledge, and expertise to deliver seamless results for your home.",
+        "PiNE Cleaning is the top Christmas light installation company. Our team is licensed, insured, and bonded, and we have the skills, knowledge, and expertise to deliver seamless results for your home.",
     },
   ];
 
@@ -101,11 +106,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
-              Why Choose Uinta Home Services?
+              Why Choose PiNE Cleaning?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We combine expert craftsmanship with exceptional service to
-              deliver home maintenance solutions that exceed expectations.
+              We deliver exceptional service with expert craftsmanship to care
+              for your home and vehicle and exceed expectations.
             </p>
           </div>
 
@@ -163,13 +168,23 @@ const Index = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 overflow-hidden">
+        {/* Background image with gaussian-style overlay similar to hero cards */}
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="PiNE Cleaning core services background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
+            <h2 className="text-4xl font-bold heading-caps text-white mb-4">
               Our Core Services
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Comprehensive home maintenance and cleaning services for residential,
               commercial, and industrial properties throughout Utah.
             </p>
@@ -177,7 +192,10 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {services.map((service, index) => (
-              <Card key={index} className="card-service group">
+              <Card
+                key={index}
+                className="group bg-white border border-border rounded-2xl shadow-2xl"
+              >
                 <CardContent className="p-8">
                   <div className="mb-6">
                     <service.icon className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
@@ -278,7 +296,7 @@ const Index = () => {
       </section>
 
       {/* Reviews & Instagram Feed Section */}
-      <section className="py-20 bg-surface">
+      <section id="reviews" className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Reviews Section */}
@@ -307,8 +325,8 @@ const Index = () => {
                       ))}
                     </div>
                     <p className="text-sm text-foreground mb-3 italic">
-                      "Uinta Home Services did an amazing job on our windows
-                      and gutters. Professional, on-time, and great communication
+                      "PiNE Cleaning did an amazing job on our windows and
+                      gutters. Professional, on-time, and great communication
                       throughout."
                     </p>
                     <div className="flex items-center space-x-2">

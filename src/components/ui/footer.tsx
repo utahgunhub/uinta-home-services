@@ -27,15 +27,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">UHS</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg heading-caps text-foreground">
-                  Uinta Home Services
-                </span>
-                <span className="text-xs text-muted-foreground -mt-1">Professional Home Services</span>
-              </div>
+              <img
+                src="/nav-logo.png"
+                alt="Pine Cleaning logo"
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Utah's trusted home service experts. From windows to gutters, we clean it all with
@@ -146,7 +142,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-muted-foreground text-sm">
-              © {currentYear} Uinta Home Services. All rights reserved.
+              © {currentYear} PiNE Cleaning. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <Link

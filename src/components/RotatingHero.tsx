@@ -35,11 +35,11 @@ const RotatingHero = () => {
     {
       id: 1,
       image: housePaintingImage,
-      title: "Uinta Home Services",
+      title: "PiNE Cleaning",
       subtitle: "",
       description:
         "Utah's premier home maintenance and cleaning specialists. From residential to commercial, we deliver professional quality with exceptional service.",
-      ctaText: "Get a Free Quote",
+      ctaText: "Get Your Quote",
       ctaLink: "/contact",
       secondaryCtaText: "View Our Work",
       secondaryCtaLink: "/gallery",

@@ -70,7 +70,7 @@ const About = () => {
             <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground mb-6">
               About{" "}
               <span className="text-primary text-glow">
-                Uinta Home Services
+                PiNE Cleaning
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -131,7 +131,7 @@ const About = () => {
             <div className="relative">
               <img
                 src={heroImage}
-                alt="Uinta Home Services team at work"
+                alt="PiNE Cleaning team at work"
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-primary/20 to-transparent"></div>
@@ -221,8 +221,8 @@ const About = () => {
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Our clients have come to expect the very best from us, and we think
-            you should be able to as well. Uinta Home Services: It's a name
-            that means excellence. It's a name you can trust.
+            you should be able to as well. PiNE Cleaning: It's a name that
+            means excellence. It's a name you can trust.
           </p>
 
           <div className="bg-primary/5 border border-primary/20 rounded-xl p-8 mb-8">
@@ -262,7 +262,7 @@ const About = () => {
 
           <div className="mt-8 text-muted-foreground">
             <p>
-              Uinta Home Services: Founded on a culture of professionalism,
+              PiNE Cleaning: Founded on a culture of professionalism,
               dedication, and excellence.
             </p>
             <p className="mt-2">Founded on honesty, integrity, and respect.</p>

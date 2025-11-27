@@ -101,7 +101,7 @@ const Contact = () => {
           <div className="text-center mb-16">
             <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground mb-6">
               Get Your{" "}
-              <span className="text-primary text-glow">Free Quote</span>
+              <span className="text-primary text-glow">Quote</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Ready to start your project? Contact us today for a free,
