@@ -20,102 +20,124 @@ import {
 const Services = () => {
   const services = [
     {
+      id: "exterior-window-cleaning",
       icon: Droplets,
-      title: "Window Cleaning",
+      title: "Exterior Window Cleaning",
       description:
-        "If you're looking for trusted window cleaning services, look no further than us. We are local industry leaders, and we provide an unparalleled level of quality and service to every client.",
+        "Crystal-clear exterior glass that lets natural light in and boosts curb appeal. We safely clean everything from ground-level windows to upper stories.",
       features: [
-        "Residential window cleaning",
-        "Commercial window cleaning",
-        "High-rise window services",
-        "Screen cleaning included",
-        "Streak-free results",
+        "Residential exterior window cleaning",
+        "Multi-story and hard-to-reach windows",
+        "Streak-free professional finish",
+        "Frames and sills wiped down",
+        "Safe ladders and equipment",
       ],
       image: "🏠",
     },
     {
-      icon: Gauge,
-      title: "Gutter Cleaning",
+      id: "interior-window-cleaning",
+      icon: Droplets,
+      title: "Interior Window Cleaning",
       description:
-        "If you're looking for gutter cleaning services, look no further than us. We provide a complete range of services to help homeowners, business owners, and property managers maintain clean and functional gutters. Fast and efficient, friendly and dependable, our team is second to none.",
+        "Smudge-free interior glass so your home feels brighter and cleaner. We treat your home with care while restoring every pane.",
       features: [
-        "Residential gutter cleaning",
-        "Commercial building gutters",
-        "Downspout cleaning",
-        "Gutter inspection services",
-        "Fast and efficient service",
-      ],
-      image: "🏠",
-    },
-    {
-      icon: Zap,
-      title: "Power Washing",
-      description:
-        "Power washing is one of the most effective ways to clean and maintain your property's exterior surfaces. To make sure you get the most value out of your power washing service, you need a contractor who will do it right.",
-      features: [
-        "House exterior cleaning",
-        "Driveway and walkway cleaning",
-        "Deck and patio cleaning",
-        "Professional equipment",
-        "Safe cleaning solutions",
-      ],
-      image: "🏠",
-    },
-    {
-      icon: Sparkles,
-      title: "Christmas Lights",
-      description:
-        "PiNE Cleaning is the top Christmas light installation company. Our team is licensed, insured, and bonded, and we have the skills, knowledge, and expertise to deliver seamless results for your home. When you choose us to brighten your living space, we don't disappoint.",
-      features: [
-        "Christmas light installation",
-        "Holiday decoration setup",
-        "Professional installation",
-        "Safe electrical work",
-        "Quality guarantee",
+        "Interior window and glass door cleaning",
+        "Removal of fingerprints and smudges",
+        "Careful protection of floors and furnishings",
+        "Detailed edge and track wipe-down",
+        "Flexible scheduling to fit your day",
       ],
       image: "🏡",
     },
     {
-      icon: Building2,
-      title: "Dryer Vent Cleaning",
+      id: "home-concrete-pressure-washing",
+      icon: Zap,
+      title: "Home & Concrete Pressure Washing",
       description:
-        "If you want to optimize your dryer's efficiency and safety, you need a dryer vent cleaning company that guarantees their service quality and thoroughness. In the surrounding areas, that company is PiNE Cleaning. Focusing on competitive pricing, customer experience, and safety, we have established ourselves as the region's premier dryer vent cleaning contractor.",
+        "Professional pressure washing for siding, driveways, walkways, and patios to remove grime, mildew, and buildup.",
       features: [
-        "Dryer efficiency optimization",
-        "Safety and fire prevention",
-        "Competitive pricing",
-        "Customer experience focus",
-        "Thorough cleaning service",
+        "House exterior soft-wash and pressure wash",
+        "Driveways, sidewalks, and patios",
+        "Oil stain and mildew reduction",
+        "Proper pressure for each surface type",
+        "Helps protect and extend surface life",
       ],
-      image: "🌡️",
+      image: "🧼",
     },
     {
-      icon: Car,
-      title: "Car Detailing",
+      id: "screen-repair-replacement",
+      icon: Monitor,
+      title: "Screen Repair & Replacement",
       description:
-        "Perfect for maintaining your vehicle's appearance and value, professional car detailing offers one of the most comprehensive cleaning services on the market. And with good reason: it's thorough, has great results, and is convenient. For many years, we have been providing the surrounding areas with affordable and reliable car detailing services.",
+        "Fresh, functional window and door screens that keep bugs out and breezes in.",
       features: [
-        "Interior car cleaning",
-        "Exterior car washing",
-        "Professional detailing",
-        "Convenient service",
-        "Years of reliable service",
+        "Window screen repair and replacement",
+        "Patio and sliding door screens",
+        "Custom sizes to fit your openings",
+        "Tear and damage repair",
+        "Durable materials for long-term use",
+      ],
+      image: "🪟",
+    },
+    {
+      id: "christmas-light-installation",
+      icon: Sparkles,
+      title: "Christmas Light Fitting & Installation",
+      description:
+        "Professional holiday lighting design, installation, and takedown so you can enjoy the season without the hassle.",
+      features: [
+        "Custom holiday light design",
+        "Safe roofline and tree installation",
+        "Timers and professional-grade materials",
+        "In-season maintenance and bulb replacement",
+        "Takedown and packing after the holidays",
+      ],
+      image: "🎄",
+    },
+    {
+      id: "gutter-cleaning",
+      icon: Gauge,
+      title: "Gutter Cleaning",
+      description:
+        "Clear, free-flowing gutters that help protect your roof, foundation, and landscaping from water damage.",
+      features: [
+        "Full debris removal from gutters",
+        "Downspout flushing and flow check",
+        "Visual inspection for issues",
+        "Protection from overflow and ice dams",
+        "Fast, tidy, and reliable service",
       ],
       image: "🏘️",
     },
     {
-      icon: Monitor,
-      title: "Screen Replacement",
+      id: "automotive-detailing",
+      icon: Car,
+      title: "Automotive Detailing",
       description:
-        "We are a team of innovative home service experts that wants to change the way home and business owners maintain their window screens. We are PiNE Cleaning, the leading screen replacement contractor in the surrounding areas.",
+        "Comprehensive interior and exterior detailing to keep your vehicle looking and feeling like new.",
       features: [
-        "Window screen replacement",
-        "Patio door screens",
-        "Custom screen sizes",
-        "Professional installation",
-        "Leading contractor expertise",
+        "Exterior wash, wax, and wheel cleaning",
+        "Interior vacuuming and wipe-down",
+        "Glass and mirror cleaning",
+        "Pet hair and odor reduction",
+        "Flexible packages for every vehicle",
       ],
-      image: "⚡",
+      image: "🚗",
+    },
+    {
+      id: "solar-panel-cleaning",
+      icon: Home,
+      title: "Solar Panel Cleaning",
+      description:
+        "Gentle solar panel cleaning to improve efficiency and protect your investment.",
+      features: [
+        "Non-abrasive cleaning methods",
+        "Removal of dust, pollen, and buildup",
+        "Improved panel performance",
+        "Safe access and equipment",
+        "Ideal for residential and small commercial arrays",
+      ],
+      image: "☀️",
     },
   ];
 
@@ -156,8 +178,12 @@ const Services = () => {
       <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="card-service group overflow-hidden">
+            {services.map((service) => (
+              <Card
+                key={service.id}
+                id={service.id}
+                className="card-service group overflow-hidden"
+              >
                 <CardContent className="p-8">
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4">
