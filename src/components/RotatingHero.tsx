@@ -42,7 +42,7 @@ const RotatingHero = () => {
       ctaText: "Get Your Quote",
       ctaLink: "/contact",
       secondaryCtaText: "View Our Work",
-      secondaryCtaLink: "/gallery",
+      secondaryCtaLink: "/commercial-cleaning-utah",
     },
     {
       id: 2,
@@ -64,7 +64,7 @@ const RotatingHero = () => {
       description:
         "Revitalize your property's exterior with our professional power washing services. We clean driveways, walkways, decks, siding, and more, removing dirt, grime, and mildew to restore beauty and prevent damage.",
       ctaText: "View Gallery",
-      ctaLink: "/gallery",
+      ctaLink: "/commercial-cleaning-utah",
       secondaryCtaText: "Get Quote",
       secondaryCtaLink: "/contact",
     },
@@ -88,7 +88,7 @@ const RotatingHero = () => {
       description:
         "Restore your vehicle's shine with our professional car detailing service. We provide thorough interior and exterior cleaning, polishing, and protection for a showroom finish that lasts and protects your investment.",
       ctaText: "View Gallery",
-      ctaLink: "/gallery",
+      ctaLink: "/commercial-cleaning-utah",
       secondaryCtaText: "Get Estimate",
       secondaryCtaLink: "/contact",
     },

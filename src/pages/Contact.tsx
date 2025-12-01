@@ -14,7 +14,8 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
-    projectType: "",
+    services: [] as string[],
+    hearAboutUs: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,14 +28,15 @@ const Contact = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: "Message Sent!",
+        title: "Quote Request Sent!",
         description: "We'll get back to you within 24 hours.",
       });
       setFormData({
         name: "",
         email: "",
         phone: "",
-        projectType: "",
+        services: [],
+        hearAboutUs: "",
         message: "",
       });
     }, 1000);
@@ -51,52 +53,103 @@ const Contact = () => {
     });
   };
 
+  const handleServiceChange = (service: string) => {
+    setFormData(prev => ({
+      ...prev,
+      services: prev.services.includes(service)
+        ? prev.services.filter(s => s !== service)
+        : [...prev.services, service]
+    }));
+  };
+
   const contactInfo = [
     {
       icon: Phone,
       title: "Phone",
       value: "801-520-7948",
       link: "tel:8015207948",
-      description: "Call us for immediate assistance",
     },
     {
       icon: Mail,
       title: "Email",
       value: "marketing@uintawindowwashing.com",
       link: "mailto:marketing@uintawindowwashing.com",
-      description: "Send us a detailed message",
     },
     {
       icon: MapPin,
       title: "Address",
       value: "Sandy, UT, 84081-4020",
       link: null,
-      description: "Serving all of Utah",
     },
     {
       icon: Clock,
       title: "Business Hours",
-      value: "Mon-Sat: 7AM-7PM, Sun: By Appointment",
+      value: "Mon-Sat: 7AM-7PM",
       link: null,
-      description: "Flexible scheduling available",
     },
   ];
 
-  const projectTypes = [
+  const serviceTypes = [
     "Window Cleaning",
     "Gutter Cleaning",
     "Power Washing",
     "Christmas Lights",
-    "Dryer Vent Cleaning",
     "Car Detailing",
     "Screen Replacement",
+    "Solar Panel Cleaning",
     "Other",
+  ];
+
+  const hearAboutUsOptions = [
+    "Yard Sign",
+    "Poster Card/Door Hanger",
+    "Family or Friend",
+    "Google",
+    "Local Company",
+    "KSL",
+    "Billboard",
+    "Facebook",
+    "Instagram",
+  ];
+
+  const serviceAreas: {
+    county: string;
+    cities: string[];
+  }[] = [
+    {
+      county: "Salt Lake County",
+      cities: [
+        "Salt Lake City",
+        "Sandy",
+        "Draper",
+        "South Jordan",
+        "West Jordan",
+        "Herriman",
+        "Riverton",
+      ],
+    },
+    {
+      county: "Utah County",
+      cities: ["Provo", "Orem", "Lehi", "American Fork", "Pleasant Grove"],
+    },
+    {
+      county: "Weber County",
+      cities: ["Ogden", "Roy", "South Ogden", "North Ogden"],
+    },
+    {
+      county: "Summit County",
+      cities: ["Park City", "Kamas", "Oakley"],
+    },
+    {
+      county: "Davis County",
+      cities: ["Layton", "Bountiful", "Kaysville", "Farmington"],
+    },
   ];
 
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-20">
+      <section className="bg-gradient-hero pt-28 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground mb-6">
@@ -113,21 +166,27 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 bg-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/contact-bg.png"
+            alt="Utah mountain landscape"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <Card className="card-service">
+              <Card className="bg-white/95 backdrop-blur-sm shadow-2xl border-2 border-white/20">
                 <CardContent className="p-8">
                   <div className="mb-8">
                     <h2 className="text-3xl font-bold heading-caps text-foreground mb-4">
                       Request Your Free Estimate
                     </h2>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Fill out the form below and we'll get back to you within
-                      24 hours with a detailed estimate for your project.
-                    </p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -193,25 +252,50 @@ const Contact = () => {
 
                       <div className="space-y-2">
                         <Label
-                          htmlFor="projectType"
+                          htmlFor="hearAboutUs"
                           className="text-foreground font-medium"
                         >
-                          Project Type
+                          How did you hear about us?
                         </Label>
                         <select
-                          id="projectType"
-                          name="projectType"
-                          value={formData.projectType}
+                          id="hearAboutUs"
+                          name="hearAboutUs"
+                          value={formData.hearAboutUs}
                           onChange={handleChange}
                           className="w-full px-3 py-2 border border-input bg-background rounded-md focus:ring-primary focus:border-primary"
                         >
-                          <option value="">Select a service</option>
-                          {projectTypes.map((type) => (
-                            <option key={type} value={type}>
-                              {type}
+                          <option value="">Select an option</option>
+                          {hearAboutUsOptions.map((option) => (
+                            <option key={option} value={option}>
+                              {option}
                             </option>
                           ))}
                         </select>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label className="text-foreground font-medium">
+                        Service Needed *
+                      </Label>
+                      <div className="grid grid-cols-2 gap-3">
+                        {serviceTypes.map((service) => (
+                          <div key={service} className="flex items-center space-x-2">
+                            <input
+                              type="checkbox"
+                              id={service}
+                              checked={formData.services.includes(service)}
+                              onChange={() => handleServiceChange(service)}
+                              className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
+                            />
+                            <label
+                              htmlFor={service}
+                              className="text-sm text-foreground cursor-pointer"
+                            >
+                              {service}
+                            </label>
+                          </div>
+                        ))}
                       </div>
                     </div>
 
@@ -243,7 +327,7 @@ const Contact = () => {
                         "Sending..."
                       ) : (
                         <>
-                          Send Message
+                          Request Quote
                           <Send className="ml-2 w-5 h-5" />
                         </>
                       )}
@@ -256,14 +340,11 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold heading-caps text-foreground mb-6">
-                  Contact Information
-                </h3>
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
                     <Card
                       key={index}
-                      className="p-6 bg-background border-border hover:border-primary/30 transition-colors duration-200"
+                      className="p-6 bg-white/95 backdrop-blur-sm border-2 border-white/20 hover:border-primary/30 transition-colors duration-200"
                     >
                       <div className="flex items-start space-x-4">
                         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -285,9 +366,6 @@ const Contact = () => {
                               {info.value}
                             </p>
                           )}
-                          <p className="text-muted-foreground text-sm mt-1">
-                            {info.description}
-                          </p>
                         </div>
                       </div>
                     </Card>
@@ -301,47 +379,36 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold heading-caps text-foreground mb-6">
-            Prefer to Talk? Give Us a Call
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Sometimes it's easier to discuss your project over the phone. Our
-            team is standing by to answer your questions and provide expert
-            advice.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:8015207948">
-              <Button
-                size="lg"
-                className="btn-primary glow-primary text-lg px-8 py-4"
-              >
-                <Phone className="mr-2 w-5 h-5" />
-                Call 801-520-7948
-              </Button>
-            </a>
-            <a href="mailto:marketing@uintawindowwashing.com">
-              <Button
-                variant="outline"
-                size="lg"
-                className="btn-ghost text-lg px-8 py-4"
-              >
-                <Mail className="mr-2 w-5 h-5" />
-                Send Email
-              </Button>
-            </a>
+      {/* Service Areas */}
+      <section className="py-16 bg-surface-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold heading-caps text-foreground mb-3">
+              Proudly Serving
+            </h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto">
+              PiNE Cleaning serves homeowners and businesses across the Wasatch
+              Front and beyond.
+            </p>
           </div>
-
-          <div className="mt-8 text-muted-foreground">
-            <p>Available Monday through Saturday, 7 AM to 7 PM</p>
-            <p className="mt-2">Sunday: By Appointment</p>
-            <p className="mt-2">License Number: 12398041-5501</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+            {serviceAreas.map((area) => (
+              <div
+                key={area.county}
+                className="bg-background border border-border rounded-lg p-4 text-left"
+              >
+                <p className="font-semibold text-foreground mb-1">
+                  {area.county}
+                </p>
+                <p className="text-muted-foreground">
+                  {area.cities.join(", ")}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
     </PageLayout>
   );
 };

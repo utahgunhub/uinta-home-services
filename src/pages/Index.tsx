@@ -542,7 +542,7 @@ const Index = () => {
             </div>
 
             {/* Instagram Feed Section - below reviews */}
-            <div className="space-y-6">
+            {/* <div className="space-y-6">
               <div className="text-center lg:text-left">
                 <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
                   Follow Our Work
@@ -556,7 +556,6 @@ const Index = () => {
               </div>
 
               <div className="grid grid-cols-3 gap-4">
-                {/* Instagram Real Images */}
                 {instagramPosts.map((image, index) => (
                   <div
                     key={index}
@@ -577,85 +576,24 @@ const Index = () => {
                   <span>Follow Our Work</span>
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
-      {/* Exceeding Expectations Section */}
-      <section className="py-20 bg-surface">
+      {/* CTA Section */}
+      <section className="py-16 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8">
-            <div className="space-y-6">
-              <h2 className="text-4xl font-bold heading-caps text-foreground">
-                Exceeding Expectations
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-                We know the value of our services, and we think you should too.
-                We want you to take advantage without having to feel like you're
-                taking a risk. It's for that reason that we guarantee your
-                satisfaction.
-              </p>
-
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-                In the rare instance we somehow fall short of your expectations,
-                then we want to do everything we can to fix the issue. Whatever
-                it may entail. Reach out to us, and we'll strive to make sure
-                you are happy with our services.
-              </p>
-            </div>
-
-            <div className="bg-primary/5 border border-primary/20 rounded-xl p-8 mb-8">
-              <h3 className="text-2xl font-bold text-primary mb-4">
-                Satisfaction Guaranteed
-              </h3>
-              <p className="text-muted-foreground">
-                Customer service isn't just friendly greetings; it's also a
-                commitment to doing right by the client no matter what. We won't
-                rest until you're completely satisfied with the end
-                result—that's our guarantee to you!
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact">
-                <Button
-                  size="lg"
-                  className="btn-primary glow-primary text-lg px-8 py-4"
-                >
-                  Call Us Now!
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <a href="tel:8015207948">
-                <Button
-                  variant="default"
-                  size="lg"
-                  className="group w-full sm:w-auto px-8"
-                >
-                  <Phone className="mr-2 w-5 h-5" />
-                  801-520-7948
-                </Button>
-              </a>
-              <Link to="/about">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="btn-ghost text-lg px-8 py-4"
-                >
-                  Learn More About Us
-                </Button>
-              </Link>
-            </div>
-
-            <div className="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-xl">
-              <h4 className="text-lg font-bold text-primary mb-2">
-                Ask About Our Discounts
-              </h4>
-              <p className="text-muted-foreground">
-                New Customer, Loyalty Program, Seniors and Military Discounts
-              </p>
-            </div>
+          <div className="flex justify-center">
+            <a href="tel:8015207948">
+              <Button
+                size="lg"
+                className="btn-primary glow-primary text-lg px-8 py-4"
+              >
+                <Phone className="mr-2 w-5 h-5" />
+                Call Us
+              </Button>
+            </a>
           </div>
         </div>
       </section>

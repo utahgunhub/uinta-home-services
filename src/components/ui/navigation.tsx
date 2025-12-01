@@ -11,7 +11,7 @@ const Navigation = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
-    { href: "/gallery", label: "Gallery" },
+    { href: "/commercial-cleaning-utah", label: "Commercial" },
     { href: "/contact", label: "Contact" },
   ];
 

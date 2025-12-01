@@ -7,17 +7,43 @@ const Footer = () => {
   const footerLinks = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
-    { href: "/gallery", label: "Gallery" },
-    { href: "/insurance", label: "Insurance Help" },
+    { href: "/commercial-cleaning-utah", label: "Commercial" },
     { href: "/contact", label: "Contact" },
   ];
 
-  const services = [
-    "Window Cleaning",
-    "Gutter Cleaning",
-    "Power Washing",
-    "Christmas Lights",
-    "Dryer Vent Cleaning",
+  const serviceLinks = [
+    {
+      href: "/services#exterior-window-cleaning",
+      label: "Exterior Window Cleaning",
+    },
+    {
+      href: "/services#interior-window-cleaning",
+      label: "Interior Window Cleaning",
+    },
+    {
+      href: "/services#home-concrete-pressure-washing",
+      label: "Home & Concrete Pressure Washing",
+    },
+    {
+      href: "/services#screen-repair-replacement",
+      label: "Screen Repair & Replacement",
+    },
+    {
+      href: "/services#christmas-light-installation",
+      label: "Christmas Light Fitting & Installation",
+    },
+    {
+      href: "/services#gutter-cleaning",
+      label: "Gutter Cleaning",
+    },
+    {
+      href: "/services#automotive-detailing",
+      label: "Automotive Detailing",
+    },
+    {
+      href: "/services#solar-panel-cleaning",
+      label: "Solar Panel Cleaning",
+    },
   ];
 
   return (
@@ -62,9 +88,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Company */}
           <div className="space-y-4">
-            <h3 className="text-foreground font-semibold heading-caps">Quick Links</h3>
+            <h3 className="text-foreground font-semibold heading-caps">
+              Company
+            </h3>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.href}>
@@ -83,13 +111,13 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-foreground font-semibold heading-caps">Our Services</h3>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service}>
+              {serviceLinks.map((service) => (
+                <li key={service.href}>
                   <Link
-                    to="/services"
+                    to={service.href}
                     className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm"
                   >
-                    {service}
+                    {service.label}
                   </Link>
                 </li>
               ))}
@@ -142,7 +170,8 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-muted-foreground text-sm">
-              © {currentYear} PiNE Cleaning. All rights reserved.
+              <div>© {currentYear} PiNE Cleaning. All rights reserved.</div>
+              <div className="mt-1">License Number: 11258030-0160</div>
             </div>
             <div className="flex space-x-6 text-sm">
               <Link

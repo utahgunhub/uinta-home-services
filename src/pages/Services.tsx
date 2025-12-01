@@ -15,6 +15,7 @@ import {
   Car,
   Monitor,
   Gauge,
+  Shield,
 } from "lucide-react";
 
 const Services = () => {
@@ -23,141 +24,112 @@ const Services = () => {
       id: "exterior-window-cleaning",
       icon: Droplets,
       title: "Exterior Window Cleaning",
-      description:
-        "Crystal-clear exterior glass that lets natural light in and boosts curb appeal. We safely clean everything from ground-level windows to upper stories.",
       features: [
-        "Residential exterior window cleaning",
-        "Multi-story and hard-to-reach windows",
-        "Streak-free professional finish",
-        "Frames and sills wiped down",
-        "Safe ladders and equipment",
+        "Residential Window Cleaning",
+        "Commercial Window Cleaning",
+        "Hard Water Removal",
+        "RainGuard Technology",
       ],
-      image: "🏠",
+      bgImage: "/exterior-window-cleaning-card.png",
     },
     {
       id: "interior-window-cleaning",
       icon: Droplets,
       title: "Interior Window Cleaning",
-      description:
-        "Smudge-free interior glass so your home feels brighter and cleaner. We treat your home with care while restoring every pane.",
       features: [
-        "Interior window and glass door cleaning",
-        "Removal of fingerprints and smudges",
-        "Careful protection of floors and furnishings",
-        "Detailed edge and track wipe-down",
-        "Flexible scheduling to fit your day",
+        "Hand Detailed Cleaning",
+        "Screen Cleaning",
+        "Window Track Detailing",
       ],
-      image: "🏡",
+      bgImage: "/interior-window-cleaning-card.png",
     },
     {
       id: "home-concrete-pressure-washing",
       icon: Zap,
       title: "Home & Concrete Pressure Washing",
-      description:
-        "Professional pressure washing for siding, driveways, walkways, and patios to remove grime, mildew, and buildup.",
       features: [
-        "House exterior soft-wash and pressure wash",
-        "Driveways, sidewalks, and patios",
-        "Oil stain and mildew reduction",
-        "Proper pressure for each surface type",
-        "Helps protect and extend surface life",
+        "Residential Pressure Washing",
+        "Commercial Pressure Washing",
+        "Stucco & Siding Cleaning",
+        "Driveway & Walkway Cleaning",
+        "Deck & Patio Cleaning",
       ],
-      image: "🧼",
+      bgImage: "/pressure-washing-card.png",
     },
     {
       id: "screen-repair-replacement",
       icon: Monitor,
       title: "Screen Repair & Replacement",
-      description:
-        "Fresh, functional window and door screens that keep bugs out and breezes in.",
       features: [
-        "Window screen repair and replacement",
-        "Patio and sliding door screens",
-        "Custom sizes to fit your openings",
-        "Tear and damage repair",
-        "Durable materials for long-term use",
+        "Window Screens",
+        "Patio Door Screens",
+        "Solar Screen Fabric",
+        "Frame Repair",
+        "Professional Installation",
       ],
-      image: "🪟",
+      bgImage: "/window-screen-replacing-card.png",
     },
     {
       id: "christmas-light-installation",
       icon: Sparkles,
       title: "Christmas Light Fitting & Installation",
-      description:
-        "Professional holiday lighting design, installation, and takedown so you can enjoy the season without the hassle.",
       features: [
-        "Custom holiday light design",
-        "Safe roofline and tree installation",
-        "Timers and professional-grade materials",
-        "In-season maintenance and bulb replacement",
-        "Takedown and packing after the holidays",
+        "Annual Install & Removal",
+        "Custom Fitted Lights",
+        "Permanent Home Lights",
+        "Custom Color Patterns",
       ],
-      image: "🎄",
+      bgImage: "/christmas-lights-card.png",
     },
     {
       id: "gutter-cleaning",
       icon: Gauge,
       title: "Gutter Cleaning",
-      description:
-        "Clear, free-flowing gutters that help protect your roof, foundation, and landscaping from water damage.",
       features: [
-        "Full debris removal from gutters",
-        "Downspout flushing and flow check",
-        "Visual inspection for issues",
-        "Protection from overflow and ice dams",
-        "Fast, tidy, and reliable service",
+        "Residential Gutter Service",
+        "Commercial Gutter Service",
+        "Downspout Cleaning",
+        "Dirt & Gravel Removal",
       ],
-      image: "🏘️",
+      bgImage: "/gutter-cleaning-card.png",
     },
     {
       id: "automotive-detailing",
       icon: Car,
       title: "Automotive Detailing",
-      description:
-        "Comprehensive interior and exterior detailing to keep your vehicle looking and feeling like new.",
       features: [
-        "Exterior wash, wax, and wheel cleaning",
-        "Interior vacuuming and wipe-down",
-        "Glass and mirror cleaning",
-        "Pet hair and odor reduction",
-        "Flexible packages for every vehicle",
+        "Leather Treatment & Conditioning",
+        "Pet Hair Removal",
+        "PH Neutral Exterior Wash",
+        "Under Carriage Detailing",
+        "Ceramic Coating",
       ],
-      image: "🚗",
+      bgImage: "/automotive-detailing-card.png",
     },
     {
       id: "solar-panel-cleaning",
       icon: Home,
       title: "Solar Panel Cleaning",
-      description:
-        "Gentle solar panel cleaning to improve efficiency and protect your investment.",
       features: [
-        "Non-abrasive cleaning methods",
-        "Removal of dust, pollen, and buildup",
-        "Improved panel performance",
-        "Safe access and equipment",
-        "Ideal for residential and small commercial arrays",
+        "Residential Solar Panel Cleaning",
+        "Commercial Solar Panel Cleaning",
+        "RainGuard Technology",
       ],
-      image: "☀️",
+      bgImage: "/solar-panel-card.png",
     },
   ];
 
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-20">
+      <section className="bg-gradient-hero pt-28 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground mb-6">
-              Our{" "}
               <span className="text-primary text-glow">
-                Professional Services
+                One-Stop Shop for Home Cleaning Services
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Comprehensive home maintenance and cleaning services for residential,
-              commercial, and industrial properties throughout Utah. Every
-              project backed by our quality guarantee.
-            </p>
           </div>
 
           <div className="flex justify-center">
@@ -179,57 +151,61 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8">
             {services.map((service) => (
-              <Card
+              <a
                 key={service.id}
-                id={service.id}
-                className="card-service group overflow-hidden"
+                href={`#${service.id}`}
+                className="block group"
               >
-                <CardContent className="p-8">
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                          <service.icon className="w-8 h-8 text-primary" />
+                <Card
+                  id={service.id}
+                  className="card-service group overflow-hidden relative h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+                >
+                  {/* Background Image with Overlay */}
+                  <div className="absolute inset-0">
+                    <img
+                      src={service.bgImage}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+                  </div>
+
+                  <CardContent className="relative p-8 h-full flex flex-col">
+                    <div className="space-y-4 flex-1">
+                      <div className="flex items-center space-x-4">
+                        <div className="flex-shrink-0">
+                          <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300 border border-white/30">
+                            <service.icon className="w-8 h-8 text-white" />
+                          </div>
                         </div>
-                      </div>
-                      <h3 className="text-2xl font-bold heading-caps text-foreground leading-tight min-h-[3rem] flex items-center">
-                        {service.title}
-                      </h3>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {service.description}
-                        </p>
+                        <h3 className="text-2xl font-bold heading-caps text-white leading-tight flex items-center flex-1">
+                          {service.title}
+                        </h3>
                       </div>
 
-                      <div className="space-y-2">
+                      <div className="space-y-2 pt-4">
                         {service.features.map((feature, featureIndex) => (
                           <div
                             key={featureIndex}
                             className="flex items-center space-x-3"
                           >
-                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                            <span className="text-foreground text-sm">
+                            <CheckCircle className="w-4 h-4 text-white flex-shrink-0" />
+                            <span className="text-white text-sm font-medium">
                               {feature}
                             </span>
                           </div>
                         ))}
                       </div>
-
-                      <div className="pt-4">
-                        <Link
-                          to="/contact"
-                          className="text-primary hover:text-primary-glow font-semibold inline-flex items-center transition-colors duration-200"
-                        >
-                          Request Quote <ArrowRight className="ml-1 w-4 h-4" />
-                        </Link>
-                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+
+                    {/* Hover indicator */}
+                    <div className="mt-6 flex items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                      <span>Learn More</span>
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
             ))}
           </div>
         </div>
@@ -238,40 +214,14 @@ const Services = () => {
       {/* Why Choose Us Section */}
       <section className="py-20 bg-gradient-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
-              Quality That Sets Us Apart
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Every service we provide is backed by our commitment to
-              excellence, professional expertise, and customer satisfaction.
-            </p>
-          </div>
-
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="card-service text-center">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Star className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold heading-caps text-foreground mb-4">
-                  Premium Materials
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  We use only the highest quality materials from trusted
-                  manufacturers to ensure long-lasting results that exceed
-                  industry standards.
-                </p>
-              </CardContent>
-            </Card>
-
             <Card className="card-service text-center">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold heading-caps text-foreground mb-4">
-                  Licensed & Insured
+                  Licensed and Insured
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Fully licensed contractors with comprehensive insurance
@@ -283,14 +233,29 @@ const Services = () => {
             <Card className="card-service text-center">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Building2 className="w-8 h-8 text-primary" />
+                  <Star className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold heading-caps text-foreground mb-4">
-                  Insurance Coordination
+                  Punctual and Professional Service
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We handle all insurance paperwork and work directly with your
-                  insurance company to streamline the claims process.
+                  We respect your time and property with on-time arrivals,
+                  courteous service, and meticulous attention to detail.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="card-service text-center">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Shield className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold heading-caps text-foreground mb-4">
+                  Quality Guaranteed
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Every service is backed by our commitment to excellence and
+                  customer satisfaction. We don't leave until you're happy.
                 </p>
               </CardContent>
             </Card>
@@ -320,7 +285,7 @@ const Services = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Link to="/gallery">
+            <Link to="/commercial-cleaning-utah">
               <Button
                 variant="outline"
                 size="lg"
