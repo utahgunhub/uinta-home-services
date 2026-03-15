@@ -35,7 +35,7 @@ const Index = () => {
         "Punctual, honest, and professional service",
       ],
       buttonText: "Reviews",
-      buttonLink: "/#reviews",
+      buttonLink: "#reviews",
       image: "/worker.png",
     },
     {
@@ -50,7 +50,7 @@ const Index = () => {
       ],
       buttonText: "View Our Services",
       buttonLink: "/services",
-      image: "/mountain-home.png",
+      image: "/images/gallery/TSA-Architects_Rocky-Mountain-Care-The-Lodge_Front-Entrance.jpg",
     },
     {
       icon: Users,
@@ -61,7 +61,7 @@ const Index = () => {
         "Bimonthly – save 25% on every cleaning",
       ],
       buttonText: "View Service Plans",
-      buttonLink: "/services",
+      buttonLink: "#plans",
       image: "/luxury-vehicle.png",
     },
   ];
@@ -157,7 +157,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
-              Why Choose PiNE Cleaning?
+              Why Choose PiNE Home Services?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We deliver exceptional service with expert craftsmanship to care
@@ -202,14 +202,25 @@ const Index = () => {
                         {feature.description}
                       </p>
                     )}
-                    <Link to={feature.buttonLink}>
-                      <Button
-                        size="sm"
-                        className="bg-primary text-white hover:bg-primary/90 transition-all duration-300"
-                      >
-                        {feature.buttonText}
-                      </Button>
-                    </Link>
+                    {feature.buttonLink.startsWith("#") ? (
+                      <a href={feature.buttonLink}>
+                        <Button
+                          size="sm"
+                          className="bg-primary text-white hover:bg-primary/90 transition-all duration-300"
+                        >
+                          {feature.buttonText}
+                        </Button>
+                      </a>
+                    ) : (
+                      <Link to={feature.buttonLink}>
+                        <Button
+                          size="sm"
+                          className="bg-primary text-white hover:bg-primary/90 transition-all duration-300"
+                        >
+                          {feature.buttonText}
+                        </Button>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -277,7 +288,7 @@ const Index = () => {
       </section>
 
       {/* Savings Plans Section */}
-      <section className="py-20 bg-gradient-subtle">
+      <section id="plans" className="py-20 bg-gradient-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
@@ -294,10 +305,10 @@ const Index = () => {
             {plans.map((plan) => (
               <Card
                 key={plan.name}
-                className={`flex flex-col h-full rounded-3xl border ${
+                className={`flex h-full flex-col rounded-3xl border border-primary transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl ${
                   plan.highlight
-                    ? "border-primary shadow-2xl bg-white"
-                    : "border-border bg-white/95"
+                    ? "bg-white shadow-2xl"
+                    : "bg-white/95 shadow-xl"
                 }`}
               >
                 <CardContent className="flex flex-col h-full p-8 space-y-6">
@@ -330,7 +341,7 @@ const Index = () => {
                         className={
                           plan.includesHardWater
                             ? "text-foreground"
-                            : "text-muted-foreground line-through"
+                            : "text-muted-foreground"
                         }
                       >
                         FREE Hard Water Removal
@@ -359,88 +370,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Quick Intro / Trust Section */}
-      <section className="py-20 bg-surface-secondary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-4xl font-bold heading-caps text-foreground">
-                Outstanding Service
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We combine expertise with the highest standards for customer
-                service. Promptness, punctuality, and professionalism are but a
-                few of the key tenets of our service model. When you enlist our
-                services, you'll experience nothing but our steadfast commitment
-                to you.
-              </p>
-
-
-
-              <div className="space-y-4">
-                {[
-                  "Free estimates and competitive pricing",
-                  "Clear and effective communication",
-                  "Promptness, punctuality, and professionalism",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="pt-6">
-                <Link to="/contact">
-                  <Button size="lg" className="btn-primary">
-                    Start Your Project Today
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6">
-              <div className="space-y-6">
-                <Card className="p-6 text-center bg-primary/5 border-primary/20">
-                  <div className="text-3xl font-bold text-primary">15+</div>
-                  <div className="text-muted-foreground">Years Experience</div>
-                </Card>
-                <Card className="p-6 text-center bg-primary/5 border-primary/20">
-                  <div className="text-3xl font-bold text-primary">500+</div>
-                  <div className="text-muted-foreground">
-                    Projects Completed
-                  </div>
-                </Card>
-              </div>
-              <div className="space-y-6 pt-8">
-                <Card className="p-6 text-center bg-primary/5 border-primary/20">
-                  <div className="text-3xl font-bold text-primary">200+</div>
-                  <div className="text-muted-foreground">Happy Customers</div>
-                </Card>
-                <Card className="p-6 text-center bg-primary/5 border-primary/20">
-                  <div className="text-3xl font-bold text-primary">100%</div>
-                  <div className="text-muted-foreground">Satisfaction Rate</div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Reviews & Instagram Feed Section */}
-      <section id="reviews" className="py-20 bg-surface">
+      <section id="reviews" className="pt-20 pb-8 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             {/* Reviews Section */}
             <div className="space-y-6">
               <div className="text-center lg:text-left">
                 <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
-                  What Our Customers Say
+                  See what our customers are saying
                 </h2>
-                <p className="text-lg text-muted-foreground mb-6">
-                  Real feedback from Utah homeowners who trust PiNE Cleaning
-                  with their homes and vehicles.
-                </p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
@@ -468,11 +407,6 @@ const Index = () => {
                     "Paid to have the windows, screens, and tracks cleaned—the
                     works. Very happy with the service. Owner and management are
                     top notch. My house was built in 2014."
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-auto">
-                    Positive: Responsiveness, Punctuality, Quality,
-                    Professionalism, Value • Services: Interior & exterior
-                    window cleaning
                   </p>
                 </Card>
 
@@ -504,10 +438,6 @@ const Index = () => {
                     windows. We will always go with PiNE. Their employees are
                     the best."
                   </p>
-                  <p className="text-xs text-muted-foreground mt-auto">
-                    Positive: Responsiveness, Punctuality, Quality,
-                    Professionalism, Value
-                  </p>
                 </Card>
 
                 {/* Review 3 - Marilyn */}
@@ -533,9 +463,6 @@ const Index = () => {
                   <p className="text-sm text-foreground mb-3 italic">
                     "Excellent service. On time, polite, clean-cut, friendly.
                     Thorough and exact. Best window washing ever."
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-auto">
-                    Services: Window washing
                   </p>
                 </Card>
               </div>

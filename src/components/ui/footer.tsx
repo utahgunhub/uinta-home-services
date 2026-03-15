@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Star, Phone, Mail, MapPin } from "lucide-react";
+import { Instagram, Star, Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -46,10 +46,41 @@ const Footer = () => {
     },
   ];
 
+  const serviceAreas = [
+    {
+      county: "Salt Lake County",
+      cities: [
+        "Salt Lake City",
+        "Sandy",
+        "Draper",
+        "South Jordan",
+        "West Jordan",
+        "Herriman",
+        "Riverton",
+      ],
+    },
+    {
+      county: "Utah County",
+      cities: ["Provo", "Orem", "Lehi", "American Fork", "Pleasant Grove"],
+    },
+    {
+      county: "Weber County",
+      cities: ["Ogden", "Roy", "South Ogden", "North Ogden"],
+    },
+    {
+      county: "Summit County",
+      cities: ["Park City", "Kamas", "Oakley"],
+    },
+    {
+      county: "Davis County",
+      cities: ["Layton", "Bountiful", "Kaysville", "Farmington"],
+    },
+  ];
+
   return (
     <footer className="bg-surface-secondary border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -60,30 +91,26 @@ const Footer = () => {
               />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Utah's trusted home service experts. From windows to gutters, we clean it all with
-              professional quality and exceptional customer service.
+              Local experts with an unwavering commitment to our clients.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-3">
               <a
-                href="https://facebook.com"
-                className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://instagram.com"
-                className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                href="https://www.instagram.com/uintawindow/?hl=en"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-4 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:bg-primary hover:text-primary-foreground"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="h-4 w-4" />
+                <span>Instagram</span>
               </a>
               <a
-                href="https://yelp.com"
-                className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                aria-label="Yelp Reviews"
+                href="/#reviews"
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-4 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:bg-primary hover:text-primary-foreground"
+                aria-label="Reviews"
               >
-                <Star className="w-5 h-5" />
+                <Star className="h-4 w-4" />
+                <span>Reviews</span>
               </a>
             </div>
           </div>
@@ -124,6 +151,28 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Service Areas */}
+          <div className="space-y-4">
+            <h3 className="text-foreground font-semibold heading-caps">
+              Proudly Serving
+            </h3>
+            <div className="space-y-2 text-sm">
+              {serviceAreas.map((area) => (
+                <details
+                  key={area.county}
+                  className="rounded-lg border border-border bg-background/60 px-3 py-2"
+                >
+                  <summary className="cursor-pointer font-medium text-foreground">
+                    {area.county}
+                  </summary>
+                  <p className="mt-2 text-muted-foreground leading-relaxed">
+                    {area.cities.join(", ")}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+
           {/* Contact Info */}
           <div className="space-y-4">
             <h3 className="text-foreground font-semibold heading-caps">Contact Us</h3>
@@ -146,10 +195,10 @@ const Footer = () => {
                 <div>
                   <span className="text-muted-foreground hover:text-foreground transition-colors">
                     <a
-                      href="mailto:marketing@uintawindowwashing.com"
+                      href="mailto:taylordwilliams11@gmail.com"
                       className="hover:underline"
                     >
-                      marketing@uintawindowwashing.com
+                      taylordwilliams11@gmail.com
                     </a>
                   </span>
                 </div>

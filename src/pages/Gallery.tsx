@@ -6,7 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import PageLayout from "@/components/layout/PageLayout";
+import PageHero from "@/components/PageHero";
 import { useToast } from "@/hooks/use-toast";
+import { sendQuoteRequest } from "@/lib/email";
 import {
   Send,
   Droplets,
@@ -16,43 +18,57 @@ import {
   Paintbrush,
   Home,
   Building2,
-  Car,
   Monitor,
   CheckCircle,
+  ArrowRight,
+  Phone,
+  X,
+  Star,
 } from "lucide-react";
 
 const Gallery = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     name: "",
     email: "",
     phone: "",
     company: "",
-    projectType: "",
+    services: [] as string[],
     message: "",
-  });
+  };
+  const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    try {
+      await sendQuoteRequest({
+        formType: "Commercial Quote",
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        services: formData.services,
+        message: formData.message,
+      });
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
       toast({
         title: "Quote Request Sent!",
         description: "We'll get back to you within 24 hours.",
       });
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        projectType: "",
-        message: "",
+
+      setFormData(initialFormData);
+    } catch (error) {
+      console.error("Failed to send commercial quote request:", error);
+      toast({
+        title: "Unable to send request",
+        description: "Please try again or call us directly at 801-520-7948.",
+        variant: "destructive",
       });
-    }, 1000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -66,12 +82,21 @@ const Gallery = () => {
     });
   };
 
+  const handleServiceChange = (service: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      services: prev.services.includes(service)
+        ? prev.services.filter((item) => item !== service)
+        : [...prev.services, service],
+    }));
+  };
+
   const services = [
     {
       id: "exterior-window-cleaning",
       icon: Droplets,
       title: "Exterior Window Cleaning",
-      bgImage: "/exterior-window-cleaning-card.png",
+      bgImage: "/images/gallery/exteior window cleaning.png",
     },
     {
       id: "interior-window-cleaning",
@@ -83,7 +108,7 @@ const Gallery = () => {
       id: "home-concrete-pressure-washing",
       icon: Paintbrush,
       title: "Exterior & Concrete Pressure Washing",
-      bgImage: "/pressure-washing-card.png",
+      bgImage: "/images/gallery/Abbington-Murray-38-REV2-scaled.jpg",
     },
     {
       id: "screen-repair-replacement",
@@ -104,12 +129,6 @@ const Gallery = () => {
       bgImage: "/gutter-cleaning-card.png",
     },
     {
-      id: "automotive-detailing",
-      icon: Car,
-      title: "Automotive Detailing",
-      bgImage: "/automotive-detailing-card.png",
-    },
-    {
       id: "solar-panel-cleaning",
       icon: Home,
       title: "Solar Panel Cleaning",
@@ -117,46 +136,61 @@ const Gallery = () => {
     },
   ];
 
-  const projectTypes = [
+  const serviceOptions = [
     "Window Cleaning",
+    "Screen Repair & Replacement",
     "Pressure Washing",
     "Gutter Cleaning",
     "Christmas Lights",
     "Solar Panel Cleaning",
-    "Multiple Services",
     "Other",
   ];
 
   const portfolioImages = [
     "/images/gallery/willow-springs-tooele-exterior-web-1-1024x576.jpg",
-    "/images/gallery/TSA-Architects_Rocky-Mountain-Care-The-Lodge_Front-Entrance.jpg",
-    "/images/gallery/exteior window cleaning.png",
-    "/images/gallery/building-outside-haven creek.jpg",
-    "/images/gallery/Abbington-Murray-38-REV2-scaled.jpg",
-    "/images/gallery/Abbington-Murray-36-REV1-scaled.jpg",
     "/images/gallery/abbington murray exterior.jpg",
+    "/images/gallery/Abbington-Murray-36-REV1-scaled.jpg",
+  ];
+
+  const plans = [
+    {
+      name: "Biannual",
+      saveText: "Save 10% on Every Cleaning",
+      highlight: false,
+      includesHardWater: false,
+    },
+    {
+      name: "Quarterly",
+      saveText: "Save 15% on Every Cleaning",
+      highlight: true,
+      includesHardWater: true,
+    },
+    {
+      name: "Bimonthly",
+      saveText: "Save 25% on Every Cleaning",
+      highlight: false,
+      includesHardWater: true,
+    },
   ];
 
   return (
     <PageLayout>
-      {/* Hero Section */}
-      <section className="bg-gradient-hero pt-28 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground mb-6">
-              <span className="text-primary text-glow">
-                Commercial Cleaning Services
-              </span>
+      <section className="bg-primary pt-28 pb-10 md:pt-32 md:pb-12">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl space-y-4">
+            <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+              Commercial Cleaning Services
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Professional cleaning solutions for businesses, office buildings, and commercial properties throughout Utah.
+            <p className="text-lg leading-relaxed text-white/85 md:text-xl">
+              Professional cleaning solutions for businesses, office buildings,
+              and commercial properties throughout Utah.
             </p>
           </div>
         </div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-16 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -259,26 +293,25 @@ const Gallery = () => {
               {/* Right Column - Project Info */}
               <div className="space-y-8">
                 <div className="space-y-3">
-                  <Label
-                    htmlFor="projectType"
-                    className="text-lg font-semibold text-foreground"
-                  >
-                    Service Needed
+                  <Label className="text-lg font-semibold text-foreground">
+                    Services Needed
                   </Label>
-                  <select
-                    id="projectType"
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleChange}
-                    className="w-full h-12 px-4 text-base border-2 border-input bg-background rounded-md focus:ring-primary focus:border-primary"
-                  >
-                    <option value="">Select a service</option>
-                    {projectTypes.map((type) => (
-                      <option key={type} value={type}>
-                        {type}
-                      </option>
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {serviceOptions.map((service) => (
+                      <label
+                        key={service}
+                        className="flex items-center space-x-3 rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={formData.services.includes(service)}
+                          onChange={() => handleServiceChange(service)}
+                          className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                        />
+                        <span>{service}</span>
+                      </label>
                     ))}
-                  </select>
+                  </div>
                 </div>
 
                 <div className="space-y-3">
@@ -325,7 +358,7 @@ const Gallery = () => {
       </section>
 
       {/* Our Approach Section */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-20 bg-surface-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold heading-caps text-foreground mb-6">
@@ -351,20 +384,20 @@ const Gallery = () => {
                   "Still doing it the right way to ensure a perfect finish.",
               },
               {
-                icon: Shield,
+                icon: Sparkles,
                 title: "Screen Cleaning",
                 description: "Included in every service.",
               },
               {
-                icon: Sparkles,
+                icon: Shield,
                 title: "RainShield Technology",
                 description:
                   "Our rain-shield coating ensures your windows stay spotless for longer.",
               },
-            ].map((item, index) => (
+            ].map((item) => (
               <Card
                 key={item.title}
-                className="group relative overflow-hidden rounded-3xl border-2 border-border/50 bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-primary/30"
+                className="group relative overflow-hidden rounded-3xl border-2 border-primary/20 bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-primary/30"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
@@ -395,36 +428,29 @@ const Gallery = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 bg-surface">
+      <section id="portfolio" className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold heading-caps text-foreground mb-6">
               Portfolio
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Commercial properties we've serviced throughout Utah.
+              Commercial Properties Serviced
             </p>
           </div>
 
-          {/* Scrolling Portfolio Grid */}
-          <div className="relative overflow-hidden">
-            <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+          <div className="grid gap-8 lg:grid-cols-3">
               {portfolioImages.map((image, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-96 snap-center group"
-                >
-                  <div className="relative overflow-hidden rounded-2xl shadow-xl transition-transform duration-300 group-hover:scale-105">
+                <div key={index} className="group">
+                  <div className="overflow-hidden rounded-3xl shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
                     <img
                       src={image}
                       alt={`Commercial property ${index + 1}`}
-                      className="w-full h-72 object-cover"
+                      className="h-80 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
+                  </div>
                 </div>
               ))}
-              </div>
           </div>
         </div>
       </section>
@@ -451,18 +477,25 @@ const Gallery = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
-            {services.map((service) => (
+          <div className="mb-12 grid gap-6 md:grid-cols-2 md:gap-8 xl:grid-cols-12">
+            {services.map((service, index) => (
               <Link
                 key={service.id}
                 to={`/services#${service.id}`}
-                className="group block h-full"
+                className={`group block h-full ${
+                  index < 4
+                    ? "xl:col-span-3"
+                    : index === 4
+                    ? "xl:col-span-3 xl:col-start-2"
+                    : "xl:col-span-3"
+                }`}
               >
                 <Card className="h-full flex flex-col bg-white border border-border rounded-2xl shadow-2xl overflow-hidden transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                   <CardContent className="flex flex-col h-full p-0">
-                    <div
-                      className="w-full aspect-[4/3] bg-cover bg-center"
-                      style={{ backgroundImage: `url(${service.bgImage})` }}
+                    <img
+                      src={service.bgImage}
+                      alt={service.title}
+                      className="w-full aspect-[4/3] object-cover"
                     />
                     <div className="flex-1 px-5 py-4 flex items-center space-x-3">
                       <service.icon className="w-7 h-7 text-primary flex-shrink-0" />
@@ -482,6 +515,185 @@ const Gallery = () => {
                 View All Services
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Cleaning Plans Section */}
+      <section className="py-20 bg-gradient-subtle">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
+              Cleaning Plans
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Lock in sparkling windows and a polished property with discounted
+              recurring service plans tailored to your commercial schedule.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {plans.map((plan) => (
+              <Card
+                key={plan.name}
+                className={`flex h-full flex-col rounded-3xl border border-primary transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl ${
+                  plan.highlight
+                    ? "bg-white shadow-2xl"
+                    : "bg-white/95 shadow-xl"
+                }`}
+              >
+                <CardContent className="flex h-full flex-col space-y-6 p-8">
+                  <div className="space-y-2 text-center">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                      {plan.name}
+                    </p>
+                    <p className="text-2xl font-bold text-foreground">
+                      {plan.saveText}
+                    </p>
+                    <p className="text-sm font-medium uppercase tracking-[0.25em] text-muted-foreground">
+                      Per Cleaning
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-4 w-4 flex-shrink-0 text-primary" />
+                      <span className="text-foreground">
+                        Free PiNE Rainguard Tech
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      {plan.includesHardWater ? (
+                        <CheckCircle className="h-4 w-4 flex-shrink-0 text-primary" />
+                      ) : (
+                        <X className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+                      )}
+                      <span
+                        className={
+                          plan.includesHardWater
+                            ? "text-foreground"
+                            : "text-muted-foreground"
+                        }
+                      >
+                        FREE Hard Water Removal
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="mt-auto pt-4">
+                    <Link to="/contact">
+                      <Button
+                        size="lg"
+                        className={`w-full text-base font-semibold ${
+                          plan.highlight
+                            ? "btn-primary"
+                            : "bg-primary/90 text-primary-foreground hover:bg-primary"
+                        }`}
+                      >
+                        Get Your Quote
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section id="reviews" className="pt-20 pb-8 bg-surface">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-12">
+            <div className="space-y-6">
+              <div className="text-center lg:text-left">
+                <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
+                  See what our customers are saying
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Nate Braack
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        Local Guide · 19 reviews · 14 photos
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "Paid to have the windows, screens, and tracks cleaned-the
+                    works. Very happy with the service. Owner and management are
+                    top notch. My house was built in 2014."
+                  </p>
+                </Card>
+
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Krista Woodward
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        Local Guide · 28 reviews · 2 photos
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "Connor and McKay were incredible young men. They were
+                    extremely friendly and courteous. We have nightmare windows
+                    with the panes on the outside and they never complained-just
+                    kept working with a smile and we have over thirty-six
+                    windows. We will always go with PiNE. Their employees are
+                    the best."
+                  </p>
+                </Card>
+
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Marilyn Watt
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        1 review
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "Excellent service. On time, polite, clean-cut, friendly.
+                    Thorough and exact. Best window washing ever."
+                  </p>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>

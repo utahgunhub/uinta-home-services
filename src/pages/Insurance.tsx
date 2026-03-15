@@ -12,6 +12,7 @@ import {
   Clock,
   Award
 } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 const Insurance = () => {
   const insuranceProviders = [
@@ -73,76 +74,31 @@ const Insurance = () => {
 
   return (
     <PageLayout>
-      {/* Hero Section */}
-      <section className="bg-gradient-hero py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground">
-                  <span className="text-primary text-glow">Insurance Help</span><br />
-                  Made Simple
-                </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  We handle the paperwork. You enjoy the results. Let our insurance 
-                  specialists coordinate with your provider for a seamless claims experience.
-                </p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact">
-                  <Button size="lg" className="btn-primary glow-primary text-lg px-8 py-4">
-                    Get Insurance Help
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-                <a href="tel:8015207948">
-                  <Button variant="outline" size="lg" className="btn-ghost text-lg px-8 py-4">
-                    <Phone className="mr-2 w-5 h-5" />
-                    Call Now
-                  </Button>
-                </a>
-              </div>
-            </div>
-            
-            <div className="lg:flex justify-center hidden">
-              <Card className="max-w-md p-8 bg-primary/5 border-primary/20">
-                <CardContent className="space-y-6 p-0">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                      <Shield className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-foreground">Fully Insured</h3>
-                      <p className="text-muted-foreground text-sm">Licensed & bonded contractors</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                      <FileText className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-foreground">Claims Expert</h3>
-                      <p className="text-muted-foreground text-sm">15+ years insurance experience</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                      <CheckCircle className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-foreground">Guaranteed Work</h3>
-                      <p className="text-muted-foreground text-sm">Quality guarantee on all projects</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title={
+          <>
+            <span className="text-primary">Insurance Help</span>
+            <br />
+            Made Simple
+          </>
+        }
+        description="We handle the paperwork while you enjoy the results. Let our insurance specialists coordinate with your provider for a seamless claims experience."
+        backgroundImage="/mountain-home.png"
+        align="left"
+      >
+        <Link to="/contact">
+          <Button size="lg" className="btn-primary glow-primary text-lg px-8 py-4">
+            Get Insurance Help
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </Link>
+        <a href="tel:8015207948">
+          <Button variant="outline" size="lg" className="border-white/40 bg-white/10 px-8 py-4 text-lg text-white hover:bg-white hover:text-black">
+            <Phone className="mr-2 w-5 h-5" />
+            Call Now
+          </Button>
+        </a>
+      </PageHero>
 
       {/* How It Works */}
       <section className="py-20 bg-surface">

@@ -3,26 +3,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import PageLayout from "@/components/layout/PageLayout";
 import {
-  Droplets,
-  Home,
-  Building2,
-  Zap,
-  RectangleHorizontal,
   ArrowRight,
   CheckCircle,
   Star,
-  Sparkles,
-  Car,
-  Monitor,
-  Gauge,
   Shield,
+  X,
+  Phone,
 } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 const Services = () => {
   const services = [
     {
       id: "exterior-window-cleaning",
-      icon: Droplets,
       title: "Exterior Window Cleaning",
       features: [
         "Residential Window Cleaning",
@@ -30,11 +23,10 @@ const Services = () => {
         "Hard Water Removal",
         "RainGuard Technology",
       ],
-      bgImage: "/exterior-window-cleaning-card.png",
+      bgImage: "/images/gallery/exteior window cleaning.png",
     },
     {
       id: "interior-window-cleaning",
-      icon: Droplets,
       title: "Interior Window Cleaning",
       features: [
         "Hand Detailed Cleaning",
@@ -45,7 +37,6 @@ const Services = () => {
     },
     {
       id: "home-concrete-pressure-washing",
-      icon: Zap,
       title: "Home & Concrete Pressure Washing",
       features: [
         "Residential Pressure Washing",
@@ -54,11 +45,10 @@ const Services = () => {
         "Driveway & Walkway Cleaning",
         "Deck & Patio Cleaning",
       ],
-      bgImage: "/pressure-washing-card.png",
+      bgImage: "/images/gallery/Abbington-Murray-36-REV1-scaled.jpg",
     },
     {
       id: "screen-repair-replacement",
-      icon: Monitor,
       title: "Screen Repair & Replacement",
       features: [
         "Window Screens",
@@ -71,7 +61,6 @@ const Services = () => {
     },
     {
       id: "christmas-light-installation",
-      icon: Sparkles,
       title: "Christmas Light Fitting & Installation",
       features: [
         "Annual Install & Removal",
@@ -83,7 +72,6 @@ const Services = () => {
     },
     {
       id: "gutter-cleaning",
-      icon: Gauge,
       title: "Gutter Cleaning",
       features: [
         "Residential Gutter Service",
@@ -95,7 +83,6 @@ const Services = () => {
     },
     {
       id: "automotive-detailing",
-      icon: Car,
       title: "Automotive Detailing",
       features: [
         "Leather Treatment & Conditioning",
@@ -108,7 +95,6 @@ const Services = () => {
     },
     {
       id: "solar-panel-cleaning",
-      icon: Home,
       title: "Solar Panel Cleaning",
       features: [
         "Residential Solar Panel Cleaning",
@@ -119,103 +105,195 @@ const Services = () => {
     },
   ];
 
+  const plans = [
+    {
+      name: "Biannual",
+      saveText: "Save 10% on Every Cleaning",
+      highlight: false,
+      includesHardWater: false,
+    },
+    {
+      name: "Quarterly",
+      saveText: "Save 15% on Every Cleaning",
+      highlight: true,
+      includesHardWater: true,
+    },
+    {
+      name: "Bimonthly",
+      saveText: "Save 25% on Every Cleaning",
+      highlight: false,
+      includesHardWater: true,
+    },
+  ];
+
   return (
     <PageLayout>
-      {/* Hero Section */}
-      <section className="bg-gradient-hero pt-28 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground mb-6">
-              <span className="text-primary text-glow">
-                One-Stop Shop for Home Cleaning Services
-              </span>
-            </h1>
-          </div>
-
-          <div className="flex justify-center">
-            <Link to="/contact">
-              <Button
-                size="lg"
-                className="btn-primary glow-primary text-lg px-8 py-4"
-              >
-                Get Your Quote
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title={<span className="text-white">One-Stop Shop for Home Cleaning Services</span>}
+        description="Professional exterior cleaning, detailing, and home care services built for Utah homes."
+        backgroundImage="/services-section-bg.png"
+        className="min-h-[220px] pt-28 pb-10 md:min-h-[260px] md:pt-32 md:pb-12"
+        titleClassName="mx-auto max-w-5xl text-3xl leading-tight sm:text-4xl lg:text-5xl"
+      >
+        <Link to="/contact">
+          <Button
+            size="lg"
+            className="btn-primary glow-primary px-6 py-3 text-base"
+          >
+            Get Your Quote
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </Link>
+      </PageHero>
 
       {/* Services Grid */}
       <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8">
             {services.map((service) => (
-              <a
+              <Card
                 key={service.id}
-                href={`#${service.id}`}
-                className="block group"
+                id={service.id}
+                className="group relative h-full overflow-hidden rounded-3xl border-0 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
               >
-                <Card
-                  id={service.id}
-                  className="card-service group overflow-hidden relative h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
-                >
-                  {/* Background Image with Overlay */}
-                  <div className="absolute inset-0">
-                    <img
-                      src={service.bgImage}
-                      alt={service.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+                <div className="absolute inset-0">
+                  <img
+                    src={service.bgImage}
+                    alt={service.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/85" />
+                </div>
+
+                <CardContent className="relative flex h-full flex-col p-8">
+                  <div className="flex-1 space-y-5">
+                    <h3 className="text-2xl font-bold heading-caps leading-tight text-white">
+                      {service.title}
+                    </h3>
+
+                    <div className="space-y-2 pt-2">
+                      {service.features.map((feature, featureIndex) => (
+                        <p
+                          key={featureIndex}
+                          className="text-sm font-medium text-white/90"
+                        >
+                          {feature}
+                        </p>
+                      ))}
+                    </div>
                   </div>
 
-                  <CardContent className="relative p-8 h-full flex flex-col">
-                    <div className="space-y-4 flex-1">
-                      <div className="flex items-center space-x-4">
-                        <div className="flex-shrink-0">
-                          <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300 border border-white/30">
-                            <service.icon className="w-8 h-8 text-white" />
-                          </div>
-                        </div>
-                        <h3 className="text-2xl font-bold heading-caps text-white leading-tight flex items-center flex-1">
-                          {service.title}
-                        </h3>
-                      </div>
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <Link to="/contact" className="flex-1">
+                      <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                        Get Your Quote
+                      </Button>
+                    </Link>
+                    <a href="tel:8015207948" className="flex-1">
+                      <Button
+                        variant="outline"
+                        className="w-full border-white/40 bg-white/10 text-white hover:bg-white hover:text-black"
+                      >
+                        <Phone className="mr-2 h-4 w-4" />
+                        Schedule Now
+                      </Button>
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                      <div className="space-y-2 pt-4">
-                        {service.features.map((feature, featureIndex) => (
-                          <div
-                            key={featureIndex}
-                            className="flex items-center space-x-3"
-                          >
-                            <CheckCircle className="w-4 h-4 text-white flex-shrink-0" />
-                            <span className="text-white text-sm font-medium">
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+      {/* Cleaning Plans Section */}
+      <section className="py-20 bg-gradient-subtle">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
+              Cleaning Plans
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Lock in sparkling windows and a spotless home with discounted
+              recurring service plans tailored to how often you like things
+              cleaned.
+            </p>
+          </div>
 
-                    {/* Hover indicator */}
-                    <div className="mt-6 flex items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                      <span>Learn More</span>
-                      <ArrowRight className="ml-2 w-4 h-4" />
+          <div className="grid gap-8 md:grid-cols-3">
+            {plans.map((plan) => (
+              <Card
+                key={plan.name}
+                className={`flex h-full flex-col rounded-3xl border border-primary transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl ${
+                  plan.highlight
+                    ? "bg-white shadow-2xl"
+                    : "bg-white/95 shadow-xl"
+                }`}
+              >
+                <CardContent className="flex h-full flex-col space-y-6 p-8">
+                  <div className="space-y-2 text-center">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                      {plan.name}
+                    </p>
+                    <p className="text-2xl font-bold text-foreground">
+                      {plan.saveText}
+                    </p>
+                    <p className="text-sm font-medium uppercase tracking-[0.25em] text-muted-foreground">
+                      Per Cleaning
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-4 w-4 flex-shrink-0 text-primary" />
+                      <span className="text-foreground">
+                        Free PiNE Rainguard Tech
+                      </span>
                     </div>
-                  </CardContent>
-                </Card>
-              </a>
+                    <div className="flex items-center space-x-3">
+                      {plan.includesHardWater ? (
+                        <CheckCircle className="h-4 w-4 flex-shrink-0 text-primary" />
+                      ) : (
+                        <X className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+                      )}
+                      <span
+                        className={
+                          plan.includesHardWater
+                            ? "text-foreground"
+                            : "text-muted-foreground"
+                        }
+                      >
+                        FREE Hard Water Removal
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="mt-auto pt-4">
+                    <Link to="/contact">
+                      <Button
+                        size="lg"
+                        className={`w-full text-base font-semibold ${
+                          plan.highlight
+                            ? "btn-primary"
+                            : "bg-primary/90 text-primary-foreground hover:bg-primary"
+                        }`}
+                      >
+                        Get Your Quote
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-20 bg-surface-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="card-service text-center">
+            <Card className="text-center border-primary/30 bg-white shadow-xl">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle className="w-8 h-8 text-primary" />
@@ -230,7 +308,7 @@ const Services = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-service text-center">
+            <Card className="text-center border-primary/30 bg-white shadow-xl">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Star className="w-8 h-8 text-primary" />
@@ -245,7 +323,7 @@ const Services = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-service text-center">
+            <Card className="text-center border-primary/30 bg-white shadow-xl">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Shield className="w-8 h-8 text-primary" />
@@ -285,7 +363,7 @@ const Services = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Link to="/commercial-cleaning-utah">
+            <Link to="/commercial-cleaning-utah#portfolio">
               <Button
                 variant="outline"
                 size="lg"

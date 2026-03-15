@@ -21,7 +21,6 @@ import {
   Car,
   Monitor,
   ArrowRight,
-  FileText,
   Star,
 } from "lucide-react";
 
@@ -114,44 +113,18 @@ const About = () => {
 
   return (
     <PageLayout>
-      {/* Hero Section */}
-      <section className="bg-gradient-hero pt-28 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl lg:text-6xl font-bold heading-caps text-foreground mb-6">
-              About{" "}
-              <span className="text-primary text-glow">
-                Us
-              </span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Local experts with an unwavering commitment to our clients.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <a href="tel:8015207948">
-                <Button
-                  size="lg"
-                  className="btn-primary glow-primary text-lg px-8 py-4 inline-flex items-center"
-                >
-                  <Phone className="mr-2 w-5 h-5" />
-                  Call
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Our Story Section */}
-      <section className="py-20 bg-surface">
+      <section className="bg-surface pt-36 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
             <div className="relative">
-              <img
-                src="/team-photo.png"
-                alt="PiNE Cleaning team"
-                className="rounded-2xl shadow-2xl w-full object-cover"
-              />
+              <div className="rounded-3xl bg-white/80 p-4 shadow-2xl">
+                <img
+                  src="/team-photo.png"
+                  alt="PiNE Cleaning team"
+                  className="w-full max-h-[640px] rounded-2xl object-contain object-center"
+                />
+              </div>
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold heading-caps text-foreground">
@@ -161,8 +134,8 @@ const About = () => {
                 Founded in Salt Lake City, PiNE Home Services has been delivering
                 5-star service to Utah families and businesses for more than 7
                 years. While we started as a window cleaning company, after more
-                than 100,000 windows cleaned we've grown into a one-stop home and
-                commercial cleaning service provider. Our licensed and insured
+                than 100,000 windows cleaned we've grown into a one-stop shop
+                for home and commercial cleaning. Our licensed and insured
                 technicians are experts at their craft and pride themselves on
                 being on time, providing excellent service, and brightening your
                 home.
@@ -218,24 +191,24 @@ const About = () => {
                 description:
                   "Still doing it the right way to ensure a perfect finish.",
                 details:
-                  "No shortcuts. Every window is carefully hand-washed using professional-grade tools and solutions. This traditional method guarantees streak-free, crystal-clear results that automated systems simply can't match.",
+                  "No shortcuts. Every window is carefully hand-washed using professional-grade tools and solutions. This traditional method guarantees streak-free, crystal-clear results that can't be matched.",
               },
               {
-                icon: Shield,
+                icon: Sparkles,
                 title: "Screen Cleaning",
                 description: "Included in every service.",
                 details:
                   "We don't skip the screens. Each screen is removed, gently cleaned to remove dirt and debris, and reinstalled—all included at no extra charge. It's part of our commitment to complete window care.",
               },
               {
-                icon: Sparkles,
+                icon: Shield,
                 title: "RainShield Technology",
                 description:
                   "Our rain-shield coating ensures your windows stay spotless for longer.",
                 details:
-                  "Our advanced hydrophobic coating causes water to bead and roll off your windows, taking dirt and debris with it. Enjoy cleaner windows for longer between services and better visibility even in rain.",
+                  "An advanced hydrophobic coating applied to your exterior windows works to bead water off your windows, taking dirt and debris with it. Enjoy cleaner windows for longer between services.",
               },
-            ].map((item, index) => (
+            ].map((item) => (
               <Card
                 key={item.title}
                 className="group relative overflow-hidden rounded-3xl border-2 border-border/50 bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-primary/30"
@@ -311,8 +284,8 @@ const About = () => {
                     <div className="flex-1 px-5 py-4 flex items-center space-x-3">
                       <service.icon className="w-7 h-7 text-primary flex-shrink-0" />
                       <h3 className="text-sm md:text-base font-bold heading-caps text-foreground leading-snug">
-                        {service.title}
-                      </h3>
+                      {service.title}
+                    </h3>
                     </div>
                   </CardContent>
                 </Card>
@@ -334,15 +307,9 @@ const About = () => {
       <section className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
-              <FileText className="w-8 h-8 text-primary" />
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold heading-caps text-foreground mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to know about our services. Can't find the answer you're looking for? Reach out to our team.
-            </p>
           </div>
 
           <Card className="border-2 border-border/50 shadow-xl rounded-3xl overflow-hidden">
@@ -414,113 +381,98 @@ const About = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-20 bg-gradient-subtle">
+      <section id="reviews" className="pt-20 pb-8 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
-              See What Our Customers Are Saying
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Real feedback from Utah homeowners who trust PiNE Cleaning
-              with their homes and vehicles.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Review 1 - Nate */}
-            <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
-              <div className="flex items-center justify-between mb-2">
-                <div>
-                  <p className="font-semibold text-foreground">
-                    Nate Braack
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Local Guide · 19 reviews · 14 photos
-                  </p>
-                </div>
-                <div className="flex items-center space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-primary text-primary"
-                    />
-                  ))}
-                </div>
+          <div className="space-y-12">
+            <div className="space-y-6">
+              <div className="text-center lg:text-left">
+                <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
+                  See what our customers are saying
+                </h2>
               </div>
-              <p className="text-sm text-foreground mb-3 italic">
-                "Paid to have the windows, screens, and tracks cleaned—the
-                works. Very happy with the service. Owner and management are
-                top notch. My house was built in 2014."
-              </p>
-              <p className="text-xs text-muted-foreground mt-auto">
-                Positive: Responsiveness, Punctuality, Quality,
-                Professionalism, Value • Services: Interior & exterior
-                window cleaning
-              </p>
-            </Card>
 
-            {/* Review 2 - Krista */}
-            <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
-              <div className="flex items-center justify-between mb-2">
-                <div>
-                  <p className="font-semibold text-foreground">
-                    Krista Woodward
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Nate Braack
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        Local Guide · 19 reviews · 14 photos
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "Paid to have the windows, screens, and tracks cleaned—the
+                    works. Very happy with the service. Owner and management are
+                    top notch. My house was built in 2014."
                   </p>
-                  <p className="text-xs text-muted-foreground">
-                    Local Guide · 28 reviews · 2 photos
-                  </p>
-                </div>
-                <div className="flex items-center space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-primary text-primary"
-                    />
-                  ))}
-                </div>
-              </div>
-              <p className="text-sm text-foreground mb-3 italic">
-                "Connor and McKay were incredible young men. They were
-                extremely friendly and courteous. We have nightmare windows
-                with the panes on the outside and they never complained—just
-                kept working with a smile and we have over thirty-six
-                windows. We will always go with PiNE. Their employees are
-                the best."
-              </p>
-              <p className="text-xs text-muted-foreground mt-auto">
-                Positive: Responsiveness, Punctuality, Quality,
-                Professionalism, Value
-              </p>
-            </Card>
+                </Card>
 
-            {/* Review 3 - Marilyn */}
-            <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
-              <div className="flex items-center justify-between mb-2">
-                <div>
-                  <p className="font-semibold text-foreground">
-                    Marilyn Watt
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Krista Woodward
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        Local Guide · 28 reviews · 2 photos
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "Connor and McKay were incredible young men. They were
+                    extremely friendly and courteous. We have nightmare windows
+                    with the panes on the outside and they never complained—just
+                    kept working with a smile and we have over thirty-six
+                    windows. We will always go with PiNE. Their employees are
+                    the best."
                   </p>
-                  <p className="text-xs text-muted-foreground">
-                    1 review
+                </Card>
+
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Marilyn Watt
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        1 review
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "Excellent service. On time, polite, clean-cut, friendly.
+                    Thorough and exact. Best window washing ever."
                   </p>
-                </div>
-                <div className="flex items-center space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-primary text-primary"
-                    />
-                  ))}
-                </div>
+                </Card>
               </div>
-              <p className="text-sm text-foreground mb-3 italic">
-                "Excellent service. On time, polite, clean-cut, friendly.
-                Thorough and exact. Best window washing ever."
-              </p>
-              <p className="text-xs text-muted-foreground mt-auto">
-                Services: Window washing
-              </p>
-            </Card>
+            </div>
           </div>
         </div>
       </section>

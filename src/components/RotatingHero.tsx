@@ -2,14 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star } from "lucide-react";
-import heroImage from "@/assets/hero-coating.jpg";
 
-// Hero background images
-const concreteWaterproofingImage =
-  "/images/hero-images/concrete-waterproofing.png";
-const epoxyFloorImage = "/images/hero-images/epoxy-floor.png";
 const housePaintingImage = "/images/hero-images/house-painting.png";
-const insulationImage = "/images/hero-images/insulation.png";
 const windowCleaningImage = "/images/hero-images/window-cleaning.png";
 const powerWashingImage = "/images/hero-images/power-washing.png";
 const gutterCleaningImage = "/images/hero-images/gutter-cleaning.png";
@@ -19,8 +13,6 @@ interface HeroSlide {
   id: number;
   image: string;
   title: string;
-  subtitle: string;
-  description: string;
   ctaText: string;
   ctaLink: string;
   secondaryCtaText: string;
@@ -36,61 +28,46 @@ const RotatingHero = () => {
       id: 1,
       image: housePaintingImage,
       title: "PiNE Cleaning",
-      subtitle: "",
-      description:
-        "Utah's premier home maintenance and cleaning specialists. From residential to commercial, we deliver professional quality with exceptional service.",
       ctaText: "Get Your Quote",
       ctaLink: "/contact",
       secondaryCtaText: "View Our Work",
-      secondaryCtaLink: "/commercial-cleaning-utah",
+      secondaryCtaLink: "/commercial-cleaning-utah#portfolio",
     },
     {
       id: 2,
       image: windowCleaningImage,
       title: "Window Cleaning",
-      subtitle: "",
-      description:
-        "Crystal clear windows with our professional cleaning service. We handle residential and commercial properties with care and attention to detail.",
-      ctaText: "Learn More",
-      ctaLink: "/services",
-      secondaryCtaText: "Get Estimate",
-      secondaryCtaLink: "/contact",
+      ctaText: "Get Your Quote",
+      ctaLink: "/contact",
+      secondaryCtaText: "View Our Work",
+      secondaryCtaLink: "/commercial-cleaning-utah#portfolio",
     },
     {
       id: 3,
       image: powerWashingImage,
       title: "Power Washing",
-      subtitle: "",
-      description:
-        "Revitalize your property's exterior with our professional power washing services. We clean driveways, walkways, decks, siding, and more, removing dirt, grime, and mildew to restore beauty and prevent damage.",
-      ctaText: "View Gallery",
-      ctaLink: "/commercial-cleaning-utah",
-      secondaryCtaText: "Get Quote",
-      secondaryCtaLink: "/contact",
+      ctaText: "Get Your Quote",
+      ctaLink: "/contact",
+      secondaryCtaText: "View Our Work",
+      secondaryCtaLink: "/commercial-cleaning-utah#portfolio",
     },
     {
       id: 4,
       image: gutterCleaningImage,
       title: "Gutter Cleaning",
-      subtitle: "",
-      description:
-        "Keep your gutters flowing freely with our professional cleaning service. We remove debris, leaves, and buildup to prevent water damage, foundation issues, and pest infestations, maintaining your home's integrity and value.",
-      ctaText: "Learn More",
-      ctaLink: "/services",
-      secondaryCtaText: "Contact Us",
-      secondaryCtaLink: "/contact",
+      ctaText: "Get Your Quote",
+      ctaLink: "/contact",
+      secondaryCtaText: "View Our Work",
+      secondaryCtaLink: "/commercial-cleaning-utah#portfolio",
     },
     {
       id: 5,
       image: carDetailImage,
       title: "Car Detailing",
-      subtitle: "",
-      description:
-        "Restore your vehicle's shine with our professional car detailing service. We provide thorough interior and exterior cleaning, polishing, and protection for a showroom finish that lasts and protects your investment.",
-      ctaText: "View Gallery",
-      ctaLink: "/commercial-cleaning-utah",
-      secondaryCtaText: "Get Estimate",
-      secondaryCtaLink: "/contact",
+      ctaText: "Get Your Quote",
+      ctaLink: "/contact",
+      secondaryCtaText: "View Our Work",
+      secondaryCtaLink: "/commercial-cleaning-utah#portfolio",
     },
   ];
 
@@ -120,7 +97,7 @@ const RotatingHero = () => {
   };
 
   return (
-    <section className="relative h-[calc(100vh-4rem)] overflow-hidden">
+    <section className="relative h-screen overflow-hidden">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -133,7 +110,7 @@ const RotatingHero = () => {
           <div className="absolute inset-0">
             <img
               src={slide.image}
-              alt={`${slide.title} ${slide.subtitle}`}
+              alt={slide.title}
               className={`w-full h-full object-cover transition-all duration-1000 ${
                 index === 0
                   ? "brightness-90"
@@ -147,6 +124,7 @@ const RotatingHero = () => {
               }`}
               loading={index === 0 ? "eager" : "lazy"}
             />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,14,8,0.62)_0%,rgba(7,14,8,0.18)_28%,rgba(7,14,8,0.52)_100%)]" />
           </div>
 
           {/* Content */}
@@ -155,14 +133,8 @@ const RotatingHero = () => {
               <div className="bg-black/60 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-white/20 shadow-2xl space-y-8 animate-fade-in">
                 <div className="space-y-4">
                   <h1 className="text-5xl lg:text-7xl font-bold heading-caps animate-fade-in">
-                    {slide.title}{" "}
-                    <span className="text-primary text-glow">
-                      {slide.subtitle}
-                    </span>
+                    {slide.title}
                   </h1>
-                  <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto animate-fade-in">
-                    {slide.description}
-                  </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
@@ -198,7 +170,7 @@ const RotatingHero = () => {
                       ))}
                     </div>
                     <span className="text-gray-200">
-                      Rated 5/5 by 200+ satisfied customers
+                      Rated 5/5 after 8 years in business.
                     </span>
                   </div>
                 )}

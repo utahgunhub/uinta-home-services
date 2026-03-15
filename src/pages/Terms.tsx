@@ -1,22 +1,23 @@
 import PageLayout from "@/components/layout/PageLayout";
+import PageHero from "@/components/PageHero";
 import { Link } from "react-router-dom";
 
 const Terms = () => {
   return (
     <PageLayout>
+      <PageHero
+        title={
+          <>
+            Terms of <span className="text-primary">Service</span>
+          </>
+        }
+        description="The basic conditions for using the website and requesting services from PiNE Cleaning."
+        backgroundImage="/mountain-home.png"
+      />
+
       <section className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="text-center space-y-4">
-            <h1 className="text-4xl font-bold heading-caps text-foreground">
-              Terms of Service
-            </h1>
-            <p className="text-muted-foreground">
-              These terms outline the basic conditions for using the Uinta Home
-              Services website and requesting our services.
-            </p>
-          </div>
-
-          <div className="space-y-6 text-muted-foreground">
+          <div className="space-y-6 rounded-3xl border border-border bg-white p-8 text-muted-foreground shadow-xl">
             <p>
               By using this site or submitting a contact form, you agree that we may
               contact you about your project by phone or email. Estimates are based
