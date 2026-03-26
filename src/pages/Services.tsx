@@ -23,7 +23,7 @@ const Services = () => {
         "Hard Water Removal",
         "RainGuard Technology",
       ],
-      bgImage: "/images/gallery/exteior window cleaning.png",
+      bgImage: "/new-images/11 - exteior window cleaning.webp",
     },
     {
       id: "interior-window-cleaning",
@@ -33,7 +33,7 @@ const Services = () => {
         "Screen Cleaning",
         "Window Track Detailing",
       ],
-      bgImage: "/interior-window-cleaning-card.png",
+      bgImage: "/new-images/3 - interior window washing.webp",
     },
     {
       id: "home-concrete-pressure-washing",
@@ -68,7 +68,7 @@ const Services = () => {
         "Permanent Home Lights",
         "Custom Color Patterns",
       ],
-      bgImage: "/christmas-lights-card.png",
+      bgImage: "/new-images/2 - christmas lights.webp",
     },
     {
       id: "gutter-cleaning",
@@ -79,7 +79,7 @@ const Services = () => {
         "Downspout Cleaning",
         "Dirt & Gravel Removal",
       ],
-      bgImage: "/gutter-cleaning-card.png",
+      bgImage: "/new-images/7 - gutter.webp",
     },
     {
       id: "automotive-detailing",
@@ -91,7 +91,7 @@ const Services = () => {
         "Under Carriage Detailing",
         "Ceramic Coating",
       ],
-      bgImage: "/automotive-detailing-card.png",
+      bgImage: "/new-images/13 - car detailing.webp",
     },
     {
       id: "solar-panel-cleaning",
@@ -101,7 +101,7 @@ const Services = () => {
         "Commercial Solar Panel Cleaning",
         "RainGuard Technology",
       ],
-      bgImage: "/solar-panel-card.png",
+      bgImage: "/new-images/9 - solar.webp",
     },
   ];
 
@@ -131,7 +131,7 @@ const Services = () => {
       <PageHero
         title={<span className="text-white">One-Stop Shop for Home Cleaning Services</span>}
         description="Professional exterior cleaning, detailing, and home care services built for Utah homes."
-        backgroundImage="/services-section-bg.png"
+        backgroundImage="/new-images/8 - pine trees.webp"
         className="min-h-[220px] pt-28 pb-10 md:min-h-[260px] md:pt-32 md:pb-12"
         titleClassName="mx-auto max-w-5xl text-3xl leading-tight sm:text-4xl lg:text-5xl"
       >

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star } from "lucide-react";
 
-const housePaintingImage = "/images/hero-images/house-painting.png";
-const windowCleaningImage = "/images/hero-images/window-cleaning.png";
-const powerWashingImage = "/images/hero-images/power-washing.png";
+const pineCleaningImage = "/new-images/4 - suds.webp";
+const windowCleaningImage = "/new-images/12 - RMC.webp";
+const christmasLightsImage = "/new-images/2 - christmas lights.webp";
 const gutterCleaningImage = "/images/hero-images/gutter-cleaning.png";
-const carDetailImage = "/images/hero-images/car-detail.png";
+const carDetailImage = "/new-images/13 - car detailing.webp";
 
 interface HeroSlide {
   id: number;
@@ -26,7 +26,7 @@ const RotatingHero = () => {
   const slides: HeroSlide[] = [
     {
       id: 1,
-      image: housePaintingImage,
+      image: pineCleaningImage,
       title: "PiNE Cleaning",
       ctaText: "Get Your Quote",
       ctaLink: "/contact",
@@ -44,8 +44,8 @@ const RotatingHero = () => {
     },
     {
       id: 3,
-      image: powerWashingImage,
-      title: "Power Washing",
+      image: christmasLightsImage,
+      title: "Christmas Light Fitting and Installation",
       ctaText: "Get Your Quote",
       ctaLink: "/contact",
       secondaryCtaText: "View Our Work",
@@ -229,7 +229,7 @@ const RotatingHero = () => {
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? "bg-primary scale-125"
+                ? "bg-white scale-125"
                 : "bg-white/50 hover:bg-white/75"
             }`}
             aria-label={`Go to slide ${index + 1}`}

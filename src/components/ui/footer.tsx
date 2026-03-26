@@ -78,19 +78,29 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-surface-secondary border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="relative overflow-hidden border-t border-white/10">
+      <div className="absolute inset-0">
+        <img
+          src="/new-images/8 - pine trees.webp"
+          alt=""
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,16,10,0.9)_0%,rgba(10,22,13,0.86)_45%,rgba(9,18,12,0.94)_100%)]" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img
-                src="/nav-logo.png"
+                src="/white-nav-logo.png"
                 alt="Pine Cleaning logo"
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-sm leading-relaxed text-white/80">
               Local experts with an unwavering commitment to our clients.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -98,7 +108,7 @@ const Footer = () => {
                 href="https://www.instagram.com/uintawindow/?hl=en"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-4 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:bg-primary hover:text-primary-foreground"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-white hover:text-primary"
                 aria-label="Instagram"
               >
                 <Instagram className="h-4 w-4" />
@@ -106,7 +116,7 @@ const Footer = () => {
               </a>
               <a
                 href="/#reviews"
-                className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-4 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:bg-primary hover:text-primary-foreground"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-white hover:text-primary"
                 aria-label="Reviews"
               >
                 <Star className="h-4 w-4" />
@@ -117,7 +127,7 @@ const Footer = () => {
 
           {/* Company */}
           <div className="space-y-4">
-            <h3 className="text-foreground font-semibold heading-caps">
+            <h3 className="font-semibold heading-caps text-white">
               Company
             </h3>
             <ul className="space-y-2">
@@ -125,7 +135,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm"
+                    className="text-sm text-white/80 transition-colors duration-200 hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -136,13 +146,13 @@ const Footer = () => {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-foreground font-semibold heading-caps">Our Services</h3>
+            <h3 className="font-semibold heading-caps text-white">Our Services</h3>
             <ul className="space-y-2">
               {serviceLinks.map((service) => (
                 <li key={service.href}>
                   <Link
                     to={service.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm"
+                    className="text-sm text-white/80 transition-colors duration-200 hover:text-white"
                   >
                     {service.label}
                   </Link>
@@ -153,19 +163,19 @@ const Footer = () => {
 
           {/* Service Areas */}
           <div className="space-y-4">
-            <h3 className="text-foreground font-semibold heading-caps">
+            <h3 className="font-semibold heading-caps text-white">
               Proudly Serving
             </h3>
             <div className="space-y-2 text-sm">
               {serviceAreas.map((area) => (
                 <details
                   key={area.county}
-                  className="rounded-lg border border-border bg-background/60 px-3 py-2"
+                  className="rounded-lg border border-white/15 bg-white/10 px-3 py-2"
                 >
-                  <summary className="cursor-pointer font-medium text-foreground">
+                  <summary className="cursor-pointer font-medium text-white">
                     {area.county}
                   </summary>
-                  <p className="mt-2 text-muted-foreground leading-relaxed">
+                  <p className="mt-2 leading-relaxed text-white/75">
                     {area.cities.join(", ")}
                   </p>
                 </details>
@@ -175,12 +185,12 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-foreground font-semibold heading-caps">Contact Us</h3>
+            <h3 className="font-semibold heading-caps text-white">Contact Us</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-white" />
                 <div>
-                  <span className="text-muted-foreground hover:text-foreground transition-colors">
+                  <span className="text-white/80 transition-colors hover:text-white">
                     <a
                       href="tel:8015207948"
                       className="hover:underline"
@@ -191,9 +201,9 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-white" />
                 <div>
-                  <span className="text-muted-foreground hover:text-foreground transition-colors">
+                  <span className="text-white/80 transition-colors hover:text-white">
                     <a
                       href="mailto:taylordwilliams11@gmail.com"
                       className="hover:underline"
@@ -204,9 +214,9 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-white" />
                 <div>
-                  <span className="text-muted-foreground text-sm">
+                  <span className="text-sm text-white/80">
                     Serving all of Utah
                   </span>
                 </div>
@@ -216,22 +226,22 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-8 pt-8 border-t border-border">
+        <div className="mt-8 border-t border-white/15 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-muted-foreground text-sm">
+            <div className="text-sm text-white/70">
               <div>© {currentYear} PiNE Cleaning. All rights reserved.</div>
               <div className="mt-1">License Number: 11258030-0160</div>
             </div>
             <div className="flex space-x-6 text-sm">
               <Link
                 to="/privacy"
-                className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="text-white/80 transition-colors duration-200 hover:text-white"
               >
                 Privacy Policy
               </Link>
               <Link
                 to="/terms"
-                className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="text-white/80 transition-colors duration-200 hover:text-white"
               >
                 Terms of Service
               </Link>

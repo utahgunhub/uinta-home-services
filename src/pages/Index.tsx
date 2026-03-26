@@ -9,16 +9,7 @@ import {
   Users,
   CheckCircle,
   Star,
-  ArrowRight,
-  Palette,
-  Home,
-  Building2,
   Phone,
-  Paintbrush,
-  Droplets,
-  Sparkles,
-  Car,
-  Monitor,
   X,
 } from "lucide-react";
 
@@ -36,7 +27,7 @@ const Index = () => {
       ],
       buttonText: "Reviews",
       buttonLink: "#reviews",
-      image: "/worker.png",
+      image: "/new-images/11 - exteior window cleaning.webp",
     },
     {
       icon: Award,
@@ -62,58 +53,50 @@ const Index = () => {
       ],
       buttonText: "View Service Plans",
       buttonLink: "#plans",
-      image: "/luxury-vehicle.png",
+      image: "/new-images/6 - cabin overhead.webp",
     },
   ];
 
   const services = [
     {
       id: "exterior-window-cleaning",
-      icon: Droplets,
       title: "Exterior Window Cleaning",
-      bgImage: "/exterior-window-cleaning-card.png",
+      bgImage: "/new-images/11 - exteior window cleaning.webp",
     },
     {
       id: "interior-window-cleaning",
-      icon: Droplets,
       title: "Interior Window Cleaning",
-      bgImage: "/interior-window-cleaning-card.png",
+      bgImage: "/new-images/3 - interior window washing.webp",
     },
     {
       id: "home-concrete-pressure-washing",
-      icon: Paintbrush,
       title: "Home & Concrete Pressure Washing",
       bgImage: "/pressure-washing-card.png",
     },
     {
       id: "screen-repair-replacement",
-      icon: Monitor,
       title: "Screen Repair & Replacement",
       bgImage: "/window-screen-replacing-card.png",
     },
     {
       id: "christmas-light-installation",
-      icon: Sparkles,
       title: "Christmas Light Fitting & Installation",
-      bgImage: "/christmas-lights-card.png",
+      bgImage: "/new-images/2 - christmas lights.webp",
     },
     {
       id: "gutter-cleaning",
-      icon: Building2,
       title: "Gutter Cleaning",
-      bgImage: "/gutter-cleaning-card.png",
+      bgImage: "/new-images/7 - gutter.webp",
     },
     {
       id: "automotive-detailing",
-      icon: Car,
       title: "Automotive Detailing",
-      bgImage: "/automotive-detailing-card.png",
+      bgImage: "/new-images/13 - car detailing.webp",
     },
     {
       id: "solar-panel-cleaning",
-      icon: Home,
       title: "Solar Panel Cleaning",
-      bgImage: "/solar-panel-card.png",
+      bgImage: "/new-images/9 - solar.webp",
     },
   ];
 
@@ -234,7 +217,7 @@ const Index = () => {
         {/* Background image with gaussian-style overlay similar to hero cards */}
         <div className="absolute inset-0">
           <img
-            src="/services-section-bg.png"
+            src="/new-images/8 - pine trees.webp"
             alt="PiNE Cleaning core services background"
             className="w-full h-full object-cover"
           />
@@ -259,15 +242,16 @@ const Index = () => {
                 to={`/services#${service.id}`}
                 className="group block h-full"
               >
-                <Card className="h-full flex flex-col bg-white border border-border rounded-2xl shadow-2xl overflow-hidden transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
-                  <CardContent className="flex flex-col h-full p-0">
-                    <div
-                      className="w-full aspect-[4/3] bg-cover bg-center"
-                      style={{ backgroundImage: `url(${service.bgImage})` }}
+                <Card className="h-full overflow-hidden rounded-2xl border border-white/80 shadow-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                  <CardContent className="relative flex h-full min-h-[280px] items-end p-0">
+                    <img
+                      src={service.bgImage}
+                      alt={service.title}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="flex-1 px-5 py-4 flex items-center space-x-3">
-                      <service.icon className="w-7 h-7 text-primary flex-shrink-0" />
-                      <h3 className="text-sm md:text-base font-bold heading-caps text-foreground leading-snug">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                    <div className="relative w-full p-5">
+                      <h3 className="text-sm font-bold leading-snug text-white md:text-base">
                         {service.title}
                       </h3>
                     </div>

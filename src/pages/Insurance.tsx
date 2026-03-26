@@ -83,7 +83,7 @@ const Insurance = () => {
           </>
         }
         description="We handle the paperwork while you enjoy the results. Let our insurance specialists coordinate with your provider for a seamless claims experience."
-        backgroundImage="/mountain-home.png"
+        backgroundImage="/new-images/8 - pine trees.webp"
         align="left"
       >
         <Link to="/contact">

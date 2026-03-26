@@ -169,8 +169,17 @@ const Contact = () => {
 
   return (
     <PageLayout>
-      <section className="bg-primary pt-28 pb-10 md:pt-32 md:pb-12">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <section className="relative min-h-[280px] overflow-hidden pt-32 pb-16 md:min-h-[340px] md:pt-40 md:pb-20">
+        <div className="absolute inset-0">
+          <img
+            src="/new-images/8 - pine trees.webp"
+            alt=""
+            className="h-full w-full object-cover"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,18,12,0.68)_0%,rgba(17,32,20,0.58)_35%,rgba(17,32,20,0.72)_100%)]" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl space-y-4">
             <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
               Get Your Quote

@@ -12,7 +12,7 @@ const Privacy = () => {
           </>
         }
         description="How PiNE Cleaning collects, uses, and protects the information you share with us."
-        backgroundImage="/contact-bg.png"
+        backgroundImage="/new-images/8 - pine trees.webp"
       />
 
       <section className="py-20 bg-surface">

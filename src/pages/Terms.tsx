@@ -12,7 +12,7 @@ const Terms = () => {
           </>
         }
         description="The basic conditions for using the website and requesting services from PiNE Cleaning."
-        backgroundImage="/mountain-home.png"
+        backgroundImage="/new-images/8 - pine trees.webp"
       />
 
       <section className="py-20 bg-surface">
