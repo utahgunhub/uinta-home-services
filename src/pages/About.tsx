@@ -30,18 +30,18 @@ const About = () => {
       id: "exterior-window-cleaning",
       icon: Droplets,
       title: "Exterior Window Cleaning",
-      bgImage: "/exterior-window-cleaning-card.png",
+      bgImage: "/new-images/11 - exteior window cleaning.webp",
     },
     {
       id: "interior-window-cleaning",
       icon: Droplets,
       title: "Interior Window Cleaning",
-      bgImage: "/interior-window-cleaning-card.png",
+      bgImage: "/new-images/3 - interior window washing.webp",
     },
     {
       id: "home-concrete-pressure-washing",
       icon: Paintbrush,
-      title: "Home & Concrete Pressure Washing",
+      title: "Building & Concrete Pressure Washing",
       bgImage: "/pressure-washing-card.png",
     },
     {
@@ -54,25 +54,25 @@ const About = () => {
       id: "christmas-light-installation",
       icon: Sparkles,
       title: "Christmas Light Fitting & Installation",
-      bgImage: "/christmas-lights-card.png",
+      bgImage: "/new-images/2 - christmas lights.webp",
     },
     {
       id: "gutter-cleaning",
       icon: Building2,
       title: "Gutter Cleaning",
-      bgImage: "/gutter-cleaning-card.png",
+      bgImage: "/new-images/7 - gutter.webp",
     },
     {
       id: "automotive-detailing",
       icon: Car,
-      title: "Automotive Detailing",
-      bgImage: "/automotive-detailing-card.png",
+      title: "Auto Detailing",
+      bgImage: "/new-images/13 - car detailing.webp",
     },
     {
       id: "solar-panel-cleaning",
       icon: Home,
       title: "Solar Panel Cleaning",
-      bgImage: "/solar-panel-card.png",
+      bgImage: "/new-images/9 - solar.webp",
     },
   ];
 
@@ -86,7 +86,7 @@ const About = () => {
       answer: "Yes! All PiNE Cleaning services and crews are fully insured, protecting your home and property for full peace of mind. Our crews are experts in their craft and will treat your home like their own.",
     },
     {
-      question: "What is included in your automotive cleaning service?",
+      question: "What is included in your auto detailing service?",
       answer: "At PiNE Cleaning, our auto cleaning service entails a thorough interior and exterior cleaning, including a detailed vacuum of all seats, a deep shampoo of carpets, floor mats, and trunk/cargo area, a meticulous cleaning of all interior surfaces, buttons, cracks, and a gentle exterior PH neutral snow foam contact wash with a hand dry finish.",
     },
     {
@@ -114,8 +114,17 @@ const About = () => {
   return (
     <PageLayout>
       {/* Our Story Section */}
-      <section className="bg-surface pt-36 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden pt-36 pb-20">
+        <div className="absolute inset-0">
+          <img
+            src="/new-images/8 - pine trees.webp"
+            alt=""
+            className="h-full w-full object-cover"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,16,10,0.62)_0%,rgba(10,22,13,0.4)_45%,rgba(9,18,12,0.66)_100%)]" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
             <div className="relative">
               <div className="rounded-3xl bg-white/80 p-4 shadow-2xl">
@@ -127,10 +136,10 @@ const About = () => {
               </div>
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold heading-caps text-foreground">
+              <h2 className="text-3xl md:text-4xl font-bold heading-caps text-white">
                 Our Story
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-white/90 leading-relaxed">
                 Founded in Salt Lake City, PiNE Home Services has been delivering
                 5-star service to Utah families and businesses for more than 7
                 years. While we started as a window cleaning company, after more
@@ -152,8 +161,8 @@ const About = () => {
                     key={item}
                     className="flex items-center space-x-3 text-lg"
                   >
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground">{item}</span>
+                    <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                    <span className="text-white">{item}</span>
                   </div>
                 ))}
               </div>
@@ -169,10 +178,6 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold heading-caps text-foreground mb-6">
               Our Approach
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              The details that make our window cleaning different—and why our work
-              looks better and lasts longer.
-            </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
@@ -247,10 +252,10 @@ const About = () => {
 
       {/* Services Overview */}
       <section className="relative py-20 overflow-hidden">
-        {/* Background image with gaussian-style overlay similar to hero cards */}
+        {/* Background image with overlay */}
         <div className="absolute inset-0">
           <img
-            src="/services-section-bg.png"
+            src="/new-images/8 - pine trees.webp"
             alt="PiNE Cleaning core services background"
             className="w-full h-full object-cover"
           />
@@ -275,17 +280,18 @@ const About = () => {
                 to={`/services#${service.id}`}
                 className="group block h-full"
               >
-                <Card className="h-full flex flex-col bg-white border border-border rounded-2xl shadow-2xl overflow-hidden transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
-                  <CardContent className="flex flex-col h-full p-0">
-                    <div
-                      className="w-full aspect-[4/3] bg-cover bg-center"
-                      style={{ backgroundImage: `url(${service.bgImage})` }}
+                <Card className="h-full overflow-hidden rounded-2xl border-0 shadow-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                  <CardContent className="relative flex h-full min-h-[360px] items-center justify-center p-0">
+                    <img
+                      src={service.bgImage}
+                      alt={service.title}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="flex-1 px-5 py-4 flex items-center space-x-3">
-                      <service.icon className="w-7 h-7 text-primary flex-shrink-0" />
-                      <h3 className="text-sm md:text-base font-bold heading-caps text-foreground leading-snug">
-                      {service.title}
-                    </h3>
+                    <div className="absolute inset-0 bg-black/30" />
+                    <div className="relative w-full px-6 text-center">
+                      <h3 className="mx-auto max-w-[14ch] text-xl font-bold leading-tight text-white md:text-2xl">
+                        {service.title}
+                      </h3>
                     </div>
                   </CardContent>
                 </Card>
@@ -304,7 +310,7 @@ const About = () => {
       </section>
 
       {/* FAQs Section */}
-      <section className="py-20 bg-surface">
+      <section id="faqs" className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold heading-caps text-foreground mb-4">

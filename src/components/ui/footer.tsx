@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { Instagram, Star, Phone, Mail, MapPin } from "lucide-react";
 
-const Footer = () => {
+interface FooterProps {
+  useBackground?: boolean;
+}
+
+const Footer = ({ useBackground = true }: FooterProps) => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
@@ -22,7 +26,7 @@ const Footer = () => {
     },
     {
       href: "/services#home-concrete-pressure-washing",
-      label: "Home & Concrete Pressure Washing",
+      label: "Building & Concrete Pressure Washing",
     },
     {
       href: "/services#screen-repair-replacement",
@@ -38,7 +42,7 @@ const Footer = () => {
     },
     {
       href: "/services#automotive-detailing",
-      label: "Automotive Detailing",
+      label: "Auto Detailing",
     },
     {
       href: "/services#solar-panel-cleaning",
@@ -50,49 +54,123 @@ const Footer = () => {
     {
       county: "Salt Lake County",
       cities: [
+        "Alta",
+        "Bluffdale",
+        "Brighton",
+        "Cottonwood Heights",
+        "Draper",
+        "Herriman",
+        "Holladay",
+        "Midvale",
+        "Millcreek",
+        "Murray",
+        "Riverton",
         "Salt Lake City",
         "Sandy",
-        "Draper",
         "South Jordan",
+        "South Salt Lake",
+        "Taylorsville",
         "West Jordan",
-        "Herriman",
-        "Riverton",
+        "West Valley City",
       ],
     },
     {
       county: "Utah County",
-      cities: ["Provo", "Orem", "Lehi", "American Fork", "Pleasant Grove"],
+      cities: [
+        "Alpine",
+        "American Fork",
+        "Cedar Fort",
+        "Cedar Hills",
+        "Eagle Mountain",
+        "Elk Ridge",
+        "Fairfield",
+        "Genola",
+        "Goshen",
+        "Highland",
+        "Lehi",
+        "Lindon",
+        "Mapleton",
+        "Orem",
+        "Payson",
+        "Pleasant Grove",
+        "Provo",
+        "Salem",
+        "Santaquin",
+        "Saratoga Springs",
+        "Spanish Fork",
+        "Springville",
+        "Vineyard",
+        "Woodland Hills",
+      ],
     },
     {
       county: "Weber County",
-      cities: ["Ogden", "Roy", "South Ogden", "North Ogden"],
+      cities: [
+        "Farr West",
+        "Harrisville",
+        "Huntsville",
+        "Hooper",
+        "Marriott-Slaterville",
+        "North Ogden",
+        "Ogden",
+        "Plain City",
+        "Pleasant View",
+        "Riverdale",
+        "Roy",
+        "South Ogden",
+        "Uintah",
+        "Washington Terrace",
+        "West Haven",
+      ],
     },
     {
       county: "Summit County",
-      cities: ["Park City", "Kamas", "Oakley"],
+      cities: ["Coalville", "Francis", "Henefer", "Kamas", "Oakley", "Park City"],
     },
     {
       county: "Davis County",
-      cities: ["Layton", "Bountiful", "Kaysville", "Farmington"],
+      cities: [
+        "Bountiful",
+        "Centerville",
+        "Clearfield",
+        "Clinton",
+        "Farmington",
+        "Fruit Heights",
+        "Kaysville",
+        "Layton",
+        "North Salt Lake",
+        "South Weber",
+        "Sunset",
+        "Syracuse",
+        "West Bountiful",
+        "West Point",
+        "Woods Cross",
+      ],
     },
   ];
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10">
-      <div className="absolute inset-0">
-        <img
-          src="/new-images/8 - pine trees.webp"
-          alt=""
-          className="h-full w-full object-cover"
-          aria-hidden="true"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,16,10,0.9)_0%,rgba(10,22,13,0.86)_45%,rgba(9,18,12,0.94)_100%)]" />
-      </div>
+    <footer
+      className={`relative overflow-hidden ${
+        useBackground ? "border-t border-white/10" : "border-t border-white/20 bg-transparent"
+      }`}
+    >
+      {useBackground && (
+        <div className="absolute inset-0">
+          <img
+            src="/new-images/8 - pine trees.webp"
+            alt=""
+            className="h-full w-full object-cover"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,16,10,0.78)_0%,rgba(10,22,13,0.7)_45%,rgba(9,18,12,0.82)_100%)]" />
+        </div>
+      )}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:justify-items-center">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="w-full space-y-4 lg:max-w-[220px]">
             <div className="flex items-center space-x-2">
               <img
                 src="/white-nav-logo.png"
@@ -115,7 +193,9 @@ const Footer = () => {
                 <span>Instagram</span>
               </a>
               <a
-                href="/#reviews"
+                href="https://share.google/cCJTWRb87w9yFVjJi"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-white hover:text-primary"
                 aria-label="Reviews"
               >
@@ -125,27 +205,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Company */}
-          <div className="space-y-4">
-            <h3 className="font-semibold heading-caps text-white">
-              Company
-            </h3>
-            <ul className="space-y-2">
-              {footerLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-white/80 transition-colors duration-200 hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Services */}
-          <div className="space-y-4">
+          <div className="w-full space-y-4 lg:max-w-[220px]">
             <h3 className="font-semibold heading-caps text-white">Our Services</h3>
             <ul className="space-y-2">
               {serviceLinks.map((service) => (
@@ -162,7 +223,7 @@ const Footer = () => {
           </div>
 
           {/* Service Areas */}
-          <div className="space-y-4">
+          <div className="w-full space-y-4 lg:max-w-[220px]">
             <h3 className="font-semibold heading-caps text-white">
               Proudly Serving
             </h3>
@@ -184,8 +245,21 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="font-semibold heading-caps text-white">Contact Us</h3>
+          <div className="w-full space-y-4 lg:max-w-[220px]">
+            <h3 className="font-semibold heading-caps text-white">Company</h3>
+            <ul className="space-y-2">
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    to={link.href}
+                    className="text-sm text-white/80 transition-colors duration-200 hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h3 className="pt-2 font-semibold heading-caps text-white">Contact Us</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-white" />
@@ -205,10 +279,10 @@ const Footer = () => {
                 <div>
                   <span className="text-white/80 transition-colors hover:text-white">
                     <a
-                      href="mailto:taylordwilliams11@gmail.com"
+                      href="mailto:management@uintawindowwashing.com"
                       className="hover:underline"
                     >
-                      taylordwilliams11@gmail.com
+                      management@uintawindowwashing.com
                     </a>
                   </span>
                 </div>

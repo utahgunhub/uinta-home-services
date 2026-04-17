@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import PageLayout from "@/components/layout/PageLayout";
 import { useToast } from "@/hooks/use-toast";
 import { sendQuoteRequest } from "@/lib/email";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -86,14 +86,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "taylordwilliams11@gmail.com",
-      link: "mailto:taylordwilliams11@gmail.com",
-    },
-    {
-      icon: MapPin,
-      title: "Address",
-      value: "Sandy, UT, 84081-4020",
-      link: null,
+      value: "management@uintawindowwashing.com",
+      link: "mailto:management@uintawindowwashing.com",
     },
     {
       icon: Clock,
@@ -108,7 +102,7 @@ const Contact = () => {
     "Gutter Cleaning",
     "Power Washing",
     "Christmas Lights",
-    "Car Detailing",
+    "Auto Detailing",
     "Screen Replacement",
     "Solar Panel Cleaning",
     "Other",
@@ -140,46 +134,108 @@ const Contact = () => {
     {
       county: "Salt Lake County",
       cities: [
+        "Alta",
+        "Bluffdale",
+        "Brighton",
+        "Cottonwood Heights",
+        "Draper",
+        "Herriman",
+        "Holladay",
+        "Midvale",
+        "Millcreek",
+        "Murray",
+        "Riverton",
         "Salt Lake City",
         "Sandy",
-        "Draper",
         "South Jordan",
+        "South Salt Lake",
+        "Taylorsville",
         "West Jordan",
-        "Herriman",
-        "Riverton",
+        "West Valley City",
       ],
     },
     {
       county: "Utah County",
-      cities: ["Provo", "Orem", "Lehi", "American Fork", "Pleasant Grove"],
+      cities: [
+        "Alpine",
+        "American Fork",
+        "Cedar Fort",
+        "Cedar Hills",
+        "Eagle Mountain",
+        "Elk Ridge",
+        "Fairfield",
+        "Genola",
+        "Goshen",
+        "Highland",
+        "Lehi",
+        "Lindon",
+        "Mapleton",
+        "Orem",
+        "Payson",
+        "Pleasant Grove",
+        "Provo",
+        "Salem",
+        "Santaquin",
+        "Saratoga Springs",
+        "Spanish Fork",
+        "Springville",
+        "Vineyard",
+        "Woodland Hills",
+      ],
     },
     {
       county: "Weber County",
-      cities: ["Ogden", "Roy", "South Ogden", "North Ogden"],
+      cities: [
+        "Farr West",
+        "Harrisville",
+        "Huntsville",
+        "Hooper",
+        "Marriott-Slaterville",
+        "North Ogden",
+        "Ogden",
+        "Plain City",
+        "Pleasant View",
+        "Riverdale",
+        "Roy",
+        "South Ogden",
+        "Uintah",
+        "Washington Terrace",
+        "West Haven",
+      ],
     },
     {
       county: "Summit County",
-      cities: ["Park City", "Kamas", "Oakley"],
+      cities: ["Coalville", "Francis", "Henefer", "Kamas", "Oakley", "Park City"],
     },
     {
       county: "Davis County",
-      cities: ["Layton", "Bountiful", "Kaysville", "Farmington"],
+      cities: [
+        "Bountiful",
+        "Centerville",
+        "Clearfield",
+        "Clinton",
+        "Farmington",
+        "Fruit Heights",
+        "Kaysville",
+        "Layton",
+        "North Salt Lake",
+        "South Weber",
+        "Sunset",
+        "Syracuse",
+        "West Bountiful",
+        "West Point",
+        "Woods Cross",
+      ],
     },
   ];
+  const [selectedCounty, setSelectedCounty] = useState(serviceAreas[0]?.county ?? "");
+  const selectedServiceArea =
+    serviceAreas.find((area) => area.county === selectedCounty) ?? serviceAreas[0];
 
   return (
     <PageLayout>
-      <section className="relative min-h-[280px] overflow-hidden pt-32 pb-16 md:min-h-[340px] md:pt-40 md:pb-20">
-        <div className="absolute inset-0">
-          <img
-            src="/new-images/8 - pine trees.webp"
-            alt=""
-            className="h-full w-full object-cover"
-            aria-hidden="true"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,18,12,0.68)_0%,rgba(17,32,20,0.58)_35%,rgba(17,32,20,0.72)_100%)]" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <section className="min-h-[320px] pt-36 pb-6 md:min-h-[380px] md:pt-48 md:pb-8">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl space-y-4">
             <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
               Get Your Quote
@@ -192,18 +248,8 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="relative py-20 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src="/contact-bg.png"
-            alt="Utah mountain landscape"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-0 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-2">
@@ -420,16 +466,6 @@ const Contact = () => {
                     </Card>
                   ))}
                 </div>
-                <Card className="mt-6 p-6 bg-white/95 backdrop-blur-sm border-2 border-white/20">
-                  <div className="text-center">
-                    <p className="text-sm uppercase tracking-[0.18em] text-primary font-semibold">
-                      License Number
-                    </p>
-                    <p className="mt-2 text-lg font-semibold text-foreground">
-                      11258030-0160
-                    </p>
-                  </div>
-                </Card>
               </div>
             </div>
           </div>
@@ -444,19 +480,32 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="mt-8 grid gap-6 text-sm md:grid-cols-2 lg:grid-cols-5">
-              {serviceAreas.map((area) => (
-                <div key={area.county} className="text-left">
-                  <p className="mb-3 font-semibold text-foreground">
+            <div className="mt-8 grid gap-4 lg:grid-cols-3">
+              <div className="rounded-lg border border-border bg-background/80 p-4 text-left lg:min-h-[220px]">
+                <p className="font-semibold text-foreground">
+                  {selectedServiceArea?.county}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {selectedServiceArea?.cities.join(", ")}
+                </p>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2 lg:col-span-2">
+                {serviceAreas.map((area) => (
+                  <button
+                    key={area.county}
+                    type="button"
+                    onClick={() => setSelectedCounty(area.county)}
+                    className={`rounded-lg border px-4 py-3 text-left text-sm font-semibold transition-colors duration-200 ${
+                      selectedServiceArea?.county === area.county
+                        ? "border-primary bg-primary/10 text-foreground"
+                        : "border-border bg-background/70 text-foreground hover:bg-background"
+                    }`}
+                  >
                     {area.county}
-                  </p>
-                  <ul className="space-y-1 text-muted-foreground">
-                    {area.cities.map((city) => (
-                      <li key={city}>{city}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                  </button>
+                ))}
+              </div>
             </div>
           </Card>
         </div>

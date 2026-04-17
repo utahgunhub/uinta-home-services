@@ -138,6 +138,11 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-sans;
   }
 
+  /* Prevent fixed navigation from covering hash-link targets. */
+  :target {
+    scroll-margin-top: 70px;
+  }
+
   /* Typography */
   h1,
   h2,

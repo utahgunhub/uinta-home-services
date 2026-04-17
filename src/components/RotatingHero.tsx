@@ -63,7 +63,7 @@ const RotatingHero = () => {
     {
       id: 5,
       image: carDetailImage,
-      title: "Car Detailing",
+      title: "Auto Detailing",
       ctaText: "Get Your Quote",
       ctaLink: "/contact",
       secondaryCtaText: "View Our Work",
@@ -103,7 +103,9 @@ const RotatingHero = () => {
         <div
           key={slide.id}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
+            index === currentSlide
+              ? "opacity-100 pointer-events-auto z-10"
+              : "opacity-0 pointer-events-none z-0"
           }`}
         >
           {/* Background Image */}
@@ -158,22 +160,27 @@ const RotatingHero = () => {
                   </Link>
                 </div>
 
-                {/* Rating - Only show on first slide */}
-                {index === 0 && (
-                  <div className="flex items-center justify-center space-x-6 pt-4">
-                    <div className="flex items-center space-x-1">
+                <div className="flex items-center justify-center pt-2">
+                  <div className="inline-flex flex-wrap items-center justify-center gap-2 text-white">
+                    <div className="flex items-center gap-1">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className="w-5 h-5 fill-primary text-primary"
+                          className="h-4 w-4 fill-[#fbbc04] text-[#fbbc04]"
                         />
                       ))}
                     </div>
-                    <span className="text-gray-200">
-                      Rated 5/5 after 8 years in business.
+                    <span className="text-sm font-medium text-white sm:text-base">
+                      5 Stars on Google
                     </span>
+                    <img
+                      src="/Google__G__logo.svg.png"
+                      alt="Google logo"
+                      className="h-6 w-6"
+                      loading="lazy"
+                    />
                   </div>
-                )}
+                </div>
               </div>
             </div>
           </div>
@@ -183,7 +190,7 @@ const RotatingHero = () => {
       {/* Navigation Arrows - Hidden on mobile */}
       <button
         onClick={goToPrevSlide}
-        className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+        className="hidden md:block absolute left-4 top-1/2 z-20 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
         aria-label="Previous slide"
       >
         <svg
@@ -203,7 +210,7 @@ const RotatingHero = () => {
 
       <button
         onClick={goToNextSlide}
-        className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+        className="hidden md:block absolute right-4 top-1/2 z-20 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
         aria-label="Next slide"
       >
         <svg
@@ -222,7 +229,7 @@ const RotatingHero = () => {
       </button>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3">
+      <div className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2 flex space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -238,7 +245,7 @@ const RotatingHero = () => {
       </div>
 
       {/* Progress Bar */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-black/20">
+      <div className="absolute bottom-0 left-0 z-20 w-full h-1 bg-black/20">
         <div
           className="h-full bg-primary transition-all duration-5000 ease-linear"
           style={{

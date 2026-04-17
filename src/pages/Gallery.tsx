@@ -96,19 +96,19 @@ const Gallery = () => {
       id: "exterior-window-cleaning",
       icon: Droplets,
       title: "Exterior Window Cleaning",
-      bgImage: "/images/gallery/exteior window cleaning.png",
+      bgImage: "/new-images/11 - exteior window cleaning.webp",
     },
     {
       id: "interior-window-cleaning",
       icon: Droplets,
       title: "Interior Window Cleaning",
-      bgImage: "/interior-window-cleaning-card.png",
+      bgImage: "/new-images/3 - interior window washing.webp",
     },
     {
       id: "home-concrete-pressure-washing",
       icon: Paintbrush,
-      title: "Exterior & Concrete Pressure Washing",
-      bgImage: "/images/gallery/Abbington-Murray-38-REV2-scaled.jpg",
+      title: "Building & Concrete Pressure Washing",
+      bgImage: "/pressure-washing-card.png",
     },
     {
       id: "screen-repair-replacement",
@@ -120,19 +120,25 @@ const Gallery = () => {
       id: "christmas-light-installation",
       icon: Sparkles,
       title: "Christmas Light Fitting & Installation",
-      bgImage: "/christmas-lights-card.png",
+      bgImage: "/new-images/2 - christmas lights.webp",
     },
     {
       id: "gutter-cleaning",
       icon: Building2,
       title: "Gutter Cleaning",
-      bgImage: "/gutter-cleaning-card.png",
+      bgImage: "/new-images/7 - gutter.webp",
+    },
+    {
+      id: "automotive-detailing",
+      icon: Home,
+      title: "Auto Detailing",
+      bgImage: "/new-images/13 - car detailing.webp",
     },
     {
       id: "solar-panel-cleaning",
       icon: Home,
       title: "Solar Panel Cleaning",
-      bgImage: "/solar-panel-card.png",
+      bgImage: "/new-images/9 - solar.webp",
     },
   ];
 
@@ -147,13 +153,15 @@ const Gallery = () => {
   ];
 
   const portfolioImages = [
-    "/images/commercial-portfolio/commercial-portfolio1.webp",
-    "/images/commercial-portfolio/commercial-portfolio2.webp",
-    "/images/commercial-portfolio/commercial-portfolio3.webp",
     "/images/commercial-portfolio/commercial-portfolio4.webp",
     "/images/commercial-portfolio/commercial-portfolio5.webp",
     "/images/commercial-portfolio/commercial-portfolio6.webp",
-    "/images/commercial-portfolio/commercial-portfolio7.webp",
+    "/new-gallery-1.jpg",
+    "/new-gallery-2.webp",
+    "/new-gallery-3.jpg",
+    "/new-gallery-4.png",
+    "/new-gallery-5.jpg",
+    "/images/commercial-portfolio/commercial-portfolio3.webp",
   ];
 
   const plans = [
@@ -179,10 +187,10 @@ const Gallery = () => {
 
   return (
     <PageLayout>
-      <section className="relative min-h-[280px] overflow-hidden pt-32 pb-16 md:min-h-[340px] md:pt-40 md:pb-20">
+      <section className="relative min-h-[320px] overflow-hidden pt-36 pb-20 md:min-h-[380px] md:pt-48 md:pb-24">
         <div className="absolute inset-0">
           <img
-            src="/new-images/8 - pine trees.webp"
+            src="/commercial-form-bg.png"
             alt=""
             className="h-full w-full object-cover"
             aria-hidden="true"
@@ -192,7 +200,7 @@ const Gallery = () => {
         <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl space-y-4">
             <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-              Commercial Cleaning Services
+              Your Commercial Exterior Building Maintenance Provider
             </h1>
             <p className="text-lg leading-relaxed text-white/85 md:text-xl">
               Professional cleaning solutions for businesses, office buildings,
@@ -203,20 +211,10 @@ const Gallery = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="relative py-16 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src="/commercial-form-bg.png"
-            alt="Commercial cleaning background"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-surface-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold heading-caps text-white">
+            <h2 className="text-4xl md:text-5xl font-bold heading-caps text-foreground">
               Request a Quote
             </h2>
           </div>
@@ -473,7 +471,7 @@ const Gallery = () => {
         {/* Background image with overlay */}
         <div className="absolute inset-0">
           <img
-            src="/services-section-bg.png"
+            src="/new-images/8 - pine trees.webp"
             alt="PiNE Cleaning commercial services background"
             className="w-full h-full object-cover"
           />
@@ -490,35 +488,29 @@ const Gallery = () => {
             </p>
           </div>
 
-          <div className="mb-12 grid gap-6 md:grid-cols-2 md:gap-8 xl:grid-cols-12">
-            {services.map((service, index) => (
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
+            {services.map((service) => (
               <Link
                 key={service.id}
                 to={`/services#${service.id}`}
-                className={`group block h-full ${
-                  index < 4
-                    ? "xl:col-span-3"
-                    : index === 4
-                    ? "xl:col-span-3 xl:col-start-2"
-                    : "xl:col-span-3"
-                }`}
+                className="group block h-full"
               >
-                <Card className="h-full flex flex-col bg-white border border-border rounded-2xl shadow-2xl overflow-hidden transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
-                  <CardContent className="flex flex-col h-full p-0">
+                <Card className="h-full overflow-hidden rounded-2xl border-0 shadow-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                  <CardContent className="relative flex h-full min-h-[360px] items-center justify-center p-0">
                     <img
                       src={service.bgImage}
                       alt={service.title}
-                      className="w-full aspect-[4/3] object-cover"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="flex-1 px-5 py-4 flex items-center space-x-3">
-                      <service.icon className="w-7 h-7 text-primary flex-shrink-0" />
-                      <h3 className="text-sm md:text-base font-bold heading-caps text-foreground leading-snug">
+                    <div className="absolute inset-0 bg-black/30" />
+                    <div className="relative w-full px-6 text-center">
+                      <h3 className="mx-auto max-w-[14ch] text-xl font-bold leading-tight text-white md:text-2xl">
                         {service.title}
                       </h3>
                     </div>
                   </CardContent>
                 </Card>
-            </Link>
+              </Link>
             ))}
           </div>
 

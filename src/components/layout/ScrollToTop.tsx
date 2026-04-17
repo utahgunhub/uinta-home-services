@@ -10,7 +10,20 @@ export default function ScrollToTop() {
 
       if (element) {
         requestAnimationFrame(() => {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
+          const nav = document.querySelector("nav");
+          const navBottom = nav?.getBoundingClientRect().bottom ?? 0;
+          const extraOffset = 12;
+          const targetTop =
+            element.getBoundingClientRect().top +
+            window.scrollY -
+            navBottom -
+            extraOffset;
+
+          window.scrollTo({
+            top: Math.max(0, targetTop),
+            left: 0,
+            behavior: "smooth",
+          });
         });
         return;
       }

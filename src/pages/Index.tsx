@@ -31,13 +31,13 @@ const Index = () => {
     },
     {
       icon: Award,
-      title: "Comprehensive Home Care",
+      title: "Comprehensive Care",
       description: [
         "Interior & exterior window cleaning",
         "Home & concrete pressure washing",
         "Screen repair & replacement",
         "Christmas light fitting & installation",
-        "Automotive detailing",
+        "Auto detailing",
       ],
       buttonText: "View Our Services",
       buttonLink: "/services",
@@ -70,7 +70,7 @@ const Index = () => {
     },
     {
       id: "home-concrete-pressure-washing",
-      title: "Home & Concrete Pressure Washing",
+      title: "Building & Concrete Pressure Washing",
       bgImage: "/pressure-washing-card.png",
     },
     {
@@ -90,7 +90,7 @@ const Index = () => {
     },
     {
       id: "automotive-detailing",
-      title: "Automotive Detailing",
+      title: "Auto Detailing",
       bgImage: "/new-images/13 - car detailing.webp",
     },
     {
@@ -143,8 +143,9 @@ const Index = () => {
               Why Choose PiNE Home Services?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We deliver exceptional service with expert craftsmanship to care
-              for your home and vehicle and exceed expectations.
+              Top-rated window cleaning and exterior building maintenance in
+              Utah. Licensed and insured technicians delivering spotless
+              results.
             </p>
           </div>
 
@@ -242,16 +243,16 @@ const Index = () => {
                 to={`/services#${service.id}`}
                 className="group block h-full"
               >
-                <Card className="h-full overflow-hidden rounded-2xl border border-white/80 shadow-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
-                  <CardContent className="relative flex h-full min-h-[280px] items-end p-0">
+                <Card className="h-full overflow-hidden rounded-2xl border-0 shadow-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                  <CardContent className="relative flex h-full min-h-[360px] items-center justify-center p-0">
                     <img
                       src={service.bgImage}
                       alt={service.title}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-                    <div className="relative w-full p-5">
-                      <h3 className="text-sm font-bold leading-snug text-white md:text-base">
+                    <div className="absolute inset-0 bg-black/30" />
+                    <div className="relative w-full px-6 text-center">
+                      <h3 className="mx-auto max-w-[14ch] text-xl font-bold leading-tight text-white md:text-2xl">
                         {service.title}
                       </h3>
                     </div>

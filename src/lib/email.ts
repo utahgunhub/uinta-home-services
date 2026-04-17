@@ -22,7 +22,7 @@ export const sendQuoteRequest = async (payload: QuoteRequestPayload) => {
     : "None selected";
 
   const templateParams = {
-    to_email: "taylordwilliams11@gmail.com",
+    to_email: "management@uintawindowwashing.com",
     subject: `${payload.formType} Submission`,
     form_type: payload.formType,
     inquiry_type: payload.formType,

@@ -37,7 +37,7 @@ const Services = () => {
     },
     {
       id: "home-concrete-pressure-washing",
-      title: "Home & Concrete Pressure Washing",
+      title: "Building & Concrete Pressure Washing",
       features: [
         "Residential Pressure Washing",
         "Commercial Pressure Washing",
@@ -83,7 +83,7 @@ const Services = () => {
     },
     {
       id: "automotive-detailing",
-      title: "Automotive Detailing",
+      title: "Auto Detailing",
       features: [
         "Leather Treatment & Conditioning",
         "Pet Hair Removal",
@@ -129,10 +129,9 @@ const Services = () => {
   return (
     <PageLayout>
       <PageHero
-        title={<span className="text-white">One-Stop Shop for Home Cleaning Services</span>}
-        description="Professional exterior cleaning, detailing, and home care services built for Utah homes."
+        title={<span className="text-white">One-Stop Shop for Exterior Home &amp; Building Cleaning Services</span>}
         backgroundImage="/new-images/8 - pine trees.webp"
-        className="min-h-[220px] pt-28 pb-10 md:min-h-[260px] md:pt-32 md:pb-12"
+        className="min-h-[320px] pt-36 pb-20 md:min-h-[380px] md:pt-48 md:pb-24"
         titleClassName="mx-auto max-w-5xl text-3xl leading-tight sm:text-4xl lg:text-5xl"
       >
         <Link to="/contact">
