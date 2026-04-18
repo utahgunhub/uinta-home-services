@@ -236,9 +236,19 @@ const Footer = ({ useBackground = true }: FooterProps) => {
                   <summary className="cursor-pointer font-medium text-white">
                     {area.county}
                   </summary>
-                  <p className="mt-2 leading-relaxed text-white/75">
-                    {area.cities.join(", ")}
-                  </p>
+                  <div className="mt-2 leading-relaxed text-white/75">
+                    {area.cities.map((city, index) => (
+                      <span key={`${area.county}-${city}`}>
+                        <Link
+                          to="/contact#quote-request"
+                          className="transition-colors duration-200 hover:text-white hover:underline"
+                        >
+                          {city}
+                        </Link>
+                        {index < area.cities.length - 1 ? ", " : ""}
+                      </span>
+                    ))}
+                  </div>
                 </details>
               ))}
             </div>

@@ -142,11 +142,6 @@ const Index = () => {
             <h2 className="text-4xl font-bold heading-caps text-foreground mb-4">
               Why Choose PiNE Home Services?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Top-rated window cleaning and exterior building maintenance in
-              Utah. Licensed and insured technicians delivering spotless
-              results.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -450,6 +445,83 @@ const Index = () => {
                     Thorough and exact. Best window washing ever."
                   </p>
                 </Card>
+
+                {/* Review 4 - Marsha */}
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Marsha Jensen
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        4 reviews · Edited 6 years ago
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "Very happy with the windows. Employees are wonderful. Will
+                    definitely use this company again."
+                  </p>
+                </Card>
+
+                {/* Review 5 - Josie */}
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Josie Williams
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        2 reviews · 20 hours ago
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "I've been using this company for years. They are great at
+                    what they do and are very professional."
+                  </p>
+                </Card>
+
+                {/* Review 6 - Lucy */}
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Lucy Vasquez
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        Local Guide · 3 reviews · 2 years ago
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "Positive: Punctuality, Professionalism, Value."
+                  </p>
+                </Card>
               </div>
             </div>
 
@@ -496,7 +568,7 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-16 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href="tel:8015207948">
               <Button
                 size="lg"
@@ -504,6 +576,24 @@ const Index = () => {
               >
                 <Phone className="mr-2 w-5 h-5" />
                 Call Us
+              </Button>
+            </a>
+            <a
+              href="https://www.google.com/search?sca_esv=7a3e106727178f17&sxsrf=ANbL-n4EjdW2OgqjqSLQ-lJaUhnea0jFRw:1776527124160&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOU5V7h6BcFVioeMMrDE0DiwNi0AoZ-ML-WhR2se-UGBsPeVQh75Zy_4ZlxuPWrZIz9h68BkNdfUwqwmSC8c1Y_gg0ruFU23KAzUHJd5rKmTuafk58w%3D%3D&q=Uinta+Window+Washing,+LLC+Reviews&sa=X&ved=2ahUKEwjcmK2h3_eTAxVPmO4BHegXGZEQ0bkNegQINBAF&biw=1598&bih=947&dpr=2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button
+                size="lg"
+                className="bg-primary text-white hover:bg-primary/90 text-lg px-8 py-4"
+              >
+                <img
+                  src="/google-white-icon.webp"
+                  alt="Google icon"
+                  className="mr-2 h-5 w-5"
+                  loading="lazy"
+                />
+                Share your review
               </Button>
             </a>
           </div>

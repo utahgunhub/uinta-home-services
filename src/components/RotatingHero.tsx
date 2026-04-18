@@ -137,6 +137,13 @@ const RotatingHero = () => {
                   <h1 className="text-5xl lg:text-7xl font-bold heading-caps animate-fade-in">
                     {slide.title}
                   </h1>
+                  {slide.id === 1 && (
+                    <p className="mx-auto max-w-3xl text-lg text-white/90 sm:text-xl">
+                      Top-rated window cleaning and exterior building maintenance
+                      in Utah. Licensed and insured technicians delivering
+                      spotless results.
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
@@ -162,7 +169,7 @@ const RotatingHero = () => {
 
                 <div className="flex items-center justify-center pt-2">
                   <div className="inline-flex flex-wrap items-center justify-center gap-2 text-white">
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 rounded-full bg-gray-700/70 px-2.5 py-1">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}

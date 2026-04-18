@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import PageLayout from "@/components/layout/PageLayout";
 import { useToast } from "@/hooks/use-toast";
 import { sendQuoteRequest } from "@/lib/email";
-import { Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { Send } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -78,19 +78,16 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: Phone,
       title: "Phone",
       value: "801-520-7948",
       link: "tel:8015207948",
     },
     {
-      icon: Mail,
       title: "Email",
       value: "management@uintawindowwashing.com",
       link: "mailto:management@uintawindowwashing.com",
     },
     {
-      icon: Clock,
       title: "Business Hours",
       value: "Mon-Sat: 7AM-7PM",
       link: null,
@@ -124,7 +121,7 @@ const Contact = () => {
     "One Time",
     "Biannual - Save 10% on Every Cleaning",
     "Quarterly - Save 15% on Every Cleaning + Free Hard Water Removal",
-    "Biannual - Save 25% on Every Cleaning + Free Hard Water Removal",
+    "Bimonthly - Save 25% on Every Cleaning + Free Hard Water Removal",
   ];
 
   const serviceAreas: {
@@ -250,223 +247,211 @@ const Contact = () => {
       {/* Contact Form & Info */}
       <section className="pt-0 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <Card className="bg-white/95 backdrop-blur-sm shadow-2xl border-2 border-white/20">
-                <CardContent className="p-8">
-                  <div className="mb-8">
-                    <h2 className="text-3xl font-bold heading-caps text-foreground mb-4">
-                      Request Your Free Estimate
-                    </h2>
-                  </div>
+          <div className="space-y-6">
+            <Card
+              id="quote-request"
+              className="bg-white/95 backdrop-blur-sm shadow-2xl border-2 border-white/20"
+            >
+              <CardContent className="p-8">
+                <div className="mb-8">
+                  <h2 className="text-3xl font-bold heading-caps text-foreground mb-4">
+                    Request Your Free Estimate
+                  </h2>
+                </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label
-                          htmlFor="name"
-                          className="text-foreground font-medium"
-                        >
-                          Full Name *
-                        </Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={handleChange}
-                          className="focus:ring-primary focus:border-primary"
-                          placeholder="Your full name"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label
-                          htmlFor="email"
-                          className="text-foreground font-medium"
-                        >
-                          Email Address *
-                        </Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="focus:ring-primary focus:border-primary"
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label
-                          htmlFor="phone"
-                          className="text-foreground font-medium"
-                        >
-                          Phone Number *
-                        </Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          required
-                          value={formData.phone}
-                          onChange={handleChange}
-                          className="focus:ring-primary focus:border-primary"
-                          placeholder="(801) 520-7948"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label
-                          htmlFor="hearAboutUs"
-                          className="text-foreground font-medium"
-                        >
-                          How did you hear about us?
-                        </Label>
-                        <select
-                          id="hearAboutUs"
-                          name="hearAboutUs"
-                          value={formData.hearAboutUs}
-                          onChange={handleChange}
-                          className="w-full px-3 py-2 border border-input bg-background rounded-md focus:ring-primary focus:border-primary"
-                        >
-                          <option value="">Select an option</option>
-                          {hearAboutUsOptions.map((option) => (
-                            <option key={option} value={option}>
-                              {option}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="name"
+                        className="text-foreground font-medium"
+                      >
+                        Full Name *
+                      </Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="focus:ring-primary focus:border-primary"
+                        placeholder="Your full name"
+                      />
                     </div>
 
                     <div className="space-y-2">
                       <Label
-                        htmlFor="frequency"
+                        htmlFor="email"
                         className="text-foreground font-medium"
                       >
-                        Frequency of Service
+                        Email Address *
+                      </Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="focus:ring-primary focus:border-primary"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="phone"
+                        className="text-foreground font-medium"
+                      >
+                        Phone Number *
+                      </Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="focus:ring-primary focus:border-primary"
+                        placeholder="(801) 520-7948"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="hearAboutUs"
+                        className="text-foreground font-medium"
+                      >
+                        How did you hear about us?
                       </Label>
                       <select
-                        id="frequency"
-                        name="frequency"
-                        value={formData.frequency}
+                        id="hearAboutUs"
+                        name="hearAboutUs"
+                        value={formData.hearAboutUs}
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-input bg-background rounded-md focus:ring-primary focus:border-primary"
                       >
-                        <option value="">Select a frequency</option>
-                        {frequencyOptions.map((option) => (
+                        <option value="">Select an option</option>
+                        {hearAboutUsOptions.map((option) => (
                           <option key={option} value={option}>
                             {option}
                           </option>
                         ))}
                       </select>
                     </div>
+                  </div>
 
-                    <div className="space-y-2">
-                      <Label className="text-foreground font-medium">
-                        Service Needed *
-                      </Label>
-                      <div className="grid grid-cols-2 gap-3">
-                        {serviceTypes.map((service) => (
-                          <div key={service} className="flex items-center space-x-2">
-                            <input
-                              type="checkbox"
-                              id={service}
-                              checked={formData.services.includes(service)}
-                              onChange={() => handleServiceChange(service)}
-                              className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
-                            />
-                            <label
-                              htmlFor={service}
-                              className="text-sm text-foreground cursor-pointer"
-                            >
-                              {service}
-                            </label>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label
-                        htmlFor="message"
-                        className="text-foreground font-medium"
-                      >
-                        Project Details
-                      </Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        rows={5}
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="focus:ring-primary focus:border-primary"
-                        placeholder="Tell us about your project, including size, timeline, and any specific requirements..."
-                      />
-                    </div>
-
-                    <Button
-                      type="submit"
-                      size="lg"
-                      disabled={isSubmitting}
-                      className="btn-primary w-full glow-primary"
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="frequency"
+                      className="text-foreground font-medium"
                     >
-                      {isSubmitting ? (
-                        "Sending..."
-                      ) : (
-                        <>
-                          Request Quote
-                          <Send className="ml-2 w-5 h-5" />
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <div>
-                <div className="space-y-6">
-                  {contactInfo.map((info, index) => (
-                    <Card
-                      key={index}
-                      className="p-6 bg-white/95 backdrop-blur-sm border-2 border-white/20 hover:border-primary/30 transition-colors duration-200"
+                      Frequency of Service
+                    </Label>
+                    <select
+                      id="frequency"
+                      name="frequency"
+                      value={formData.frequency}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-input bg-background rounded-md focus:ring-primary focus:border-primary"
                     >
-                      <div className="flex flex-col items-center text-center space-y-4">
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                          <info.icon className="w-6 h-6 text-primary" />
+                      <option value="">Select a frequency</option>
+                      {frequencyOptions.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label className="text-foreground font-medium">
+                      Service Needed *
+                    </Label>
+                    <div className="grid grid-cols-2 gap-3">
+                      {serviceTypes.map((service) => (
+                        <div key={service} className="flex items-center space-x-2">
+                          <input
+                            type="checkbox"
+                            id={service}
+                            checked={formData.services.includes(service)}
+                            onChange={() => handleServiceChange(service)}
+                            className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
+                          />
+                          <label
+                            htmlFor={service}
+                            className="text-sm text-foreground cursor-pointer"
+                          >
+                            {service}
+                          </label>
                         </div>
-                        <div className="w-full">
-                          <h4 className="font-semibold text-foreground mb-1">
-                            {info.title}
-                          </h4>
-                          {info.link ? (
-                            <a
-                              href={info.link}
-                              className="text-primary hover:text-primary-glow transition-colors duration-200 font-medium"
-                            >
-                              {info.value}
-                            </a>
-                          ) : (
-                            <p className="text-foreground font-medium">
-                              {info.value}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    </Card>
-                  ))}
-                </div>
-              </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="message"
+                      className="text-foreground font-medium"
+                    >
+                      Project Details
+                    </Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="focus:ring-primary focus:border-primary"
+                      placeholder="Tell us about your project, including size, timeline, and any specific requirements..."
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={isSubmitting}
+                    className="btn-primary w-full glow-primary"
+                  >
+                    {isSubmitting ? (
+                      "Sending..."
+                    ) : (
+                      <>
+                        Request Quote
+                        <Send className="ml-2 w-5 h-5" />
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {contactInfo.map((info) => (
+                <Card
+                  key={info.title}
+                  className="border-2 border-white/20 bg-white/95 p-4 text-center"
+                >
+                  <h4 className="text-sm font-semibold uppercase tracking-wide text-foreground">
+                    {info.title}
+                  </h4>
+                  {info.link ? (
+                    <a
+                      href={info.link}
+                      className="mt-2 block text-sm font-medium text-primary hover:text-primary-glow transition-colors duration-200"
+                    >
+                      {info.value}
+                    </a>
+                  ) : (
+                    <p className="mt-2 text-sm font-medium text-foreground">
+                      {info.value}
+                    </p>
+                  )}
+                </Card>
+              ))}
             </div>
           </div>
           <Card className="mt-8 p-6 bg-white/95 backdrop-blur-sm border-2 border-white/20 md:p-8">
