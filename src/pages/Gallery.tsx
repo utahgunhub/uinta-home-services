@@ -638,7 +638,7 @@ const Gallery = () => {
                     </div>
                   </div>
                   <p className="text-sm text-foreground mb-3 italic">
-                    "Paid to have the windows, screens, and tracks cleaned-the
+                    "Paid to have the windows, screens, and tracks cleaned—the
                     works. Very happy with the service. Owner and management are
                     top notch. My house was built in 2014."
                   </p>
@@ -666,7 +666,7 @@ const Gallery = () => {
                   <p className="text-sm text-foreground mb-3 italic">
                     "Connor and McKay were incredible young men. They were
                     extremely friendly and courteous. We have nightmare windows
-                    with the panes on the outside and they never complained-just
+                    with the panes on the outside and they never complained—just
                     kept working with a smile and we have over thirty-six
                     windows. We will always go with PiNE. Their employees are
                     the best."
@@ -695,6 +695,80 @@ const Gallery = () => {
                   <p className="text-sm text-foreground mb-3 italic">
                     "Excellent service. On time, polite, clean-cut, friendly.
                     Thorough and exact. Best window washing ever."
+                  </p>
+                </Card>
+
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Marsha Jensen
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        4 reviews · Edited 6 years ago
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "Very happy with the windows. Employees are wonderful. Will
+                    definitely use this company again."
+                  </p>
+                </Card>
+
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Josie Williams
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        2 reviews · 20 hours ago
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "I've been using this company for years. They are great at
+                    what they do and are very professional."
+                  </p>
+                </Card>
+
+                <Card className="p-6 bg-primary/5 border-primary/20 h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        Lucy Vasquez
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        Local Guide · 3 reviews · 2 years ago
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-primary text-primary"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground mb-3 italic">
+                    "Positive: Punctuality, Professionalism, Value."
                   </p>
                 </Card>
               </div>

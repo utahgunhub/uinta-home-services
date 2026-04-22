@@ -46,7 +46,7 @@ const Navigation = () => {
   const navMutedTextClass = "text-foreground/80";
   const activeNavClass = "border-primary text-foreground";
   const activeMobileNavClass = "bg-primary/10 text-foreground";
-  const navPanelClass = "border-white/70 bg-white/70 shadow-lg backdrop-blur-md";
+  const navPanelClass = "border-white/40 bg-white/45 shadow-lg backdrop-blur-lg";
   const logoSrc = "/nav-logo.png";
 
   useEffect(() => {

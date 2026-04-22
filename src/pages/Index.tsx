@@ -276,8 +276,7 @@ const Index = () => {
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Lock in sparkling windows and a spotless home with discounted
-              recurring service plans tailored to how often you like things
-              cleaned.
+              recurring service plans.
             </p>
           </div>
 
